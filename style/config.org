@@ -1,0 +1,55 @@
+# Root of reveal.js and my style css
+
+#+REVEAL_ROOT: ./style/reveal.js/
+#+REVEAL_EXTRA_CSS: ./style/hal9001.css
+#+REVEAL_EXTRA_CSS: ./style/Reveal.js-TOC-Progress/plugin/toc-progress/toc-progress.css
+
+# reveal.js options
+#+OPTIONS: reveal_history:t reveal_fragmentinurl:t
+#+OPTIONS: reveal_mousewheel:t reveal_inter_presentation_links:t
+#+OPTIONS: reveal_title_slide:nil
+#+OPTIONS: toc:nil num:nil
+#+OPTIONS: reveal_width:1024 reveal_height:768
+
+#+REVEAL_MARGIN: 0.1
+#+REVEAL_MIN_SCALE: 0.5
+#+REVEAL_MAX_SCALE: 2.5
+
+# Enable smart quotes
+#+OPTIONS: ':t
+
+# Transition styles: none/fade/slide/convex/concave/zoom/cube
+#+REVEAL_TRANS: slide
+#+REVEAL_THEME: white
+
+# reveal.js plugins
+#+REVEAL_PLUGINS: (markdown notes search zoom)
+
+# macros
+#+macro: cmt @@comment:$1@@
+#+MACRO: nl @@html:<br \>@@
+#+MACRO: begin_div @@html:<div class="$1" style="$2" id="$3">@@
+#+MACRO: end_div @@html:</div>@@
+#+MACRO: awesome @@html:&#xf$1@@
+#+MACRO: rawesome @@html:<font color="#981E32">&#xf$1</font>@@
+#+MACRO: bawesome @@html:<font color="#1A53A1">&#xf$1</font>@@
+#+MACRO: color @@html:<font color="$1">$2</font>@@
+#+MACRO: red @@html:<font color="#981E32">$1</font>@@
+#+MACRO: blue @@html:<font color="#1A53A1">$1</font>@@
+#+MACRO: bold @@html:<b>$1</b>@@
+#+MACRO: rbold @@html:<font color="#981E32"><b>$1</b></font>@@
+#+MACRO: bbold @@html:<font color="#1A53A1"><b>$1</b></font>@@
+#+MACRO: it @@html:<i>$1</i>@@
+#+MACRO: rit @@html:<font color="#981E32"><i>$1</i></font>@@
+#+MACRO: bit @@html:<font color="#1A53A1"><i>$1</i></font>@@
+#+MACRO: it @@html:<i>$1</i>@@
+#+MACRO: rit @@html:<font color="#981E32"><i>$1</i></font>@@
+#+MACRO: bit @@html:<font color="#1A53A1"><i>$1</i></font>@@
+#+MACRO: small @@html:<small>$1</small>@@
+#+MACRO: rsmall @@html:<font color="#981E32"><small>$1</small></font>@@
+#+MACRO: bsmall @@html:<font color="#1A53A1"><small>$1</smallmarknt>@@
+#+MACRO: rmark @@html:<mark style="background-color: #981E32;">$1</mark>@@
+#+MACRO: bmark @@html:<mark style="background-color: #1A53A1;">$1</mark>@@
+
+# extra settings
+#+HTML_HEAD: <script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS": { scale: 80}, tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}});</script>

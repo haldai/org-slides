@@ -1,0 +1,6 @@
+[submodule "style/reveal.js"]
+	path = style/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
+[submodule "style/Reveal.js-TOC-Progress"]
+	path = style/Reveal.js-TOC-Progress
+	url = https://github.com/e-gor/Reveal.js-TOC-Progress

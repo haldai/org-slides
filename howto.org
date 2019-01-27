@@ -1,0 +1,101 @@
+#+INCLUDE: style/config.org
+
+#+NAME: eval_conf
+#+BEGIN_SRC emacs-lisp :results none :exports none
+(load "~/Documents/2018_fall/毕业论文/slides/style/config.el")
+#+END_SRC
+
+#+TITLE: 一阶逻辑领域知识与机器学习的结合研究
+#+AUTHOR: 戴望州
+#+DATE: <2019-02-26 一>
+
+# Title slide
+#+BEGIN_EXPORT html
+<section id="slide-title" class="no-toc-progress">
+<div class="talk-title">
+    <h1>一阶逻辑领域知识<br>与机器学习的结合研究</h1>
+</div>
+<div class="talk-subtitle">
+    <p>Research on Integrating First-Order Logical Domain Knowledge with Machine Learning</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<div class="talk-author">
+    <p><a href="http://lamda.nju.edu.cn/daiwz">戴望州</a><br />
+    <span class="talk-date">2019-02-26 星期一</span></p>
+</div>
+</section>
+<!--大纲-->
+<section id="slide-toc">
+<div class="talk-toc">
+    <h4>大纲</h4>
+</div>
+#+END_EXPORT
+- 研究背景
+- 一阶逻辑领域知识辅助机器学习
+  - 领域知识增广样本
+  - 领域知识辅助约束
+- 机器学习辅助逻辑领域知识精化
+- 机器学习与领域知识的互促结合
+#+REVEAL_HTML: </section>
+* 研究背景
+** 机器学习
+\[
+\sum_{i=1}^n l(\mathbf{x}_i,y_i)
+\]
+
+1. 试一下{{{bold(黑体字)}}}
+   - 试一下{{{red(红色的字)}}}
+2. 试一下{{{blue(蓝色的字)}}}
+   + 试一下{{{rbold(红强调的字)}}}
+3. 试一下{{{bbold(蓝强调的字)}}}
+   - 试一下awesome符号{{{awesome(1d7)}}}；红awesome{{{rawesome(0f9)}}}，蓝awesome{{{bawesome(17a)}}}
+4. 试一下[[http://lamda.nju.edu.cn][超链接]]
+*** 机器学习
+{{{begin_div(flexbox)}}}
+#+ATTR_HTML: :class leftcol60 
+#+ATTR_REVEAL: :frag (grow shrink roll-in none) :frag_idx (3 2 1 -)
+1. 试一下{{{it(斜体字)}}}
+2. 试一下{{{small(小字)}}}
+   + 试一下{{{rit(红斜体的字)}}}
+3. 试一下{{{rmark(红高亮的字)}}}
+   1. 试一下{{{bit(蓝斜体的字)}}}
+      1. 试一下{{{rbold(红黑体的字)}}}
+      2. 试一下{{{bbold(蓝黑体的字)}}}
+      3. 试一下{{{bold(黑体的字)}}}
+   2. 试一下{{{bit(蓝斜体的字)}}}
+   3. 试一下{{{bit(蓝斜体的字)}}}
+     - 试一下{{{bmark(<small style="height:70%">蓝高亮的小字</small>)}}}
+       - 试一下{{{rawesome(1d8)}}}
+{{{begin_div(rightcol40)}}}
+啥都没有
+\[
+B\cup H\models E.
+\]
+{{{end_div()}}}
+{{{end_div()}}}
+** 一阶逻辑
+#+ATTR_HTML: :class org-center :width 70%
+| 逻辑   | 数学 | 机器学习 |
+|--------+------+----------|
+| 1      | 2    | 1991     |
+| 南京   | 北京 | 南京大学 |
+| 南京   | 北京 | 南京大学 |
+| 南京   | 北京 | 南京大学 |
+| 南京   | 北京 | 南京大学 |
+
+{{{begin_div(org-right, float: left;width: 40%)}}}
+我向右对齐我向右对齐我向右对齐我向右对齐我向右对齐我向右对齐我向右
+{{{end_div()}}}
+
+{{{begin_div(org-center, float: right;width: 40%)}}}
+我居中对齐我居中对齐我居中对齐我居中对齐我居中对齐我居中对齐我居中
+{{{end_div()}}}
+
+* 一阶逻辑领域知识辅助{{{nl()}}}机器学习
+** 领域知识增广样本
+** 领域知识作为约束
+* 机器学习辅助{{{nl()}}}逻辑领域知识精化
+* 机器学习与领域知识{{{nl()}}}互促结合
+* 结束语

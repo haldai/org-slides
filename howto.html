@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>一阶逻辑领域知识与机器学习的结合研究</title>
+<meta name="author" content="(戴望州)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="./style/reveal.js/css/reveal.css"/>
+
+<link rel="stylesheet" href="./style/reveal.js/css/theme/white.css" id="theme"/>
+
+<link rel="stylesheet" href="./style/hal9001.css"/>
+
+<link rel="stylesheet" href="./style/Reveal.js-TOC-Progress/plugin/toc-progress/toc-progress.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './style/reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS": { scale: 80}, tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}});</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="slide-title" class="no-toc-progress">
+<div class="talk-title">
+    <h1>一阶逻辑领域知识<br>与机器学习的结合研究</h1>
+</div>
+<div class="talk-subtitle">
+    <p>Research on Integrating First-Order Logical Domain Knowledge with Machine Learning</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<div class="talk-author">
+    <p><a href="http://lamda.nju.edu.cn/daiwz">戴望州</a><br />
+    <span class="talk-date">2019-02-26 星期一</span></p>
+</div>
+</section>
+<!--大纲-->
+<section id="slide-toc">
+<div class="talk-toc">
+    <h4>大纲</h4>
+</div>
+<ul>
+<li>研究背景</li>
+<li>一阶逻辑领域知识辅助机器学习
+<ul>
+<li>领域知识增广样本</li>
+<li>领域知识辅助约束</li>
+
+</ul></li>
+<li>机器学习辅助逻辑领域知识精化</li>
+<li>机器学习与领域知识的互促结合</li>
+
+</ul>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="org20fda6e">研究背景</h2>
+<div class="outline-text-2" id="text-org20fda6e">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org49eac8b">机器学习</h3>
+<p>
+\[
+\sum_{i=1}^n l(\mathbf{x}_i,y_i)
+\]
+</p>
+
+<ol>
+<li>试一下<b>黑体字</b>
+<ul>
+<li>试一下<font color="#981E32">红色的字</font></li>
+
+</ul></li>
+<li>试一下<font color="#1A53A1">蓝色的字</font>
+<ul>
+<li>试一下<font color="#981E32"><b>红强调的字</b></font></li>
+
+</ul></li>
+<li>试一下<font color="#1A53A1"><b>蓝强调的字</b></font>
+<ul>
+<li>试一下awesome符号&#xf1d7；红awesome<font color="#981E32">&#xf0f9</font>，蓝awesome<font color="#1A53A1">&#xf17a</font></li>
+
+</ul></li>
+<li>试一下<a href="http://lamda.nju.edu.cn">超链接</a></li>
+
+</ol>
+</section>
+<section id="slide-sec-">
+<h4 id="org3c3433c">机器学习</h4>
+<p>
+<div class="flexbox" style="" id="">
+</p>
+<ol class="leftcol60">
+<li data-fragment-index="3" class="fragment grow">试一下<i>斜体字</i></li>
+<li data-fragment-index="2" class="fragment shrink">试一下<small>小字</small>
+<ul>
+<li>试一下<font color="#981E32"><i>红斜体的字</i></font></li>
+
+</ul></li>
+<li data-fragment-index="1" class="fragment roll-in">试一下<mark style="background-color: #981E32;">红高亮的字</mark>
+<ol>
+<li>试一下<font color="#1A53A1"><i>蓝斜体的字</i></font>
+<ol>
+<li>试一下<font color="#981E32"><b>红黑体的字</b></font></li>
+<li>试一下<font color="#1A53A1"><b>蓝黑体的字</b></font></li>
+<li>试一下<b>黑体的字</b></li>
+
+</ol></li>
+<li>试一下<font color="#1A53A1"><i>蓝斜体的字</i></font></li>
+<li>试一下<font color="#1A53A1"><i>蓝斜体的字</i></font>
+<ul>
+<li>试一下<mark style="background-color: #1A53A1;"><small style="height:70%">蓝高亮的小字</small></mark>
+<ul>
+<li>试一下<font color="#981E32">&#xf1d8</font></li>
+
+</ul></li>
+
+</ul></li>
+
+</ol></li>
+
+</ol>
+<p>
+<div class="rightcol40" style="" id="">
+啥都没有
+\[
+B\cup H\models E.
+\]
+</div>
+</div>
+</p>
+</section>
+<section id="slide-sec-">
+<h3 id="org3caedf3">一阶逻辑</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" class="org-center" width="70%">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">逻辑</th>
+<th scope="col" class="org-left">数学</th>
+<th scope="col" class="org-left">机器学习</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">1</td>
+<td class="org-left">2</td>
+<td class="org-left">1991</td>
+</tr>
+
+<tr>
+<td class="org-left">南京</td>
+<td class="org-left">北京</td>
+<td class="org-left">南京大学</td>
+</tr>
+
+<tr>
+<td class="org-left">南京</td>
+<td class="org-left">北京</td>
+<td class="org-left">南京大学</td>
+</tr>
+
+<tr>
+<td class="org-left">南京</td>
+<td class="org-left">北京</td>
+<td class="org-left">南京大学</td>
+</tr>
+
+<tr>
+<td class="org-left">南京</td>
+<td class="org-left">北京</td>
+<td class="org-left">南京大学</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<div class="org-right" style=" float: left;width: 40%" id="">
+我向右对齐我向右对齐我向右对齐我向右对齐我向右对齐我向右对齐我向右
+</div>
+</p>
+
+<p>
+<div class="org-center" style=" float: right;width: 40%" id="">
+我居中对齐我居中对齐我居中对齐我居中对齐我居中对齐我居中对齐我居中
+</div>
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="org7c27da9">一阶逻辑领域知识辅助<br \>机器学习</h2>
+<div class="outline-text-2" id="text-org7c27da9">
+</div>
+</section>
+<section id="slide-sec-">
+<h3 id="org26e0c2f">领域知识增广样本</h3>
+</section>
+<section id="slide-sec-">
+<h3 id="org9d8affa">领域知识作为约束</h3>
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="org8363139">机器学习辅助<br \>逻辑领域知识精化</h2>
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="org8d6963b">机器学习与领域知识<br \>互促结合</h2>
+</section>
+</section>
+<section>
+<section id="slide-sec-">
+<h2 id="org61ea061">结束语</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="./style/reveal.js/lib/js/head.min.js"></script>
+<script src="./style/reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+width: 1024,
+height: 768,
+margin: 0.10,
+minScale: 0.50,
+maxScale: 2.50,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'slide', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: './style/reveal.js/../Reveal.js-TOC-Progress/plugin/toc-progress/toc-progress.js', async: true, callback: function() { toc_progress.initialize('reduce', 'rgba(120,138,130,0.2)'); toc_progress.create(); } },
+ { src: './style/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './style/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: './style/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './style/reveal.js/plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: './style/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>

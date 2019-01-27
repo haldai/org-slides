@@ -1,5 +1,5 @@
 #+TITLE: org-slides
-#+AUTHOR: hal_dai
+#+AUTHOR: haldai
 #+Email: dai.wzero@gmail.com
 
 * Introduction

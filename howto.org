@@ -2,7 +2,7 @@
 
 #+NAME: eval_conf
 #+BEGIN_SRC emacs-lisp :results none :exports none
-(load "~/Documents/2018_fall/毕业论文/slides/style/config.el")
+(load "/home/daiwz/Documents/2018_fall/毕业论文/org-slides/style/config.el")
 #+END_SRC
 
 #+TITLE: 一阶逻辑领域知识与机器学习的结合研究

@@ -1,0 +1,10 @@
+#+TITLE: org-slides
+#+AUTHOR: hal_dai
+#+Email: dai.wzero@gmail.com
+
+* Introduction
+An Emacs [[https://orgmode.org/][org-mode]] based slides template based on [[https://revealjs.com/][Reveal.js]].
+* Usage
+Install =org-mode= in your emacs and Enjoy!.
+
+Please refer to the =howto.org=. Remember to run the elisp src block first!

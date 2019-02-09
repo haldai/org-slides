@@ -1,8 +1,8 @@
 # Root of reveal.js and my style css
 
-#+REVEAL_ROOT: ./style/reveal.js/
-#+REVEAL_EXTRA_CSS: ./style/hal9001.css
-#+REVEAL_EXTRA_CSS: ./style/Reveal.js-TOC-Progress/plugin/toc-progress/toc-progress.css
+#+REVEAL_ROOT: style/reveal.js/
+#+REVEAL_EXTRA_CSS: style/hal9001.css
+#+REVEAL_EXTRA_CSS: style/Reveal.js-TOC-Progress/plugin/toc-progress/toc-progress.css
 
 # reveal.js options
 #+OPTIONS: reveal_history:t reveal_fragmentinurl:t

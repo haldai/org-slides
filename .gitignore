@@ -1,2 +1,13 @@
+# emacs backups
 *~
+
+# HTML
+*.htm
 *.html
+*.pdf
+*.odt
+
+# latex
+*.tex
+auto/
+ltximg/

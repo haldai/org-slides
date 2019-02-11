@@ -186,25 +186,45 @@ body {
 .reveal .flexbox-center {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .reveal .flexbox-start {
     display: flex;
     align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .reveal .flexbox-end {
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
 }
 
 .reveal .flexbox-baseline {
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
 }
 
 .reveal .flexbox-stretch {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    height: 200px;
+    -ms-box-orient: horizontal;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
     display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-align-items: stretch;
     align-items: stretch;
 }
 
@@ -215,9 +235,17 @@ body {
  * Float to the right.
  ******************************************************************/
 
-.reveal img {
-  margin: 5px 5px;
-  float: right;
+.reveal section img {
+    margin: 5px 5px;
+    display: block;
+    border: none;
+}
+
+.reveal iframe {
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /*******************************************************************

@@ -1,0 +1,64 @@
+#+INCLUDE: style/config.org
+
+#+NAME: eval_conf
+#+BEGIN_SRC emacs-lisp :results none :exports none
+(set 'conf-file (concat default-directory "style/config.el"))
+(load conf-file)
+#+END_SRC
+
+#+TITLE: 一阶逻辑领域知识与机器学习的结合研究
+#+AUTHOR: 戴望州
+#+DATE: <2019-02-26 一>
+
+# Title slide
+#+BEGIN_EXPORT html
+<section id="slide-title">
+<div class="talk-title">
+    <h1 class="no-toc-progress">一阶逻辑领域知识<br>与机器学习的结合研究</h1>
+</div>
+<div class="talk-subtitle">
+    <p>Research on Integrating First-Order Logical Domain Knowledge with Machine Learning</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<div class="talk-author">
+    <p><a href="http://lamda.nju.edu.cn/daiwz">戴望州</a><br />
+    <span class="talk-date">2019-02-26 星期一</span></p>
+</div>
+</section>
+<!--大纲-->
+<section id="slide-toc">
+<div class="talk-toc">
+    <h4>大纲</h4>
+</div>
+#+END_EXPORT
+- 研究背景
+- 一阶逻辑领域知识辅助机器学习
+  - 领域知识增广样本
+  - 领域知识辅助约束
+- 机器学习辅助逻辑领域知识精化
+- 机器学习与领域知识的互促结合
+#+REVEAL_HTML: </section>
+* 研究背景
+** 人工智能
+#+BEGIN_EXPORT html
+<div class=flexbox-stretch>
+    <img src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180 width=auto />
+    <img  src="https://i.pinimg.com/originals/6c/fc/5c/6cfc5c281108d8ae10f4d6ced8c34dc6.gif" height=180 width=auto />
+    <img  src="https://66.media.tumblr.com/13d03fae2b31e61f160c4859f71ff085/tumblr_niafo4EUCB1rvhqlvo1_640.gif" height=180 width=auto />
+    <img src="https://i.imgur.com/z1wxD8B.gif" height=180 width=auto />
+    <img  src="https://storage.googleapis.com/deepmind-live-cms/documents/sc2-agent-vis%2520%25281%2529.gif" height=180 width=auto />
+    <img src="https://thumbs.gfycat.com/DeliciousWeepyBullfrog-small.gif" height=180 width=auto />
+</div>
+#+END_EXPORT
+*** 人工智能
+#+REVEAL_HTML: <iframe src="https://zh.wikipedia.org/zh-cn/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%B2" width="1024px" height="600" style="padding:20px"><p>Your browser does not support iframe, please use Firefox or Chrome.</p></iframe>
+** 机器学习
+** 一阶逻辑
+* 一阶逻辑领域知识辅助{{{nl()}}}机器学习
+** 领域知识增广样本
+** 领域知识作为约束
+* 机器学习辅助{{{nl()}}}逻辑领域知识精化
+* 机器学习与领域知识{{{nl()}}}互促结合
+* 结束语

@@ -45,17 +45,22 @@
 #+BEGIN_EXPORT html
 <div class=flexbox-stretch>
     <img src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180 width=auto />
-    <img  src="https://i.pinimg.com/originals/6c/fc/5c/6cfc5c281108d8ae10f4d6ced8c34dc6.gif" height=180 width=auto />
-    <img  src="https://66.media.tumblr.com/13d03fae2b31e61f160c4859f71ff085/tumblr_niafo4EUCB1rvhqlvo1_640.gif" height=180 width=auto />
-    <img src="https://i.imgur.com/z1wxD8B.gif" height=180 width=auto />
-    <img  src="https://storage.googleapis.com/deepmind-live-cms/documents/sc2-agent-vis%2520%25281%2529.gif" height=180 width=auto />
-    <img src="https://thumbs.gfycat.com/DeliciousWeepyBullfrog-small.gif" height=180 width=auto />
+    <img src="https://media.tenor.com/images/14ea2784dbf2458cc2911e5dac4e4024/tenor.gif" height=180 width=auto />
+    <img src="https://i.pinimg.com/originals/6c/fc/5c/6cfc5c281108d8ae10f4d6ced8c34dc6.gif" height=180 width=auto />
+    <img src="https://padtronics.com/wp-content/uploads/2017/05/unnamed.gif" height=180 width=380 />
+    <img src="https://www.citibank.com.sg/citigold/images/insights/infograph-1a.gif" height=180 width=280 />
+    <img src="http://5b0988e595225.cdn.sohucs.com/images/20170727/a6fbd258cec24b81aa29da7747a633c9.png" height=180 width=320 />
+    <img src="https://storage.googleapis.com/deepmind-live-cms/documents/sc2-agent-vis%2520%25281%2529.gif" height=180 width=auto />
+    <img src="https://thumbs.gfycat.com/DeliciousWeepyBullfrog-small.gif" height=180 width=340 />
+    <img src="https://thumbs.gfycat.com/AmusingConfusedBobwhite-max-1mb.gif" height=180 width=auto />    
 </div>
 #+END_EXPORT
-*** 人工智能
-#+REVEAL_HTML: <iframe src="https://zh.wikipedia.org/zh-cn/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%B2" width="1024px" height="600" style="padding:20px"><p>Your browser does not support iframe, please use Firefox or Chrome.</p></iframe>
-** 机器学习
+*** 知识工程→机器学习
+#+REVEAL_HTML: <iframe src="https://zh.wikipedia.org/zh-cn/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%B2" width="1024" height="600" style="padding:20px"><p>Your browser does not support iframe, please use Firefox or Chrome.</p></iframe>
 ** 一阶逻辑
+** 机器学习
+** 以往工作
+** 本文工作
 * 一阶逻辑领域知识辅助{{{nl()}}}机器学习
 ** 领域知识增广样本
 ** 领域知识作为约束

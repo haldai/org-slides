@@ -58,9 +58,40 @@
 *** 知识工程→机器学习
 #+REVEAL_HTML: <iframe src="https://zh.wikipedia.org/zh-cn/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%B2" width="1024" height="600" style="padding:20px"><p>Your browser does not support iframe, please use Firefox or Chrome.</p></iframe>
 ** 一阶逻辑
+[[https://zh.wikipedia.org/zh-cn/%25E4%25B8%2580%25E9%2598%25B6%25E9%2580%25BB%25E8%25BE%2591][一阶逻辑]](First-Order Logic, FOL)是一种[[https://zh.wikipedia.org/zh-cn/%25E5%25BD%25A2%25E5%25BC%258F%25E7%25B3%25BB%25E7%25B5%25B1][形式系统]].
+{{{begin_div(flexbox)}}}
+{{{begin_div(leftcol60)}}}
+#+ATTR_REVEAL: :frag (appear)
+- 谓词: $mortal/1$, $man/1$
+- 常量: $socrates$
+- 量词: $\forall$, $\exists$
+- 项: $man(socrates)$, $mortal(X)$, $\ldots$
+- 公式: 
+#+ATTR_REVEAL: :frag (appear)
+\[
+\forall X(mortal(X)\leftarrow man(X)).
+\]
+{{{end_div()}}}
+{{{begin_div(rightcol40)}}}
+#+REVEAL_HTML: <img src="http://www.quickmeme.com/img/a3/a31f18eace4a2930460d85351cb584fc88ff5971bddf657816ce54115d9e7cfd.jpg" width=400 height=auto />
+{{{end_div()}}}
+{{{end_div()}}}
+#+BEGIN_NOTES
+什么是一阶逻辑
+#+END_NOTES
+*** 人工智能中的一阶逻辑
+#+BEGIN_NOTES
+一阶逻辑、领域知识
+#+END_NOTES
 ** 机器学习
 ** 以往工作
+#+BEGIN_NOTES
+将二者相结合的工作，分三大类，PLP，SRL，可微分。。。
+#+END_NOTES
 ** 本文工作
+#+BEGIN_NOTES
+将一阶逻辑与机器学习有机结合
+#+END_NOTES
 * 一阶逻辑领域知识辅助{{{nl()}}}机器学习
 ** 领域知识增广样本
 ** 领域知识作为约束

@@ -30,6 +30,7 @@
 #+MACRO: nl @@html:<br \>@@
 #+MACRO: begin_div @@html:<div class="$1" style="$2" id="$3">@@
 #+MACRO: end_div @@html:</div>@@
+#+MACRO: img @@html:<img src="$1" width="$2" height="$3" class="$4" style="$5" />@@
 #+MACRO: awesome @@html:&#xf$1@@
 #+MACRO: rawesome @@html:<font color="#981E32">&#xf$1</font>@@
 #+MACRO: bawesome @@html:<font color="#1A53A1">&#xf$1</font>@@

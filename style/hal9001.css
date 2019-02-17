@@ -32,7 +32,7 @@ body {
 }
 
 .reveal {
-    font-family: "Source Han Sans", "Source Han Sans SC", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
+    font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
     font-size: 40px;
     font-weight: normal;
     color: #303030;
@@ -99,7 +99,7 @@ body {
   top: 0;
   left: 0;
   color: #303030;
-  font-family: "Source Han Sans", "Source Han Sans SC", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
+  font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
   font-weight: 600;
   letter-spacing: normal;
   text-align: left;
@@ -144,57 +144,57 @@ body {
  *********************************************/
 
 .reveal .slides {
-  text-align: left;
+    text-align: left;
 }
 
 .reveal .leftcol {
-  float: left;
-  width: 48%;
+    float: left;
+    width: 48%;
 }
 
 .reveal .rightcol {
-  float: right;
-  width: 48%;
+    float: right;
+    width: 48%;
 }
 
 .reveal .leftcol30 {
-  float: left;
-  width: 28%;
+    float: left;
+    width: 28%;
 }
 
 .reveal .rightcol30 {
-  float: right;
-  width: 28%;
+    float: right;
+    width: 28%;
 }
 
 .reveal .leftcol40 {
-  float: left;
-  width: 38%;
+    float: left;
+    width: 38%;
 }
 
 .reveal .rightcol40 {
-  float: right;
-  width: 38%;
+    float: right;
+    width: 38%;
 }
 
 .reveal .leftcol60 {
-  float: left;
-  width: 58%;
+    float: left;
+    width: 58%;
 }
 
 .reveal .rightcol60 {
-  float: right;
-  width: 58%;
+    float: right;
+    width: 58%;
 }
 
 .reveal .leftcol70 {
-  float: left;
-  width: 68%;
+    float: left;
+    width: 68%;
 }
 
 .reveal .rightcol70 {
-  float: right;
-  width: 68%;
+    float: right;
+    width: 68%;
 }
 
 .reveal .rightcol img,
@@ -223,8 +223,7 @@ body {
     float: left;
 }
 
-.reveal .flexbox,
-.reveal .flexbox-center {
+.reveal .flexbox {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -232,6 +231,18 @@ body {
     display: -webkit-flex;
     justify-content: space-between;
     -webkit-justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.reveal .flexbox-center {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -541,7 +552,7 @@ div.ribbon-legalese a {
 .reveal .slides ol li:before {
     content: counter(my-awesome-counter) ".";
     color: #303030;
-    font-family: "Source Han Sans", "Source Han Sans SC", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
+    font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
     font-weight: bold;
     display: inline-block;
     margin-left: -1.3em; /* same as padding-left set on li */
@@ -871,7 +882,7 @@ TOC-Progress plugin
 *********************************************/
 #toc-progress-footer {
     color: #1A53A1;
-    font-family: "Source Han Sans", "Source Han Sans SC", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
+    font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
     line-height: 1.1;
     width: 100%;
     height: 9.5vh;

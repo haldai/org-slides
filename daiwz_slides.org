@@ -15,7 +15,7 @@
 <section id="slide-title">
 <img src="./figs/dissertation/nju.jpg" style="position:absolute;top:5%;right:5%;width:300px;box-shadow:none" />
 <div class="talk-title">
-    <p style="font-size:0.8em;color:gray">博士论文答辩汇报</p>
+    <p style="font-size:0.8em;color:rgba(0,0,0,0.6)">博士论文答辩汇报</p>
     <h1 class="no-toc-progress">一阶逻辑领域知识<br>与机器学习的结合研究</h1>
 </div>
 <div class="talk-subtitle">

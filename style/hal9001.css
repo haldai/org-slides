@@ -28,14 +28,14 @@
  *********************************************/
 body {
     background-color: #FFF;
-    color: #000;
+    color: #303030;
 }
 
 .reveal {
     font-family: "Source Han Sans", "Source Han Sans SC", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
     font-size: 40px;
     font-weight: normal;
-    color: #222;
+    color: #303030;
 }
 
 ::selection {
@@ -65,7 +65,7 @@ body {
 
 .reveal .slides section .fragment.highlight-red.visible {
   font-weight: bold;
-  color: #222; }
+  color: #303030; }
 
 .reveal .slides section .fragment.gray-out {
   opacity: 1;
@@ -98,7 +98,7 @@ body {
   margin: 0 0 20px 0;
   top: 0;
   left: 0;
-  color: #222;
+  color: #303030;
   font-family: "Source Han Sans", "Source Han Sans SC", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
   font-weight: 600;
   letter-spacing: normal;
@@ -456,7 +456,7 @@ div.ribbon-legalese a {
 .reveal .talk-author {/* nothing special */ }
 
 .reveal .talk-date {
-    color:black;
+    color: #303030;
     font-size:.6em;}
 
 .reveal .keyboard-usage p {

@@ -144,13 +144,13 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{img(./figs/dissertation/learnware.png, 100%, auto)}}}
 {{{end_div()}}}
 {{{end_div()}}}
-*** 一种可能的解决办法
+** 一种可能的解决方案
 #+ATTR_HTML: :class org-center
 {{{rbold(将机器学习与一阶逻辑表示的知识相结合)}}}
 
 {{{begin_div(flexbox-center,font-size:80%)}}}
 #+ATTR_HTML: :class fragment appear :data-fragment-index 0 :style text-align:left
-[[https://zh.wikipedia.org/zh-cn/%25E4%25B8%2580%25E9%2598%25B6%25E9%2580%25BB%25E8%25BE%2591][一阶逻辑]](First-Order Logic, FOL)是一种[[https://zh.wikipedia.org/zh-cn/%25E5%25BD%25A2%25E5%25BC%258F%25E8%25AF%25AD%25E8%25A8%2580][形式语言]].
+*一阶逻辑* (First-Order Logic, FOL)是一种[[https://zh.wikipedia.org/zh-cn/%25E5%25BD%25A2%25E5%25BC%258F%25E8%25AF%25AD%25E8%25A8%2580][形式语言]].
 {{{begin_div(leftcol60)}}}
 #+ATTR_REVEAL: :frag (appear)
 - 常量: $socrates$
@@ -169,22 +169,21 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 #+BEGIN_NOTES
 什么是一阶逻辑
 #+END_NOTES
-*** 一种可能的解决办法
+*** 引入一阶逻辑领域知识的好处
 {{{begin_div(flexbox)}}}
-{{{begin_div(leftcol)}}}
+{{{begin_div(leftcol70)}}}
 1. 一阶逻辑具有强大的可表达性
 2. 一阶逻辑拥有良好的可理解性
 3. 
 {{{end_div()}}}
-{{{begin_div(rightcol)}}}
+{{{begin_div(rightcol30)}}}
 {{{begin_div(flexbox-center)}}}
 {{{img(, 100%, auto)}}}
 
 {{{end_div()}}}
 {{{end_div()}}}
 {{{end_div()}}}
-
-** 一阶逻辑领域知识与机器学习的结合
+** 本文的工作与挑战
 {{{begin_div(flexbox-center)}}}
 [[./figs/dissertation/chpts.svg]]
 {{{end_div()}}}

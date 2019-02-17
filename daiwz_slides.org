@@ -13,7 +13,9 @@
 # Title slide
 #+BEGIN_EXPORT html
 <section id="slide-title">
+<img src="./figs/dissertation/nju.jpg" style="position:absolute;top:5%;right:5%;width:300px;box-shadow:none" />
 <div class="talk-title">
+    <p style="font-size:0.8em;color:gray">博士论文答辩汇报</p>
     <h1 class="no-toc-progress">一阶逻辑领域知识<br>与机器学习的结合研究</h1>
 </div>
 <div class="talk-subtitle">
@@ -22,23 +24,27 @@
 <div class="keyboard-usage">
     <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
 </div>
-<div class="talk-author">
-    <p><a href="http://lamda.nju.edu.cn/daiwz">戴望州</a><br />
-    <span class="talk-date">2019-02-26 星期一</span></p>
+<div class="talk-author" style="font-size:0.7em">
+    <p>&emsp;<b>答辩人</b>： 戴望州<br />
+       &emsp;&emsp;<b>专业</b>： 计算机科学与技术<br />
+       <b>研究方向</b>： 机器学习<br />
+       <b>指导教师</b>： 周志华 教授<br />
+    <span class="talk-date">2019-02-26 星期二</span></p>
 </div>
 </section>
 <!--大纲-->
 <section id="slide-toc">
 <div class="talk-toc">
-    <h4>大纲</h4>
+    <h3 class="no-toc-progress">大纲</h3>
 </div>
 #+END_EXPORT
 - 研究背景
-- 一阶逻辑领域知识辅助机器学习
-  - 领域知识增广样本
-  - 领域知识辅助约束
-- 机器学习辅助逻辑领域知识精化
-- 机器学习与领域知识的互促结合
+- 第二、三章：一阶逻辑领域知识辅助的机器学习方法
+  - 第二章：一种领域知识增广样本的机器学习方法
+  - 第三章：一种领域知识辅助约束的机器学习方法
+- 第四章：一种机器学习驱动的领域知识精化方法
+- 第五章：一种领域知识与机器学习互促结合框架
+- 总结
 #+REVEAL_HTML: </section>
 * 研究背景
 ** 人工智能
@@ -55,7 +61,7 @@
     <img src="https://thumbs.gfycat.com/AmusingConfusedBobwhite-max-1mb.gif" height=180 width=auto />    
 </div>
 #+END_EXPORT
-*** 知识工程→机器学习
+*** 推理引擎→知识工程→机器学习
 #+REVEAL_HTML: <iframe src="https://zh.wikipedia.org/zh-cn/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E5%8F%B2" width="1024" height="600" style="padding:20px"><p>Your browser does not support iframe, please use Firefox or Chrome.</p></iframe>
 ** 一阶逻辑
 [[https://zh.wikipedia.org/zh-cn/%25E4%25B8%2580%25E9%2598%25B6%25E9%2580%25BB%25E8%25BE%2591][一阶逻辑]](First-Order Logic, FOL)是一种[[https://zh.wikipedia.org/zh-cn/%25E5%25BD%25A2%25E5%25BC%258F%25E8%25AF%25AD%25E8%25A8%2580][形式语言]].
@@ -64,6 +70,7 @@
 #+ATTR_REVEAL: :frag (appear)
 - 常量: $socrates$
 - 变量: $X,Y,\ldots$
+- 连词: $\wedge,\vee,\neg,\leftarrow,\ldots$
 - {{{rbold(谓词/函数)}}}: $mortal/1$, $man/1$
 - {{{rbold(量词)}}}: $\forall$, $\exists$
 - 项: $man(socrates)$, $mortal(X)$, $\ldots$
@@ -83,7 +90,7 @@
 - 一般问题求解:
   - General Problem Solver, 1957
   - 自动定理证明, 1960s
-- 知识工程（特殊问题求解）:
+- 知识工程:
   - 专家系统, 1960s
   - 逻辑程序, 1970s
   - "五代机", 1980s
@@ -93,15 +100,15 @@
 {{{end_div()}}}
 {{{end_div()}}}
 #+ATTR_HTML: :class org-center fragment appear
-{{{bbold(“领域知识+推理引擎”)}}}
+{{{bbold(“推理引擎+领域知识”)}}}
 #+BEGIN_NOTES
 (Simon & Newell 1957), (Gelenter 1959, Robinson 1965), (Feigenbaum et. al. 1960s), (McCarthy et. al. 1960s, Kowalski 1970s), (Japan, 1980s)
 #+END_NOTES
 *** “知识工程瓶颈”
 #+REVEAL_HTML: <img src="https://www.igcseict.info/theory/7_2/expert/files/stacks_image_5738.png" align=center style="margin:10px auto;"/>
-#+ATTR_HTML: :style font-size:4em;position:absolute;right:38.5%;top:17% :class fragment appear :data-fragment-index 1
+#+ATTR_HTML: :style font-size:3em;position:absolute;right:39.5%;top:21% :class fragment appear :data-fragment-index 1
 {{{rawesome(157)}}}
-#+ATTR_HTML: :style font-size:3em;position:absolute;right:20%;top:22% :class fragment appear :data-fragment-index 2
+#+ATTR_HTML: :style font-size:2em;position:absolute;right:25%;top:18% :class fragment appear :data-fragment-index 2
 {{{rawesome(119)}}}
 #+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 2)
 - 领域知识成本高;
@@ -110,7 +117,28 @@
 #+ATTR_HTML: :class org-center fragment appear
 {{{bbold(解决办法: 通过计算、利用经验来改善系统自身性能)}}}
 ** 机器学习
-*** 以往工作
+{{{begin_div(flexbox)}}}
+{{{begin_div(leftcol40)}}}
+[[./figs/dissertation/ml.svg]]
+{{{end_div()}}}
+{{{begin_div(rightcol60)}}}
+\[
+\min_f \sum_{\langle x,y\rangle\sim D}loss(f(x),y)
+\]
+#+BEGIN_EXPORT html
+<div class=flexbox-stretch>
+    <img class="fragment appear" data-fragment-index=0 src="https://systweak1.vo.llnwd.net/content/wp/systweakblogsnew/uploads_new/2018/03/hidden-layers-in-network.gif" width=290px height=220px/>
+    <img class="fragment appear" data-fragment-index=1 src="https://jeremykun.files.wordpress.com/2017/06/svm_solve_by_hand-e1496076457793.gif" width=280px height=220px/>
+    <img class="fragment appear" data-fragment-index=2 src="https://yanndubs.github.io/img/blog/decision-tree-class.gif" width=340px height=220px/>
+    <img class="fragment appear" data-fragment-index=3 src="https://cdn-images-1.medium.com/max/1600/1*Nx6IyGfRAV1ly6uDGnVCxQ.gif" width=230px height=220px>
+</div>
+#+END_EXPORT
+{{{end_div}}}
+{{{end_div}}}
+#+BEGIN_NOTES
+机器学习的目标，代表性模型有神经网络、支持向量机、决策树等监督学习方法，以及非监督学习方法
+#+END_NOTES
+*** 符号主义
 #+BEGIN_NOTES
 将二者相结合的工作，分三大类，PLP，SRL，可微分。。。
 #+END_NOTES
@@ -118,9 +146,8 @@
 #+BEGIN_NOTES
 将一阶逻辑与机器学习有机结合
 #+END_NOTES
-* 一阶逻辑领域知识辅助{{{nl()}}}机器学习
-** 领域知识增广样本
-** 领域知识作为约束
-* 机器学习辅助{{{nl()}}}逻辑领域知识精化
-* 机器学习与领域知识{{{nl()}}}互促结合
-* 结束语
+* 第二章：{{{nl()}}}一种领域知识增广样本的{{{nl()}}}机器学习方法
+* 第三章：{{{nl()}}}一种领域知识辅助约束的{{{nl()}}}机器学习方法
+* 第四章：{{{nl()}}}一种机器学习驱动的{{{nl()}}}领域知识精化方法
+* 第五章：{{{nl()}}}一种领域知识与机器学习{{{nl()}}}互促结合框架
+* 总结

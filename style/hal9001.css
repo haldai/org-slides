@@ -9,6 +9,34 @@
     font-style: normal;
 }
 
+/* noto-sans-sc-regular - latin_chinese-simplified */
+@font-face {
+    font-family: 'Noto Sans SC';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/noto-sans-sc-v4-latin_chinese-simplified-regular.eot'); /* IE9 Compat Modes */
+    src: local('Noto Sans SC Regular'), local('NotoSansSC-Regular'),
+         url('fonts/noto-sans-sc-v4-latin_chinese-simplified-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/noto-sans-sc-v4-latin_chinese-simplified-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/noto-sans-sc-v4-latin_chinese-simplified-regular.woff') format('woff'), /* Modern Browsers */
+         url('fonts/noto-sans-sc-v4-latin_chinese-simplified-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/noto-sans-sc-v4-latin_chinese-simplified-regular.svg#NotoSansSC') format('svg'); /* Legacy iOS */
+}
+
+/* source-code-pro-regular - latin-ext_latin */
+@font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/source-code-pro-v8-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Source Code Pro'), local('SourceCodePro-Regular'),
+         url('fonts/source-code-pro-v8-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('fonts/source-code-pro-v8-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('fonts/source-code-pro-v8-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('fonts/source-code-pro-v8-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('fonts/source-code-pro-v8-latin-ext_latin-regular.svg#SourceCodePro') format('svg'); /* Legacy iOS */
+}
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -18,7 +46,7 @@ body {
 }
 
 .reveal {
-    font-family: "Source Han Sans", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", 'FontAwesome47', Helvetica, sans-serif;
+    font-family: "Source Han Sans", "Noto Sans SC", "Source Han Sans SC", "Source Han Sans CN", 'FontAwesome47', Helvetica, sans-serif;
     font-size: 40px;
     font-weight: normal;
     color: #222;
@@ -85,7 +113,7 @@ body {
   top: 0;
   left: 0;
   color: #222;
-  font-family: "Source Han Sans", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", Helvetica, sans-serif;
+  font-family: "Source Han Sans", "Noto Sans SC", "Source Han Sans SC", "Source Han Sans CN", Helvetica, sans-serif;
   font-weight: 600;
   letter-spacing: normal;
   text-align: left;
@@ -120,9 +148,10 @@ body {
 
 /* Footer; TOC progress plugin has height 9.5vh. */
 .reveal .slide-footer {
-  height: 9.5vh;
-  pointer-events: none;
-  clear: both; }
+    height: 9.5vh;
+    pointer-events: none;
+    clear: both;
+}
 
 /*********************************************
  * SLIDES
@@ -186,7 +215,12 @@ body {
 .reveal .rightcol30 img,
 .reveal .rightcol40 img,
 .reveal .rightcol60 img,
-.reveal .rightcol70 img {
+.reveal .rightcol70 img,
+.reveal .rightcol org-svg,
+.reveal .rightcol30 org-svg,
+.reveal .rightcol40 org-svg,
+.reveal .rightcol60 org-svg,
+.reveal .rightcol70 org-svg {
     float: right;
 }
 
@@ -194,7 +228,12 @@ body {
 .reveal .leftcol30 img,
 .reveal .leftcol40 img,
 .reveal .leftcol60 img,
-.reveal .leftcol70 img {
+.reveal .leftcol70 img,
+.reveal .leftcol .org-svg,
+.reveal .leftcol30 .org-svg,
+.reveal .leftcol40 .org-svg,
+.reveal .leftcol60 .org-svg,
+.reveal .leftcol70 .org-svg {
     float: left;
 }
 
@@ -516,7 +555,7 @@ div.ribbon-legalese a {
 .reveal .slides ol li:before {
     content: counter(my-awesome-counter) ".";
     color: #303030;
-    font-family: "Source Han Sans", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", Helvetica, sans-serif;
+    font-family: "Source Han Sans", "Noto Sans SC", "Source Han Sans SC", "Source Han Sans CN", Helvetica, sans-serif;
     font-weight: bold;
     display: inline-block;
     margin-left: -1.3em; /* same as padding-left set on li */
@@ -623,7 +662,7 @@ div.ribbon-legalese a {
 .reveal code {
     color: dimgrey;
     background: whitesmoke;
-    font-family: monospace;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .reveal pre code {
@@ -846,10 +885,43 @@ TOC-Progress plugin
 *********************************************/
 #toc-progress-footer {
     color: #1A53A1;
-    font-family: "Source Han Sans", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", 'FontAwesome47', Helvetica, sans-serif;
-    line-height: 1.2;
-    width: 90%;
+    font-family: "Source Han Sans", "Noto Sans SC", "Source Han Sans SC", "Source Han Sans CN", 'FontAwesome47', Helvetica, sans-serif;
+    line-height: 1.1;
+    width: 100%;
+    height: 9.5vh;
+    font-size: 1.55vh;
+    padding-top: 0.1vh;
+    padding-bottom: 0.1vh;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    align-items: center;
 }
-
-#toc-progress-footer-main { width: 60%;}
-#toc-progress-footer-secondary { width: 40%;}
+#toc-progress-footer-main {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: small;
+}
+#toc-progress-footer-secondary {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: x-small;
+}

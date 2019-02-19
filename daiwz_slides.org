@@ -149,10 +149,10 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{rbold(将机器学习与一阶逻辑表示的知识相结合)}}}
 
 {{{begin_div(flexbox-center,font-size:80%)}}}
-#+ATTR_HTML: :class fragment appear :data-fragment-index 0 :style text-align:left
+#+ATTR_HTML: :class fragment appear :data-fragment-index 1 :style text-align:left
 *一阶逻辑* (First-Order Logic, FOL)是一种[[https://zh.wikipedia.org/zh-cn/%25E5%25BD%25A2%25E5%25BC%258F%25E8%25AF%25AD%25E8%25A8%2580][形式语言]].
 {{{begin_div(leftcol60)}}}
-#+ATTR_REVEAL: :frag (appear)
+#+ATTR_REVEAL: :frag (appear appear appear appear appear appear appear) :frag_idx (2 2 2 3 3 4 5)
 - 常量: $socrates$
 - 变量: $X,Y,\ldots$
 - 连词: $\wedge,\vee,\neg,\leftarrow,\ldots$
@@ -162,34 +162,163 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 - {{{rbold(公式)}}}: $\forall X(mortal(X)\leftarrow man(X)).$
 {{{end_div()}}}
 {{{begin_div(rightcol40)}}}
-#+ATTR_HTML: :height 400px :class fragment appear :data-fragment-index 0
+#+ATTR_HTML: :height 400px :class fragment appear :data-fragment-index 1
 [[http://www.quickmeme.com/img/a3/a31f18eace4a2930460d85351cb584fc88ff5971bddf657816ce54115d9e7cfd.jpg]]
 {{{end_div()}}}
 {{{end_div()}}}
 #+BEGIN_NOTES
 什么是一阶逻辑
 #+END_NOTES
-*** 引入一阶逻辑领域知识的好处
+*** 引入FOL领域知识的好处
 {{{begin_div(flexbox)}}}
-{{{begin_div(leftcol70)}}}
-1. 一阶逻辑具有强大的可表达性
-2. 一阶逻辑拥有良好的可理解性
-3. 
+{{{begin_div(leftcol60)}}}
+{{{begin_div(scalebox90,font-size:0.8em)}}}
+{{{bold(目标概念)}}}/{{{rbold(发明谓词)}}}/{{{bbold(领域知识)}}}:
+\begin{align}
+\mathbf{stair}(P)\leftarrow&\color{red}{\mathbf{s}_1}(P).\\
+\mathbf{stair}([X,Y,Z|P])\leftarrow&\color{red}{\mathbf{s}_1}(X,Y,Z)\wedge\mathbf{stair}([Z|P]).\\
+\color{red}{\mathbf{s}_1}(X,Y,Z)\leftarrow& \color{blue}{\mathbf{hori}}(X,Y)\wedge\color{blue}{\mathbf{vert}}(Y,Z).
+\end{align}
 {{{end_div()}}}
-{{{begin_div(rightcol30)}}}
-{{{begin_div(flexbox-center)}}}
-{{{img(, 100%, auto)}}}
-
+#+REVEAL_HTML: <img src="./figs/dissertation/stairs.svg" height=300px style="box-shadow:none;position:relative;left:21%"/>
+{{{end_div()}}}
+{{{begin_div(rightcol40)}}}
+#+ATTR_REVEAL: :frag (appear)
+1. 良好的{{{rbold(可理解性)}}}
+   - 比统计模型和神经网络更易于人类理解
+   - 语义明确的谓词发明
+2. 强大的{{{rbold(表达能力)}}}
+   - 允许递归
+   - 强于函数形式表达的优化约束
+3. 优秀的{{{rbold(推理能力)}}}
+   - 是完备的形式系统
 {{{end_div()}}}
 {{{end_div()}}}
-{{{end_div()}}}
-** 本文的工作与挑战
+#+BEGIN_NOTES
+完备的，意味着所有真命题都可以通过有限步推理证明；那些不可判定的均为假命题。
+#+END_NOTES
+*** TODO FOL知识解决了前面的问题
+** 本文工作
 {{{begin_div(flexbox-center)}}}
 [[./figs/dissertation/chpts.svg]]
 {{{end_div()}}}
 *** 领域知识辅助机器学习
-*** 机器学习辅助领域知识精化
+{{{begin_div(flexbox)}}}
+{{{begin_div(leftcol65)}}}
+- {{{rbold(任务目标)}}}:
+  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (1 1 2)
+  - FOL领域知识完备{{{rawesome(087)}}}
+  - 机器学习模型未训练{{{rawesome(165)}}}
+  - 利用领域知识提升机器学习性能
+- {{{bbold(以往工作)}}}:
+  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (4 5 6)
+  - 可引入函数表达的领域知识
+  - {{{bawesome(188)}}}{{{bbold(难点1)}}}：符号表示数据中采用效率更高的统计学习
+  - {{{bawesome(188)}}}{{{bbold(难点2)}}}：非符号表示数据中引入FOL领域知识
+- {{{bold(本文工作)}}}:
+  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (7 7)
+  - 第二章：领域知识增广样本（SUL）
+  - 第三章：领域知识辅助约束（LASIN）
+{{{end_div()}}}
+{{{begin_div(rightcol40)}}}
+{{{begin_div(scalebox90,font-size:0.8em)}}}
+#+BEGIN_EXPORT html
+<img src="./figs/dissertation/lasin/data_1.svg" width=200px height="auto" style="position:fixed;right:20%" class="fragment fade-out" data-fragment-index=3 />
+<div class="fragment fade-out" data-fragment-index=3>
+<div style="font-size:2em;font-weight:bold;position:fixed;right:38.5%;top:62%;">↓</div>
+<div style="position: fixed;top: 71%;right: 5%;">特征学习</div>
+</div>
+#+END_EXPORT
+#+ATTR_REVEAL: :frag fade-in :frag_idx 3
+\begin{align}
+&\mathbf{char}([S|T])\leftarrow\\
+&\hspace{3em}\mathbf{stroke}(S)\wedge\mathbf{strokes}(T).\\
+&\mathbf{stroke}([A,B,C|T])\leftarrow\\
+&\hspace{3em}\mathbf{ink}(A,B)\wedge\mathbf{ink}(B,C)\\
+&\hspace{2em}\wedge\mathbf{angle}(\mathbf{AB},\mathbf{BC})<\alpha\\
+&\hspace{2em}\wedge\mathbf{stroke}([B,C|T]).
+\end{align}
+{{{end_div()}}}
+#+BEGIN_EXPORT html
+<img class="fragment fade-out" data-fragment-index=3 style="position:relative" width="350" height="auto" src="./figs/dissertation/lasin/origin_dict.svg" />
+<img class="fragment fade-in" data-fragment-index=3 style="position:fixed;margin:5px;right:0" width="350" height="auto" src="./figs/dissertation/lasin/stroke_dict.svg" />
+#+END_EXPORT
+{{{end_div()}}}
+{{{end_div()}}}
+*** 机器学习驱动领域知识精化
+{{{begin_div(flexbox)}}}
+{{{begin_div(leftcol65)}}}
+- {{{rbold(任务目标)}}}:
+  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (1 1 2)
+  - FOL领域知识不完备{{{rawesome(165)}}}
+  - 机器学习模型已训练{{{rawesome(087)}}}
+  - 利用机器学习驱动FOL知识精化
+- {{{bbold(以往工作)}}}:
+  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (4 5)
+  - 可在FOL表示的数据中对领域知识进行精化，获得FOL规则集
+  - {{{bawesome(188)}}}{{{bbold(难点)}}}：在非符号表示的数据中对FOL领域知识进行精化
+- {{{bold(本文工作)}}}:
+  #+ATTR_REVEAL: :frag (appear) :frag_idx (6)
+  - 第四章：机器学习驱动领域知识精化方法（KRL）
+{{{end_div()}}}
+{{{begin_div(rightcol40)}}}
+{{{begin_div(scalebox90,font-size:0.8em)}}}
+#+ATTR_REVEAL: :frag fade-out :frag_idx 3
+\begin{align}
+&\mathbf{polygon}(p1,[(0,0),(0,1),\ldots]).\\
+&\mathbf{polygon}(p2,[(2,4),(0,2),\ldots]).\\
+&\ldots\\
+&\neg\mathbf{regular}(p1).\\
+&\mathbf{regular}(p3).\\
+&\ldots
+\end{align}
+{{{end_div()}}}
+#+BEGIN_EXPORT html
+<img src="./figs/dissertation/logvis/ex_regular.svg" width=350px height="auto" style="position:fixed;top:25%;right:0%" class="fragment fade-in" data-fragment-index=3 />
+<div>
+<div style="font-size:1em;font-weight:bold;position:fixed;right:18%;top:47%;">↓</div>
+<div style="position:fixed;top:47.5%;right:12%;font-size:0.8em">精化</div>
+</div>
+#+END_EXPORT
+{{{begin_div(scalebox90,font-size:0.8em)}}}
+\begin{align}
+&\mathbf{regular\_poly_2}(A,G)\leftarrow\\
+&\hspace{2em}\mathbf{angles\_list}(A,B)\\
+&\hspace{2em}\wedge\mathbf{std\_dev\_bounded}(B,G).\\
+&\mathbf{regular\_poly_1}(A,A2)\leftarrow\\
+&\hspace{2em}\mathbf{polygon}(A,B)\\
+&\hspace{2em}\wedge\mathbf{regular\_poly_2}(B,A2).\\
+&\mathbf{regular\_poly}(A)\leftarrow\\
+&\hspace{2em}\mathbf{regular\_poly_1}(A,0.02).
+\end{align}
+{{{end_div()}}}
+{{{end_div()}}}
+{{{end_div()}}}
 *** 领域知识与机器学习互促结合
+{{{begin_div(flexbox)}}}
+{{{begin_div(leftcol65)}}}
+- {{{rbold(任务目标)}}}:
+  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (1 1 2)
+  - FOL领域知识不完备{{{rawesome(165)}}}
+  - 机器学习模型未训练{{{rawesome(165)}}}
+  - 同时进行FOL知识精化与机器学习
+- {{{bawesome(188)}}}{{{bbold(挑战)}}}:
+  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (4 4)
+  - 训练机器学习模型的标记（label）{{{nl()}}}需要通过逻辑推理获得
+  - 逻辑推理使用的基本事实（facts）{{{nl()}}}需要借助机器学习识别
+- {{{bold(本文工作)}}}:
+  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (5)
+  - 第五章：领域知识与机器学习{{{nl()}}}互促结合（反绎学习）
+{{{end_div()}}}
+{{{begin_div(rightcol40)}}}
+{{{begin_div(flexbox-center)}}}
+#+BEGIN_EXPORT html
+<img src="./figs/dissertation/al/before_learn.svg" class="fragment fade-out" style="box-shadow:none;position:fixed;right:0;" data-fragment-index=3 width=350px height=auto />
+<img src="./figs/dissertation/al/after_learn.svg" class="fragment fade-in" style="box-shadow:none;position:fixed;right:0" data-fragment-index=3 width=350px height=auto />
+#+END_EXPORT
+{{{end_div()}}}
+{{{end_div()}}}
+{{{end_div()}}}
 * 第二章：{{{nl()}}}一种领域知识增广样本的{{{nl()}}}机器学习方法
 * 第三章：{{{nl()}}}一种领域知识辅助约束的{{{nl()}}}机器学习方法
 * 第四章：{{{nl()}}}一种机器学习驱动的{{{nl()}}}领域知识精化方法

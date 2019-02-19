@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg821"
+   inkscape:version="0.92.2 2405546, 2018-03-11"
+   sodipodi:docname="percept_correct.svg">
+  <defs
+     id="defs815">
+    <marker
+       inkscape:stockid="Arrow1Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1587"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1585"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#0000ff;stroke-width:1pt;stroke-opacity:1;fill:#0000ff;fill-opacity:1"
+         transform="scale(0.2) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker1481"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1479"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#ff0000;stroke-width:1pt;stroke-opacity:1;fill:#ff0000;fill-opacity:1"
+         transform="scale(0.2) translate(6,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Sstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Sstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path1131"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#ff0000;stroke-width:1pt;stroke-opacity:1;fill:#ff0000;fill-opacity:1"
+         transform="scale(0.2) translate(6,0)" />
+    </marker>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath963">
+      <path
+         d="m 316.2909,348.4201 h 105 v 21 h -105 z"
+         id="path961"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath915">
+      <path
+         d="m 316.2909,318.7117 h 105 v 21 h -105 z"
+         id="path913"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send-9-8"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3512-1-6"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send-9-8-7"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3512-1-6-7"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send-9-8-8"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3512-1-6-0"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send-9-8-7-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3512-1-6-7-8"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4488"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4486"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#009600;fill-opacity:1;fill-rule:evenodd;stroke:#009600;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4488-7"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4486-3"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#009600;fill-opacity:1;fill-rule:evenodd;stroke:#009600;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send-52-3"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3512-8-0"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send-52"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3512-8"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send-52-3-5"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3512-8-0-6"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Send-52-3-54"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3512-8-0-2"
+         style="fill:#0000ff;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Send"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4631"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4629"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="343.83701"
+     inkscape:cy="640.5875"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="947"
+     inkscape:window-height="1010"
+     inkscape:window-x="965"
+     inkscape:window-y="34"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata818">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.52916664;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.52916667, 1.05833334;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect4648"
+       width="238.67604"
+       height="19.00032"
+       x="-9.4364538"
+       y="65.7761"
+       ry="4.2046776"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <g
+       id="g4606"
+       transform="matrix(0.35277777,0,0,0.35277777,-291.44137,-280.62366)"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         ry="19.273481"
+         y="1152.1249"
+         x="1412.9949"
+         height="223.94495"
+         width="63.716751"
+         id="rect3120-24"
+         style="fill:#1eb1aa;fill-opacity:0.4;stroke:none;stroke-width:0.59355885;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         transform="scale(-1)"
+         id="text3257"
+         y="-1291.9879"
+         x="-1444.0366"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;writing-mode:vertical-lr;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+         xml:space="preserve"><tspan
+           style="font-size:30px;writing-mode:vertical-lr;stroke:none;stroke-width:0.75"
+           y="-1381.5756"
+           x="-1354.449"
+           id="tspan3255"
+           sodipodi:role="line">ALP</tspan></text>
+    </g>
+    <g
+       id="g4616"
+       transform="matrix(0.35277777,0,0,0.35277777,-291.44137,-280.62366)"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <rect
+         ry="9.6408072"
+         y="1065.3978"
+         x="810.75262"
+         height="41.118977"
+         width="485.01474"
+         id="rect3120"
+         style="fill:#f08080;fill-opacity:0.4;stroke:none;stroke-width:0.61459661;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <text
+         id="text3124"
+         y="1093.5447"
+         x="1021.2092"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.75"
+         xml:space="preserve"><tspan
+           style="font-size:30px;stroke:none;stroke-width:0.75"
+           y="1093.5447"
+           x="1021.2092"
+           id="tspan3122"
+           sodipodi:role="line">CNN</tspan></text>
+    </g>
+    <rect
+       style="opacity:1;fill:#c7cfd5;fill-opacity:1;stroke:none;stroke-width:0.5190022;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3120-2"
+       width="170.96782"
+       height="83.184212"
+       x="-5.2912717"
+       y="121.75664"
+       ry="5.1282659"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:0px;word-spacing:0.86518759px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-3.4436023"
+       y="146.92909"
+       id="text3118"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3116"
+         x="-3.4436023"
+         y="146.92909"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:2;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:1.19062495px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke-width:0.26458332">[0,=,0,0,0]  [0,=,0,0,1]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="40.541306"
+       y="133.97214"
+       id="text3836"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3834"
+         x="40.541306"
+         y="133.97214"
+         style="font-size:9.8777771px;writing-mode:lr-tb;stroke-width:0.26458332">Pseudo-Labels</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:0px;word-spacing:0.86518759px;fill:#009600;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-3.4436023"
+       y="159.82477"
+       id="text3118-2"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3116-1"
+         x="-3.4436023"
+         y="159.82477"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:2;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:1.19062495px;word-spacing:0px;fill:#009600;fill-opacity:1;stroke-width:0.26458332">[0,_,0,_,0]  [0,_,0,_,1]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:0px;word-spacing:0.86518759px;fill:#f00000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-3.4436023"
+       y="172.72041"
+       id="text3118-3"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3116-2"
+         x="-3.4436023"
+         y="172.72041"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:2;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:1.19062495px;word-spacing:0px;fill:#f00000;fill-opacity:1;stroke-width:0.26458332">[0,+,0,=,0]  [0,+,0,=,1]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:0px;word-spacing:0.86518759px;fill:#009600;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-3.4436023"
+       y="185.61609"
+       id="text3118-6"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3116-7"
+         x="-3.4436023"
+         y="185.61609"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:2;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:1.19062495px;word-spacing:0px;fill:#009600;fill-opacity:1;stroke-width:0.26458332">[0,+,0,=,0]  [0,+,_,=,1]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:0px;word-spacing:0.86518759px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1"
+       x="-3.4436023"
+       y="198.51173"
+       id="text3118-4"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan3116-70"
+         x="-3.4436023"
+         y="198.51173"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:2;font-family:consolas;-inkscape-font-specification:consolas;letter-spacing:1.19062495px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.26458332;stroke-opacity:1">[0,+,0,=,0]  [0,+,1,=,1]</tspan></text>
+    <g
+       id="g4677"
+       transform="matrix(0.35277777,0,0,0.35277777,-291.44137,-280.62366)"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <g
+         id="g4460">
+        <g
+           transform="matrix(2.1389563,0,0,-2.1389563,134.28375,1776.5646)"
+           id="g957">
+          <g
+             id="g959"
+             clip-path="url(#clipPath963)">
+            <g
+               id="g965"
+               transform="matrix(105,0,0,21,316.2909,348.4201)">
+              <image
+                 width="1"
+                 height="1"
+                 preserveAspectRatio="none"
+                 transform="matrix(1,0,0,-1,0,1)"
+                 xlink:href="data:image/png;base64,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"
+                 id="image967" />
+            </g>
+          </g>
+        </g>
+        <g
+           transform="matrix(2.1389562,0,0,-2.1389562,388.77179,1713.0196)"
+           id="g909">
+          <g
+             id="g911"
+             clip-path="url(#clipPath915)">
+            <g
+               id="g917"
+               transform="matrix(105,0,0,21,316.2909,318.7117)">
+              <image
+                 width="1"
+                 height="1"
+                 preserveAspectRatio="none"
+                 transform="matrix(1,0,0,-1,0,1)"
+                 xlink:href="data:image/png;base64,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"
+                 id="image919" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         transform="translate(21.788025,0.25717394)"
+         id="g4156">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.75"
+           x="1343.6842"
+           y="1019.3596"
+           id="text4083"><tspan
+             sodipodi:role="line"
+             id="tspan4081"
+             x="1343.6842"
+             y="1019.3596"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold';fill:#0000ff;fill-opacity:1;stroke-width:0.75">P</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:30px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.75"
+           x="1411.4094"
+           y="1019.3596"
+           id="text4083-9"><tspan
+             sodipodi:role="line"
+             id="tspan4081-4"
+             x="1411.4094"
+             y="1019.3596"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Helvetica;-inkscape-font-specification:'Helvetica Bold';fill:#0000ff;fill-opacity:1;stroke-width:0.75">P</tspan></text>
+      </g>
+    </g>
+    <path
+       style="fill:#c7ced5;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 145.42839,121.8631 c 10.90715,0 36.9479,-6.67861 36.72628,-25.095588 -0.22115,-18.378734 25.06977,-5.524535 22.89828,3.238958 -2.17149,8.76349 5.42875,9.61655 -3.2572,9.61655 -8.68595,0 -36.21726,7.8329 -36.21726,30.63345 0,22.8006 -3.56743,-10.31455 -3.56743,-10.31455 z"
+       id="path4244"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssscc"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <rect
+       style="fill:#c7ced5;fill-opacity:1;stroke:none;stroke-width:0.60544497;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:0.60544495, 1.21088988;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect4225"
+       width="47.152229"
+       height="22.335276"
+       x="182.35744"
+       y="87.287773"
+       ry="4.8019576"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="183.08223"
+       y="101.26402"
+       id="text4229"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         x="183.08223"
+         y="101.26402"
+         style="stroke-width:0.26458332"
+         id="tspan4231">Optimizer</tspan></text>
+    <g
+       id="g4464"
+       transform="matrix(0.35277777,0,0,0.35277777,-291.44137,-280.62366)"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path3477-1-9"
+         d="m 923.07916,1032.3447 v 22.3243"
+         style="fill:none;stroke:#000000;stroke-width:6.70393705;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-9-8)" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path3477-1-9-7"
+         d="m 1177.5672,1032.3447 v 22.3243"
+         style="fill:none;stroke:#000000;stroke-width:6.70393705;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-9-8-7)" />
+    </g>
+    <g
+       id="g4468"
+       transform="matrix(0.35277777,0,0,0.35277777,-291.44137,-280.62366)"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path3477-1-9-6"
+         d="m 923.07916,1107.5524 v 22.3243"
+         style="fill:none;stroke:#000000;stroke-width:6.70393705;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-9-8-8)" />
+      <path
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path3477-1-9-7-3"
+         d="m 1177.5672,1107.5524 v 22.3243"
+         style="fill:none;stroke:#000000;stroke-width:6.70393705;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-9-8-7-3)" />
+    </g>
+    <path
+       style="fill:none;stroke:#009600;stroke-width:1.87854171;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4488);paint-order:stroke fill markers"
+       d="m 196.67726,113.34563 0.15512,43.42966 -26.36806,0.15508"
+       id="path4484"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#009600;stroke-width:1.87854171;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4488-7);paint-order:stroke fill markers"
+       d="m 196.75999,141.45511 0.15512,41.5684 -26.36806,0.15508"
+       id="path4484-5"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:1.87854171;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1481);marker-end:url(#Arrow2Send-52-3)"
+       d="m 168.28067,170.04743 h 35.80712"
+       id="path3477-4-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:1.87899995;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow1Sstart);marker-end:url(#Arrow2Send-52)"
+       d="m 168.28067,144.25609 h 35.80712"
+       id="path3477-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:1.87854171;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Send-52-3-5)"
+       d="m 218.27975,124.05985 v -9.26539"
+       id="path3477-4-6-6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#0000ff;stroke-width:1.87854171;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker1587);marker-end:url(#Arrow2Send-52-3-54)"
+       d="m 168.28067,195.83873 h 35.80712"
+       id="path3477-4-6-0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.87854171;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker4631)"
+       d="m -8.3362747,196.48241 h -8.5674483 v -93.06359 h 7.509115"
+       id="path4627"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:Helvetica;-inkscape-font-specification:Helvetica;letter-spacing:0px;word-spacing:0px;writing-mode:tb-rl;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="24.36327"
+       y="-167.55295"
+       id="text961"
+       transform="scale(-1)"
+       inkscape:export-filename="D:\Work\2018_spr\Neural_Logical_Machine\word_nat_comm_rev\fig6.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300"><tspan
+         sodipodi:role="line"
+         id="tspan959"
+         x="-167.55295"
+         y="24.36327"
+         style="font-size:11.28888893px;stroke-width:0.26458332">Retrain</tspan></text>
+  </g>
+</svg>

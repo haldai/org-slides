@@ -187,6 +187,16 @@ body {
     width: 58%;
 }
 
+.reveal .leftcol65 {
+    float: left;
+    width: 62%;
+}
+
+.reveal .rightcol65 {
+    float: right;
+    width: 62%;
+}
+
 .reveal .leftcol70 {
     float: left;
     width: 68%;
@@ -206,6 +216,7 @@ body {
 .reveal .rightcol30 org-svg,
 .reveal .rightcol40 org-svg,
 .reveal .rightcol60 org-svg,
+.reveal .rightcol65 org-svg,
 .reveal .rightcol70 org-svg {
     float: right;
 }
@@ -219,6 +230,7 @@ body {
 .reveal .leftcol30 .org-svg,
 .reveal .leftcol40 .org-svg,
 .reveal .leftcol60 .org-svg,
+.reveal .leftcol65 .org-svg,
 .reveal .leftcol70 .org-svg {
     float: left;
 }
@@ -301,6 +313,35 @@ body {
     align-items: stretch;
 }
 
+.reveal .scalebox90 {
+    -ms-transform: scale(0.9, 0.9); /* IE 9 */
+    -webkit-transform: scale(0.9, 0.9); /* Safari */
+    transform: scale(0.9, 0.9);
+}
+
+.reveal .scalebox80 {
+    -ms-transform: scale(0.8, 0.8); /* IE 9 */
+    -webkit-transform: scale(0.8, 0.8); /* Safari */
+    transform: scale(0.8, 0.8);
+}
+
+.reveal .scalebox70 {
+    -ms-transform: scale(0.7, 0.7); /* IE 9 */
+    -webkit-transform: scale(0.7, 0.7); /* Safari */
+    transform: scale(0.7, 0.7);
+}
+
+.reveal .scalebox60 {
+    -ms-transform: scale(0.6, 0.6); /* IE 9 */
+    -webkit-transform: scale(0.6, 0.6); /* Safari */
+    transform: scale(0.6, 0.6);
+}
+
+.reveal .scalebox50 {
+    -ms-transform: scale(0.5, 0.5); /* IE 9 */
+    -webkit-transform: scale(0.5, 0.5); /* Safari */
+    transform: scale(0.5, 0.5);
+}
 /*******************************************************************
  * Figures without captions
  *
@@ -668,6 +709,12 @@ div.ribbon-legalese a {
     overflow: auto;
     max-height: 400px;
     word-wrap: normal;
+}
+
+.reveal .src {
+    color: #dcdccc;
+    background: #3f3f3f;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .reveal section table {

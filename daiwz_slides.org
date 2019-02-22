@@ -175,9 +175,9 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{begin_div(scalebox90,font-size:0.8em)}}}
 {{{bold(目标概念)}}}/{{{rbold(发明谓词)}}}/{{{bbold(领域知识)}}}:
 \begin{align}
-\mathbf{stair}(P)\leftarrow&\color{red}{\mathbf{s}_1}(P).\\
-\mathbf{stair}([X,Y,Z|P])\leftarrow&\color{red}{\mathbf{s}_1}(X,Y,Z)\wedge\mathbf{stair}([Z|P]).\\
-\color{red}{\mathbf{s}_1}(X,Y,Z)\leftarrow& \color{blue}{\mathbf{hori}}(X,Y)\wedge\color{blue}{\mathbf{vert}}(Y,Z).
+\mathbf{stair}(P)\leftarrow&\color{#981E32}{\mathbf{s}_1}(P).\\
+\mathbf{stair}([X,Y,Z|P])\leftarrow&\color{#981E32}{\mathbf{s}_1}(X,Y,Z)\wedge\mathbf{stair}([Z|P]).\\
+\color{#981E32}{\mathbf{s}_1}(X,Y,Z)\leftarrow& \color{#1A53A1}{\mathbf{hori}}(X,Y)\wedge\color{#1A53A1}{\mathbf{vert}}(Y,Z).
 \end{align}
 {{{end_div()}}}
 #+REVEAL_HTML: <img src="./figs/dissertation/stairs.svg" height=300px style="box-shadow:none;position:relative;left:21%"/>
@@ -352,10 +352,10 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
   - 先验分布
 - *特点*: 一般连续可微
 #+ATTR_HTML: :class fragment appear :data-fragment-index 19
-{{{bbold(常用于SVM、NN，<br />一般通过凸优化求解)}}}
+{{{bbold(常用于SVM、NN，<br />一般作为凸优化约束)}}}
 {{{end_div()}}}
 {{{begin_div(rightcol)}}}
-{{{rbold(关系型领域知识：)}}}
+{{{rbold(FOL领域知识：)}}}
 #+ATTR_REVEAL: :frag (appear appear) :frag_idx (10 18)
 - *类型*:
   #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (11 14 17)
@@ -368,25 +368,25 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
     - 因果关系
     - 相关性
   - 样本间的关系
-- *特点*: 离散，FOL表示
+- *特点*: 离散，关系型知识
 #+ATTR_HTML: :class org-center fragment appear :data-fragment-index 20 :style padding:9px 0 0 0
-{{{rbold(常用于统计关系学习，<br />一般通过组合优化求解)}}}
+{{{rbold(常用于统计关系学习，<br />一般作为组合优化约束)}}}
 {{{end_div()}}}
 {{{end_div()}}}
-** 引入FOL领域知识的机器学习方法(1)
+** 引入FOL领域知识的机器学习方法
 {{{begin_div(flexbox-center)}}}
 {{{begin_div(leftcol)}}}
 #+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 3)
-- (概率)归纳逻辑程序((P)ILP){{{bsmall([])}}}
+- (概率)归纳逻辑程序((P)ILP){{{bsup([])}}}
   #+ATTR_REVEAL: :frag (appear) :frag_idx (4)
   - 模型为FOL规则
-- 统计关系学习(SRL){{{bsmall([])}}}
+- 统计关系学习(SRL){{{bsup([])}}}
   #+ATTR_REVEAL: :frag (appear appear) :frag_idx (5 6)
   - 将逻辑关系解释为相关性
   - FOL规则→概率图模型
 {{{begin_div(fragment fade-in,,,8)}}}
 {{{rbold(难点)}}}
-- FOL规则学习和图模型结构学习均为NP难{{{bsmall([])}}}
+- FOL规则学习和图模型结构学习均为NP难{{{bsup([])}}}
 - 只能用于小数据
 {{{end_div()}}}
 {{{end_div()}}}
@@ -402,8 +402,9 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 &\wedge\mathbf{friends}(X,Y).\\
 \mathbf{smokes}(X)\leftarrow&\neg\mathbf{friends}(X).
 \end{align}
-{{{begin_div(,width:674px;font-size:1.19em)}}}
+{{{begin_div(,width:700px;font-size:1.19em)}}}
 #+BEGIN_SRC prolog :exports code
+% (P)ILP与SRL使用的关系型数据集
 smokes(alan).      smokes(bob).
 friends(alan,bob). friends(bob,charlie).
 cancer(charlie).
@@ -414,58 +415,7 @@ cancer(charlie).
 {{{end_div()}}}
 {{{end_div()}}}
 {{{end_div()}}}
-*** 引入FOL领域知识的机器学习方法(1)
-{{{begin_div(flexbox-start)}}}
-{{{begin_div(leftcol60)}}}
-{{{bbold(问题形式化)}}}
-{{{begin_div(fragment fade-in,,,0)}}}
-- 经验风险最小化
-\begin{equation}
-\min_{h\in\mathcal{H}}\frac{1}{n}\sum_{i=1}^mL(h(\mathbf{x}_i),y_i),
-\end{equation}
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,,,2)}}}
-- *FOL形式*
-\begin{equation}
-B\wedge H\models E
-\end{equation}
-- *引入概率分布*
-\begin{equation}
-\max_{H\in\mathcal{H}}P(E\mid B,H)
-\end{equation}
-{{{end_div()}}}
-{{{end_div()}}}
-{{{begin_div(rightcol40)}}}
-{{{rbold(符号表示)}}}
-{{{begin_div(scalebox70 fragment fade-in,position:fixed;top:24.5%;left:55.5%,,1)}}}
-$\mathbf{x}_i$: 样本{{{nl()}}}
-$y_i$: 标记{{{nl()}}}
-$h$: 假设模型{{{nl()}}}
-$\mathcal{H}$: 假设空间{{{nl()}}}
-$L$: 损失函数
-{{{end_div()}}}
-{{{begin_div(scalebox70 fragment fade-in,position:fixed;bottom:0%;left:51%,,3)}}}
-$B$: 背景知识{{{nl()}}}
-$E$: 样本{{{nl()}}}
-$H$: 假设模型{{{nl()}}}
-$\models$: 逻辑蕴涵
-#+ATTR_HTML: :class fragment fade-in :data-fragment-index 4
-$H=(\Gamma,\theta)$: $\Gamma$为规则结构, $\theta$为分布参数
-{{{end_div()}}}
-{{{end_div()}}}
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,position:absolute;font-size:0.7em;right:0px;top:56%;,,3)}}}
-#+BEGIN_SRC prolog :exports code
-% 背景知识：
-smokes(alan).
-smokes(bob).
-friends(alan,bob). 
-friends(bob,charlie).
-% 样例：
-cancer(charlie).
-not(cancer(jack)).
-#+END_SRC
-*** 引入FOL领域知识的机器学习方法(1)
+*** 基于FOL表示的机器学习方法
 {{{begin_div(fragment fade-in,,,1)}}}
 - 领域知识库 $KB$ 由FOL规则组成:
 \[
@@ -475,33 +425,229 @@ A\leftarrow B_1\wedge B_2\wedge\ldots\wedge B_n.
 {{{begin_div(fragment fade-in,,,2)}}}
 - 假设模型 $H=(\Gamma,\theta)$ 由（带权）FOL规则组成:
 \[
-\color{red}{w::}A\leftarrow B_1\wedge B_2\wedge\ldots\wedge B_n.
+\color{#981E32}{w::}A\leftarrow B_1\wedge B_2\wedge\ldots\wedge B_n.
 \]
 {{{end_div}}}
 #+ATTR_REVEAL: :frag (appear) :frag_idx (3)
-- 学习目标: $\max_{(\Gamma,\theta)}P_\Gamma(E\mid\color{blue}{KB}\cup B,\theta)$
-  #+ATTR_REVEAL: :frag (appear appear appear appear) :frag_idx (4 5 6 7)
-  - 微调可能的规则结构 $\Gamma$;
-  - 最大化样本似然，求解参数 $\theta$;
-  - 若未达到终止条件, goto 2; 否则输出 $H=(\Gamma,\theta)$.  
-{{{begin_div(popupbox fragment fade-in,position:absolute;top:40%;left:4%,,8)}}}
+- 学习方式:
+  1. 更新规则结构 $\Gamma$;
+  2. 最大化似然，求解参数 $\theta$;
+  3. 若达到终止条件, 输出 $H=(\Gamma,\theta)$; 否则, goto 2.
+{{{begin_div(popupbox fragment fade-in,position:absolute;top:40%;left:4%,,4)}}}
 *目标函数不可微，无法使用梯度下降等速度较快的{{{nl}}}优化方法求解*
+{{{end_div}}}
+#+BEGIN_NOTES
+由于领域知识和背景知识采用了相同的形式，归纳逻辑程序设计和统计关系学习均直接对这些领域知识进行利用。
+#+END_NOTES
+*** 常规机器学习方法
+{{{begin_div(flexbox-start)}}}
+{{{begin_div(leftcol60)}}}
+{{{bbold(问题形式化)}}}
+{{{begin_div(fragment fade-in,,,0)}}}
+- 经验风险最小化
+\begin{equation}
+\min_{h\in\mathcal{H}}\frac{1}{m}\sum_{i=1}^mL(h(\mathbf{x}_i),y_i),
+\end{equation}
+{{{end_div()}}}
+{{{end_div()}}}
+{{{begin_div(rightcol40 fragment fade-in,width:430px,,1)}}}
+{{{rbold(符号表示)}}}
+{{{begin_div(,font-size:0.8em)}}}
+$\mathbf{x}_i\in\mathcal{X}$: 样本与样本空间{{{nl()}}}
+$y_i\in\mathcal{Y}$: 标记与标记空间{{{nl()}}}
+$h$: 假设模型{{{nl()}}}
+$\mathcal{H}$: 假设空间{{{nl()}}}
+$L$: 损失函数
+{{{end_div()}}}
+{{{end_div()}}}
+{{{end_div()}}}
+#+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (3 4 5)
+1. 利用FOL规则初始化神经网络结构{{{bsup([37\,51\,143\,155])}}};
+2. 端到端学习，将FOL知识作为序列输入{{{bsup([57\,58\,170])}}};
+3. LDA中将FOL知识作为先验分布或后验分布约束，采用SRL类似的方式学习{{{bsup([2\,102])}}}.
+{{{begin_div(popupbox-blue fragment fade-in,position:absolute;top:40%;left:8%,,6)}}}
+1. *无法进行真正的逻辑推理*;
+2. *基于嵌入表示的模型难以泛化至未见数据*;
+3. *仅能使用形式十分受限的FOL规则*.
 {{{end_div}}}
 ** 领域知识增广样本
 #+ATTR_HTML: :class org-center fragment fade-in :data-fragment-index 1
 {{{rbold(将领域知识 $KB$ 增广样本\,<br/>在新的训练数据集中进行学习)}}}
-#+ATTR_REVEAL: :frag appear
+#+ATTR_HTML: :class fragment fade-in :data-fragment-index 2
+\begin{equation}
+\min_{h\in\color{#981E32}{\mathcal{H}'}}\frac{1}{m}\sum_{i=1}^mL(h(\mathbf{x}_i,\color{#981E32}{\mathbf{u}_i}),y_i),
+\end{equation}
+#+ATTR_REVEAL: :frag (appear)
+- $\color{#981E32}{\mathbf{u}_i}\in\mathcal{F}$: 由$KB\cup\mathcal{x}_i$ 经过逻辑推理而得到的新信息;
+- $\color{#981E32}{\mathcal{H}'}$: 增广后的新假设空间.
+*** 领域知识增广样本
 {{{bbold(SUL学习(Statistical Unfolded Logic Learning))}}}
 #+ATTR_REVEAL: :frag (appear)
-1. 
-2.
-3.
+1. (Unfold): 将 $KB$ 增广为一组新的特征 $F\in\mathcal{F}$，并将原始特征空间增广为 $\mathcal{X}\times\mathcal{F}$;
+2. (Learning): 在新空间中进行机器学习；
+3. (Folding): 将学得的模型转化为原始问题假设空间中的模型.
 *** 领域知识增广样本
-** 实验
-*** SUL学习在统计关系学习中的应用
+{{{begin_div(flexbox-start)}}}
+{{{begin_div(leftcol)}}}
+{{{bbold(形式化)}}}
+{{{begin_div(fragment fade-in,,,1)}}}
+\begin{equation}
+B\cup KB\vdash F
+\end{equation}
+{{{end_div()}}}
+{{{begin_div(fragment fade-in,font-size:0.8em,,3)}}}
+- 通过 $F$ 提取新特征向量 $\mathbf{u}_i=\langle u_{i1},\ldots,u_{ik}\rangle$, 其中:
+#+ATTR_HTML: :style margin:20px 0
+\begin{equation}
+  u_{ij}=\left\{
+      \begin{aligned}
+        1,\quad&f_j(\mathbf{x}_i)=true,\\
+        0,\quad&f_j(\mathbf{x}_i)=false.\\
+      \end{aligned}
+    \right.
+\end{equation}
+{{{end_div()}}}
+{{{end_div()}}}
+{{{begin_div(rightcol fragment fade-in,,,2)}}}
+{{{rbold(符号表示)}}}
+#+ATTR_HTML: :style font-size:0.8em;line-height:2.3em
+$B=\{\mathbf{x}_1,\ldots,\mathbf{x}_m\}$: 样本(背景知识){{{nl()}}}
+$KB$: 领域知识{{{nl()}}}
+$\vdash$: 逻辑"推出"{{{nl()}}}
+$F=\{f_1,\ldots,f_n\}$: 增广特征
+{{{end_div()}}}
+{{{end_div()}}}
+{{{begin_div(remarkbox fragment fade-in,font-size:0.8em,,4)}}}
+"$\vdash$"可用前向链推理{{{bsup([71])}}}实现, 它表示根据 $B\cup KB$ 演绎推理得到 $F.$ 因此这些特征 $f_i\in F$ 作为推理的“结论”均至少包含一部分 $KB$ 中的语义.
+{{{end_div()}}}
+** 实验验证
+{{{bbold(任务：统计关系学习)}}}
+#+ATTR_REVEAL: :frag (appear) :frag_idx (1)
+- *输入*:
+{{{begin_div(fragment fade-in,font-size:80%;width:100%,,1)}}}
+#+BEGIN_SRC prolog :exports code
+% 基本事实（特征）
+author(class_1000,author_m_kearns_).    haswordauthor(author_kearns_michael_, word_michael).
+author(class_1001,author_m_j_kearns_).  haswordauthor(author_kearns_m_j_, word_j).
+haswordtitle(title_an_introduction_to_computational_learning_theory_, word_an).
+haswordvenue(venue_proceedings_sigir_, word_sigir).
+title(class_187,title_information_prediction_query_by_comittee_).
+venue(class_1221,venue_machine_learning_).
+% 样例
+sameauthor(author_a_blum_,author_avrim_blum_).
+samebib(class_693,class_711).
+sametitle(title_warmuth_how_to_use_expert_advice_,title_how_to_use_expert_advice_).
+samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_computing_).
+#+END_SRC
+{{{end_div()}}}
+#+ATTR_REVEAL: :frag (appear) :frag_idx (2)
+- *输出*: 带权逻辑规则集 "$w::A\leftarrow B_1\wedge\ldots\wedge B_n$".
+*** 领域知识: 关系型路径
+#+REVEAL_HTML: <img src="./figs/dissertation/sul_graph.svg" style="box-shadow:none;margin:20px auto;position:fixed;left:5%" width=1024px class="fragment fade-out" data-fragment-index=1 />
+#+REVEAL_HTML: <img src="./figs/dissertation/sul_graph1.svg" style="box-shadow:none;margin:20px auto;position:fixed;left:5%" width=1024px class="fragment fade-in" data-fragment-index=1 />
+{{{begin_div(,height:310px;width:1024px)}}}
+{{{end_div()}}}
+{{{begin_div(remarkbox)}}}
+*关系型路径假设* {{{bsup([139])}}} 对于所有正样本事实中的逻辑常量，在基本事实构成的超图中总存在长度有限的路径连接它们.
+#+ATTR_HTML: :class org-center :style margin:10px auto
+\begin{align}
+  \forall i,j\in[1..l](\mathbf{t}(X_1,\ldots,X_l)&\leftarrow i\neq j\wedge \mathbf{path}(X_i,X_j)).\\
+  \exists \mathbf{R}(\mathbf{path}(X,Y)&\leftarrow \mathbf{R}(X,Z)\wedge \mathbf{path}(Z,Y)).
+\end{align}
+{{{end_div}}}
+*** 实验设置
+#+ATTR_REVEAL: :frag (appear)
+- {{{bbold(实验数据)}}}
+  - *Cora* {{{bsup([134])}}}: 论文引用条目关系, 数据量大、结构较简单;
+    - 4个任务: =author=, =bib=, =title=, =venue=
+  - *UW-CSW* {{{bsup([36])}}}: 计算机系成员间关系, 数据量较少、结构复杂.
+    - 1个任务: =advisedby=
+- {{{rbold(对比方法)}}}
+  - *RDN-Boost* {{{bsup([116])}}}: Relational Dependency Network
+  - *Alchemy* {{{bsup([36])}}}, *ALEPH++-MLN* {{{bsup([66])}}}: 马尔可夫逻辑网
+  - *SUL-Path*: 本文方法
+    - 使用三种机器学习模型: =J48=, =AdaBoost= 和 =RandomForest=.
+*** 实验结果
+{{{bbold(AUC值)}}}
+#+ATTR_HTML: :style font-size:66%;margin:30px auto
+| 算法            | author           | bib              | title            | venue            | advisedby        |
+|-----------------+------------------+------------------+------------------+------------------+------------------|
+| SUL-Path-J48    | 0.994 ± 0.004   | 0.926 ± 0.025   | 0.921 ± 0.031   | 0.839 ± 0.046   | 0.633 ± 0.071   |
+| SUL-Path-Boost  | *0.998 ± 0.002* | *0.998 ± 0.001* | *0.987 ± 0.011* | *0.977 ± 0.011* | 0.975 ± 0.015   |
+| SUL-Path-RF     | *0.998 ± 0.002* | 0.989 ± 0.009   | 0.982 ± 0.017   | 0.946 ± 0.023   | *0.992 ± 0.006* |
+| RDN-Boost-org   | 0.985 ± 0.014   | 0.916 ± 0.021   | 0.706 ± 0.121   | 0.589 ± 0.040   | N/A              |
+| RDN-Boost-total | 0.986 ± 0.012   | 0.949 ± 0.016   | 0.729 ± 0.126   | 0.590 ± 0.038   | 0.983 ± 0.014   |
+| Alchemy         | 0.597 ± 0.152   | N/A              | 0.604 ± 0.216   | N/A              | 0.393 ± 0.103   |
+| ALEPH++-MLN     | N/A              | N/A              | N/A              | N/A              | 0.127 ± 0.032   |
+*** 实验结果
+{{{bbold(学习时间(秒))}}}
+#+ATTR_HTML: :style font-size:60%;margin:30px auto
+| 算法        | author |   bib |  title | venue | advisedby |
+|-------------+--------+-------+--------+-------+-----------|
+| SUL-J48     |    0.2 |  87.2 |    0.5 |   1.5 |       0.4 |
+| SUL-Boost   |    1.1 | 302.6 |    2.2 |   9.5 |       1.1 |
+| SUL-RF      |    1.6 | 471.0 |    4.6 |  19.7 |       1.6 |
+| RDN-Boost   |   25.6 | 947.8 |  278.6 | 204.1 |      15.6 |
+| Alchemy     | 5232.3 |   N/A | 5898.1 |   N/A |    5478.0 |
+| ALEPH++-MLN |    N/A |   N/A |    N/A |   N/A |      0.07 |
+{{{bbold(SUL增广样本耗时(秒))}}}
+#+ATTR_HTML: :style font-size:60%;margin:30px auto
+|           |              |     时间开销 |          | 增广样本大小 |
+| /         |            < |            > |        < |            > |
+|-----------+--------------+--------------+----------+--------------|
+| 任务      | 知识转化特征 | 计算特征向量 | 特征维度 |     样本数量 |
+|-----------+--------------+--------------+----------+--------------|
+| author    |          5.7 |         13.9 |       36 |         2428 |
+| bib       |         47.0 |       1475.5 |       64 |       457782 |
+| title     |         20.6 |         80.8 |       34 |        16396 |
+| venue     |         55.4 |        491.6 |       33 |        73354 |
+| advisedby |         11.5 |         22.7 |      452 |        10625 |
+*** 实验结果
+{{{bbold(领域知识复杂度与学习模型(J48)性能的关系)}}}
+{{{begin_div(flexbox)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/sul/title-len.svg" style="box-shadow:none" width=480px />
+#+REVEAL_HTML: <img src="./figs/dissertation/sul/uw-len.svg" style="box-shadow:none" width=480px />
+{{{end_div()}}}
+#+BEGIN_NOTES
+增加路径长度确实对提升 SUL-Path 的表现有所帮助.不过一旦长度超过某个阈值，它带来提升就变得十分有限了.领域知识，关系型路径假设：“有限长度路径”的猜想基本是正确的.
+
+由于 SUL-Path-Boost 和 SUL-Path-RF 的结果已经接近最优，我们选择通过观察SUL-Path-J48 的结果来进研究，该结果如图2.2所示。由于领域内的关系过于复杂，advisedby 任务中当最大路径长度超过 4 时，SUL-Path的展开阶段就无法在 1 小时内结束，因此我们没有计算它的结果.
+#+END_NOTES
+*** 谓词发明
+{{{bbold(习得规则)}}}
+\begin{align}
+  \mathbf{tree_0\_score}(X_1,X_2,W)\leftarrow & \mathbf{ct\_path}_{0,0}(X_1,X_2,N)\\
+  &\hspace{1em}\wedge N > 0.0\wedge W=1.0.
+\end{align}
+{{{rbold(发明谓词)}}}
+\begin{align}
+  \mathbf{path}_0(X_1,X_2,X_3,X_4,X_5)\leftarrow & \mathbf{author}(X_3,X_1)\wedge \mathbf{title}(X_3,X_4)\\
+  &\hspace{1em}\wedge \mathbf{title}(X_5,X_4)\wedge \mathbf{author}(X_5,X_2).\\
+  \mathbf{path}_{0,0}(X_1,X_2,X_3,X_4,X_5)\leftarrow & \mathbf{path}_0(X_1,X_2,X_3,X_4,X_5)\\
+  &\hspace{1em}\wedge \mathbf{haswordauthor}(X_1,X_6)\\
+  &\hspace{1em}\wedge \mathbf{haswordauthor}(X_2,X_6).
+\end{align}
+{{{begin_div(popupbox fragment fade-in,position:absolute;top:17%;left:7%;font-size:0.8em,,1)}}}
+- $path_0$: 作者 $X_1$ 和 $X_2$ 标题一样的论文；
+- $path_{0,0}$: $X_1$ 和 $X_2$ 的名字中至少还拥有一个相同的单词.
+{{{end_div()}}}
+#+BEGIN_NOTES
+借助不同新谓词的组合，SUL-Path可以学得拥有较大长度规则，因此能够表示关系较为复杂的目标概念，这在目前其他的SRL和PILP算法中较难做到。
+#+END_NOTES
 ** 小结
+- 提出了SUL方法
+  - 将FOL领域知识转化为样本
+  - 为常规机器学习方法引入FOL知识
+  - 与SRL相比效率更高，可实现谓词发明
+{{{begin_div(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:140px;margin:30px auto,,1)}}}
+{{{rbold(相关成果已经发表)}}}
+- _W.-Z. Dai_ and Z.-H. Zhou. Statistical unfolded logic learning. In: *Proceedings of the 7th Asian Conference on Machine Learning (ACML’15)*, Hong Kong, China, 2015, JMLR: W&CP 45, pp. 349-361. /(机器学习领域重要国际会议)/
+{{{end_div()}}}
 * 第{{{rbold(3)}}}章{{{nl()}}}{{{nl()}}}一种领域知识辅助约束的{{{nl()}}}机器学习方法
-** 可引入FOL领域知识的机器学习方法(2)
+** 主动假设检验策略
+** 领域知识辅助约束
+** 实验验证
+** 小结
 - {{{bbold(现状)}}}
   - KBANN
 - {{{rbold(难点)}}}

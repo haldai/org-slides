@@ -49,6 +49,8 @@
 #+MACRO: small @@html:<small>$1</small>@@
 #+MACRO: rsmall @@html:<font color="#981E32"><small>$1</small></font>@@
 #+MACRO: bsmall @@html:<font color="#1A53A1"><small>$1</small></font>@@
+#+MACRO: rsup @@html:<font color="#981E32"><sup>$1</sup></font>@@
+#+MACRO: bsup @@html:<font color="#1A53A1"><sup>$1</sup></font>@@
 #+MACRO: rmark @@html:<mark style="background-color: #981E32;">$1</mark>@@
 #+MACRO: bmark @@html:<mark style="background-color: #1A53A1;">$1</mark>@@
 

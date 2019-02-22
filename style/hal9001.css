@@ -592,7 +592,7 @@ div.ribbon-legalese a {
 
 .reveal .slides ol li:before {
     content: counter(my-awesome-counter) ".";
-    color: #303030;
+    /* color: #303030; */
     font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
     font-weight: bold;
     display: inline-block;
@@ -602,7 +602,7 @@ div.ribbon-legalese a {
 
 .reveal .slides ul li:before {
     content: "\f105"; /* FontAwesome47 Unicode */
-    color: #303030;
+    /* color: #303030; */
     font-weight: bold;
     font-family: 'FontAwesome47', Helvetica, sans-serif;
     display: inline-block;
@@ -626,7 +626,7 @@ div.ribbon-legalese a {
 .reveal .slides ul ol ul li:before,
 .reveal .slides ul ul ul li:before {
     content: "\f101"; /* FontAwesome47 Unicode */
-    color: #303030;
+    /* color: #303030; */
     font-weight: bold;
     font-family: 'FontAwesome47', Helvetica, sans-serif;
     display: inline-block;
@@ -907,6 +907,22 @@ div.ribbon-legalese a {
 
 .reveal .popupbox {
     background-color: #981E32;
+    color: #fff;
+    font-size: 1em;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-radius: 10px;
+    padding: 30px;
+    margin: auto;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.55);
+}
+
+.reveal .popupbox-blue {
+    background-color: #1A53A1;
     color: #fff;
     font-size: 1em;
     display: flex;

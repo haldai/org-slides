@@ -169,7 +169,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 #+BEGIN_NOTES
 什么是一阶逻辑
 #+END_NOTES
-*** TODO 引入FOL领域知识的好处
+*** 引入FOL领域知识的好处
 {{{begin_div(flexbox)}}}
 {{{begin_div(leftcol60)}}}
 {{{begin_div(scalebox90,font-size:0.8em)}}}
@@ -185,10 +185,10 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{begin_div(rightcol40)}}}
 #+ATTR_REVEAL: :frag (appear)
 1. 良好的{{{rbold(可理解性)}}}
-   - 比统计模型和神经网络更易于人类理解
-   - 语义明确的谓词发明
+   - 模型形式为 $A\leftarrow B_1\wedge\ldots\wedge B_n$
+   - 比统计模型和神经网络更易于人类理解   
 2. 强大的{{{rbold(表达能力)}}}
-   - 允许递归
+   - 允许递归、谓词发明
    - 强于函数形式表达的优化约束
 3. 优秀的{{{rbold(推理能力)}}}
    - 是完备的形式系统
@@ -299,10 +299,10 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 \begin{align}
 &\mathbf{regular\_poly_2}(A,G)\leftarrow\\
 &\hspace{2em}\mathbf{angles\_list}(A,B)\\
-&\hspace{2em}\wedge\mathbf{std\_dev\_bounded}(B,G).\\
+&\hspace{1em}\wedge\mathbf{std\_dev\_bounded}(B,G).\\
 &\mathbf{regular\_poly_1}(A,A2)\leftarrow\\
 &\hspace{2em}\mathbf{polygon}(A,B)\\
-&\hspace{2em}\wedge\mathbf{regular\_poly_2}(B,A2).\\
+&\hspace{1em}\wedge\mathbf{regular\_poly_2}(B,A2).\\
 &\mathbf{regular\_poly}(A)\leftarrow\\
 &\hspace{2em}\mathbf{regular\_poly_1}(A,0.02).
 \end{align}
@@ -334,7 +334,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{end_div()}}}
 {{{end_div()}}}
 {{{end_div()}}}
-* 第二章：{{{nl()}}}一种领域知识增广样本的{{{nl()}}}机器学习方法
+* 第{{{rbold(2)}}}章{{{nl()}}}{{{nl()}}}一种领域知识增广样本的{{{nl()}}}机器学习方法
 ** 机器学习中的领域知识
 {{{begin_div(flexbox-start)}}}
 {{{begin_div(leftcol)}}}
@@ -350,7 +350,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
     - 正则化项
     - 函数空间约束
   - 先验分布
-- *特征*: 一般连续可微
+- *特点*: 一般连续可微
 #+ATTR_HTML: :class fragment appear :data-fragment-index 19
 {{{bbold(常用于SVM、NN，<br />一般通过凸优化求解)}}}
 {{{end_div()}}}
@@ -368,27 +368,32 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
     - 因果关系
     - 相关性
   - 样本间的关系
-- *特征*: 离散，FOL表示
-#+ATTR_HTML: :class org-center fragment appear :data-fragment-index 20
+- *特点*: 离散，FOL表示
+#+ATTR_HTML: :class org-center fragment appear :data-fragment-index 20 :style padding:9px 0 0 0
 {{{rbold(常用于统计关系学习，<br />一般通过组合优化求解)}}}
 {{{end_div()}}}
 {{{end_div()}}}
-** 可引入FOL领域知识的机器学习方法(1)
+** 引入FOL领域知识的机器学习方法(1)
 {{{begin_div(flexbox-center)}}}
 {{{begin_div(leftcol)}}}
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 3)
 - (概率)归纳逻辑程序((P)ILP){{{bsmall([])}}}
+  #+ATTR_REVEAL: :frag (appear) :frag_idx (4)
   - 模型为FOL规则
 - 统计关系学习(SRL){{{bsmall([])}}}
+  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (5 6)
   - 将逻辑关系解释为相关性
   - FOL规则→概率图模型
+{{{begin_div(fragment fade-in,,,8)}}}
 {{{rbold(难点)}}}
-- 模型结构复杂
-  - FOL规则学习和图模型结构学习均为NP难{{{bsmall([])}}}
+- FOL规则学习和图模型结构学习均为NP难{{{bsmall([])}}}
+- 只能用于小数据
 {{{end_div()}}}
-{{{begin_div(rightcol)}}}
-#+ATTR_HTML: :style margin:30px auto;
+{{{end_div()}}}
+{{{begin_div(rightcol fragment fade-in,,,7)}}}
+#+ATTR_HTML: :style margin:5px auto;
 [[./figs/dissertation/mln.png]]
-{{{begin_div(scalebox70)}}}
+{{{begin_div(scalebox60 flex-box,flex-direction:column;margin:0;flex-wrap:none auto;width:450px;height:600px)}}}
 \begin{align}
 \mathbf{friends}(X,Z)\leftrightarrow&\mathbf{friends}(X,Y)\\
 &\wedge \mathbf{friends}(Y,Z).\\
@@ -397,59 +402,115 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 &\wedge\mathbf{friends}(X,Y).\\
 \mathbf{smokes}(X)\leftarrow&\neg\mathbf{friends}(X).
 \end{align}
+{{{begin_div(,width:674px;font-size:1.19em)}}}
+#+BEGIN_SRC prolog :exports code
+smokes(alan).      smokes(bob).
+friends(alan,bob). friends(bob,charlie).
+cancer(charlie).
+...
+?- cancer(jack).
+#+END_SRC
 {{{end_div()}}}
 {{{end_div()}}}
 {{{end_div()}}}
-*** 可引入FOL领域知识的机器学习方法(1)
+{{{end_div()}}}
+*** 引入FOL领域知识的机器学习方法(1)
 {{{begin_div(flexbox-start)}}}
-{{{begin_div(leftcol)}}}
+{{{begin_div(leftcol60)}}}
 {{{bbold(问题形式化)}}}
+{{{begin_div(fragment fade-in,,,0)}}}
 - 经验风险最小化
 \begin{equation}
 \min_{h\in\mathcal{H}}\frac{1}{n}\sum_{i=1}^mL(h(\mathbf{x}_i),y_i),
 \end{equation}
-{{{nl()}}}
-- 一阶逻辑形式
+{{{end_div()}}}
+{{{begin_div(fragment fade-in,,,2)}}}
+- *FOL形式*
 \begin{equation}
 B\wedge H\models E
 \end{equation}
-- 引入概率分布
+- *引入概率分布*
 \begin{equation}
 \max_{H\in\mathcal{H}}P(E\mid B,H)
 \end{equation}
 {{{end_div()}}}
-{{{begin_div(rightcol)}}}
+{{{end_div()}}}
+{{{begin_div(rightcol40)}}}
 {{{rbold(符号表示)}}}
-{{{begin_div(scalebox80)}}}
+{{{begin_div(scalebox70 fragment fade-in,position:fixed;top:24.5%;left:55.5%,,1)}}}
 $\mathbf{x}_i$: 样本{{{nl()}}}
 $y_i$: 标记{{{nl()}}}
 $h$: 假设模型{{{nl()}}}
 $\mathcal{H}$: 假设空间{{{nl()}}}
 $L$: 损失函数
+{{{end_div()}}}
+{{{begin_div(scalebox70 fragment fade-in,position:fixed;bottom:0%;left:51%,,3)}}}
 $B$: 背景知识{{{nl()}}}
 $E$: 样本{{{nl()}}}
 $H$: 假设模型{{{nl()}}}
 $\models$: 逻辑蕴涵
-#+ATTR_HTML: :class fragment fade-in
+#+ATTR_HTML: :class fragment fade-in :data-fragment-index 4
 $H=(\Gamma,\theta)$: $\Gamma$为规则结构, $\theta$为分布参数
 {{{end_div()}}}
 {{{end_div()}}}
 {{{end_div()}}}
+{{{begin_div(fragment fade-in,position:absolute;font-size:0.7em;right:0px;top:56%;,,3)}}}
+#+BEGIN_SRC prolog :exports code
+% 背景知识：
+smokes(alan).
+smokes(bob).
+friends(alan,bob). 
+friends(bob,charlie).
+% 样例：
+cancer(charlie).
+not(cancer(jack)).
+#+END_SRC
+*** 引入FOL领域知识的机器学习方法(1)
+{{{begin_div(fragment fade-in,,,1)}}}
+- 领域知识库 $KB$ 由FOL规则组成:
+\[
+A\leftarrow B_1\wedge B_2\wedge\ldots\wedge B_n.
+\]
+{{{end_div()}}}
+{{{begin_div(fragment fade-in,,,2)}}}
+- 假设模型 $H=(\Gamma,\theta)$ 由（带权）FOL规则组成:
+\[
+\color{red}{w::}A\leftarrow B_1\wedge B_2\wedge\ldots\wedge B_n.
+\]
+{{{end_div}}}
+#+ATTR_REVEAL: :frag (appear) :frag_idx (3)
+- 学习目标: $\max_{(\Gamma,\theta)}P_\Gamma(E\mid\color{blue}{KB}\cup B,\theta)$
+  #+ATTR_REVEAL: :frag (appear appear appear appear) :frag_idx (4 5 6 7)
+  - 微调可能的规则结构 $\Gamma$;
+  - 最大化样本似然，求解参数 $\theta$;
+  - 若未达到终止条件, goto 2; 否则输出 $H=(\Gamma,\theta)$.  
+{{{begin_div(popupbox fragment fade-in,position:absolute;top:40%;left:4%,,8)}}}
+*目标函数不可微，无法使用梯度下降等速度较快的{{{nl}}}优化方法求解*
+{{{end_div}}}
 ** 领域知识增广样本
-** SUL学习在统计关系学习中的应用
+#+ATTR_HTML: :class org-center fragment fade-in :data-fragment-index 1
+{{{rbold(将领域知识 $KB$ 增广样本\,<br/>在新的训练数据集中进行学习)}}}
+#+ATTR_REVEAL: :frag appear
+{{{bbold(SUL学习(Statistical Unfolded Logic Learning))}}}
+#+ATTR_REVEAL: :frag (appear)
+1. 
+2.
+3.
+*** 领域知识增广样本
 ** 实验
+*** SUL学习在统计关系学习中的应用
 ** 小结
-* 第三章：{{{nl()}}}一种领域知识辅助约束的{{{nl()}}}机器学习方法
+* 第{{{rbold(3)}}}章{{{nl()}}}{{{nl()}}}一种领域知识辅助约束的{{{nl()}}}机器学习方法
 ** 可引入FOL领域知识的机器学习方法(2)
 - {{{bbold(现状)}}}
   - KBANN
 - {{{rbold(难点)}}}
-* 第四章：{{{nl()}}}一种机器学习驱动的{{{nl()}}}领域知识精化方法
+* 第{{{rbold(4)}}}章{{{nl()}}}{{{nl()}}}一种机器学习驱动的{{{nl()}}}领域知识精化方法
 ** 
 - {{{bbold(现状)}}}
   - 分层学习
   - 神经网络的逻辑规则抽取
 - {{{rbold(难点)}}}
   - 需要大量预训练数据
-* 第五章：{{{nl()}}}一种领域知识与机器学习{{{nl()}}}互促结合框架
+* 第{{{rbold(5)}}}章{{{nl()}}}{{{nl()}}}一种领域知识与机器学习{{{nl()}}}互促结合框架
 * 总结

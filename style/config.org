@@ -28,7 +28,7 @@
 # macros
 #+macro: cmt @@comment:$1@@
 #+MACRO: nl @@html:<br \>@@
-#+MACRO: begin_div @@html:<div class="$1" style="$2" id="$3">@@
+#+MACRO: begin_div @@html:<div class="$1" style="$2" id="$3" data-fragment-index="$4">@@
 #+MACRO: end_div @@html:</div>@@
 #+MACRO: img @@html:<img src="$1" width="$2" height="$3" class="$4" style="$5" />@@
 #+MACRO: awesome @@html:&#xf$1@@

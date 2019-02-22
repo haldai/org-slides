@@ -48,9 +48,10 @@
 #+MACRO: bit @@html:<font color="#1A53A1"><i>$1</i></font>@@
 #+MACRO: small @@html:<small>$1</small>@@
 #+MACRO: rsmall @@html:<font color="#981E32"><small>$1</small></font>@@
-#+MACRO: bsmall @@html:<font color="#1A53A1"><small>$1</smallmarknt>@@
+#+MACRO: bsmall @@html:<font color="#1A53A1"><small>$1</small></font>@@
 #+MACRO: rmark @@html:<mark style="background-color: #981E32;">$1</mark>@@
 #+MACRO: bmark @@html:<mark style="background-color: #1A53A1;">$1</mark>@@
 
 # extra settings
 #+HTML_HEAD: <script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS": { scale: 80}, tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}});</script>
+#+HTML_HEAD: <script type="text/javascript" src="/home/daiwz/Projects/MathJax-2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

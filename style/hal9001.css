@@ -891,6 +891,20 @@ div.ribbon-legalese a {
     background: #1A53A1;
 }
 
+.reveal .remarkbox {
+    background-color: #eee;
+    font-size: 0.7em;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-radius: 10px;
+    border: 2px solid #66757F;
+    padding: 5px;
+    margin: auto;
+}
+
 /*********************************************
  * IMAGES
  *********************************************/

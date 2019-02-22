@@ -101,7 +101,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{end_div()}}}
 {{{begin_div(rightcol60)}}}
 \[
-\min_f \sum_{\langle x,y\rangle\sim D}loss(f(x),y)
+\min_f E_{\langle x,y\rangle\sim D}loss(f(x),y)
 \]
 #+BEGIN_EXPORT html
 <div class=flexbox-stretch>
@@ -129,19 +129,19 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{img(https://imgs.xkcd.com/comics/machine_learning.png, 100%, auto)}}}
 {{{end_div()}}}
 {{{end_div()}}}
-*** 机器学习中待解决的问题
+*** TODO 可理解性的来源
 {{{begin_div(flexbox)}}}
 {{{begin_div(leftcol)}}}
-- 可重用性
-  - 迁移学习（Transfer Learning）
-  - 类比推理（Analogical Reasoning）
-  - 学件（Learnware）
-  - 通用人工智能（Artificial General Intelligence）
-- 训练数据量
-  - 强化学习（Reinforcement Learning）
+- 机器学习模型本身的结构
+  - 逻辑规则，决策树
+  - 图模型
+  - 线性模型
+  - 核方法
+  - 深度神经网络
 {{{end_div()}}}
 {{{begin_div(rightcol)}}}
-{{{img(./figs/dissertation/learnware.png, 100%, auto)}}}
+- 领域知识的形式
+  - 特征
 {{{end_div()}}}
 {{{end_div()}}}
 ** 一种可能的解决方案
@@ -169,7 +169,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 #+BEGIN_NOTES
 什么是一阶逻辑
 #+END_NOTES
-*** 引入FOL领域知识的好处
+*** TODO 引入FOL领域知识的好处
 {{{begin_div(flexbox)}}}
 {{{begin_div(leftcol60)}}}
 {{{begin_div(scalebox90,font-size:0.8em)}}}
@@ -197,6 +197,21 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 #+BEGIN_NOTES
 完备的，意味着所有真命题都可以通过有限步推理证明；那些不可判定的均为假命题。
 #+END_NOTES
+*** 引入FOL领域知识的其他好处
+{{{begin_div(flexbox)}}}
+{{{begin_div(leftcol)}}}
+- 可重用性
+  - 迁移学习（Transfer Learning）
+  - 类比推理（Analogical Reasoning）
+  - 学件（Learnware）
+  - 通用人工智能（Artificial General Intelligence）
+- 训练数据量
+  - 强化学习（Reinforcement Learning）
+{{{end_div()}}}
+{{{begin_div(rightcol)}}}
+{{{img(./figs/dissertation/learnware.png, 100%, auto)}}}
+{{{end_div()}}}
+{{{end_div()}}}
 *** TODO FOL知识解决了前面的问题
 ** 本文工作
 {{{begin_div(flexbox-center)}}}
@@ -320,7 +335,121 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{end_div()}}}
 {{{end_div()}}}
 * 第二章：{{{nl()}}}一种领域知识增广样本的{{{nl()}}}机器学习方法
+** 机器学习中的领域知识
+{{{begin_div(flexbox-start)}}}
+{{{begin_div(leftcol)}}}
+{{{bbold(常见的领域知识：)}}}
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 9)
+- *类型*:
+  #+ATTR_REVEAL: :frag (appear appear appear appear) :frag_idx (2 3 4 8)
+  - 模型选择
+  - 特征工程  
+  - 目标函数
+    #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (5 6 7)
+    - 损失函数
+    - 正则化项
+    - 函数空间约束
+  - 先验分布
+- *特征*: 一般连续可微
+#+ATTR_HTML: :class fragment appear :data-fragment-index 19
+{{{bbold(常用于SVM、NN，<br />一般通过凸优化求解)}}}
+{{{end_div()}}}
+{{{begin_div(rightcol)}}}
+{{{rbold(关系型领域知识：)}}}
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (10 18)
+- *类型*:
+  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (11 14 17)
+  - 标记间的关系
+    #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (12 13)
+    - 层次标记
+    - 相关性
+  - 特征间的关系
+    #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (15 16)
+    - 因果关系
+    - 相关性
+  - 样本间的关系
+- *特征*: 离散，FOL表示
+#+ATTR_HTML: :class org-center fragment appear :data-fragment-index 20
+{{{rbold(常用于统计关系学习，<br />一般通过组合优化求解)}}}
+{{{end_div()}}}
+{{{end_div()}}}
+** 可引入FOL领域知识的机器学习方法(1)
+{{{begin_div(flexbox-center)}}}
+{{{begin_div(leftcol)}}}
+- (概率)归纳逻辑程序((P)ILP){{{bsmall([])}}}
+  - 模型为FOL规则
+- 统计关系学习(SRL){{{bsmall([])}}}
+  - 将逻辑关系解释为相关性
+  - FOL规则→概率图模型
+{{{rbold(难点)}}}
+- 模型结构复杂
+  - FOL规则学习和图模型结构学习均为NP难{{{bsmall([])}}}
+{{{end_div()}}}
+{{{begin_div(rightcol)}}}
+#+ATTR_HTML: :style margin:30px auto;
+[[./figs/dissertation/mln.png]]
+{{{begin_div(scalebox70)}}}
+\begin{align}
+\mathbf{friends}(X,Z)\leftrightarrow&\mathbf{friends}(X,Y)\\
+&\wedge \mathbf{friends}(Y,Z).\\
+\mathbf{cancer}(X)\leftarrow&\mathbf{smokes}(X).\\
+\mathbf{smokes}(Y)\leftarrow&\mathbf{smokes}(X)\\
+&\wedge\mathbf{friends}(X,Y).\\
+\mathbf{smokes}(X)\leftarrow&\neg\mathbf{friends}(X).
+\end{align}
+{{{end_div()}}}
+{{{end_div()}}}
+{{{end_div()}}}
+*** 可引入FOL领域知识的机器学习方法(1)
+{{{begin_div(flexbox-start)}}}
+{{{begin_div(leftcol)}}}
+{{{bbold(问题形式化)}}}
+- 经验风险最小化
+\begin{equation}
+\min_{h\in\mathcal{H}}\frac{1}{n}\sum_{i=1}^mL(h(\mathbf{x}_i),y_i),
+\end{equation}
+{{{nl()}}}
+- 一阶逻辑形式
+\begin{equation}
+B\wedge H\models E
+\end{equation}
+- 引入概率分布
+\begin{equation}
+\max_{H\in\mathcal{H}}P(E\mid B,H)
+\end{equation}
+{{{end_div()}}}
+{{{begin_div(rightcol)}}}
+{{{rbold(符号表示)}}}
+{{{begin_div(scalebox80)}}}
+$\mathbf{x}_i$: 样本{{{nl()}}}
+$y_i$: 标记{{{nl()}}}
+$h$: 假设模型{{{nl()}}}
+$\mathcal{H}$: 假设空间{{{nl()}}}
+$L$: 损失函数
+$B$: 背景知识{{{nl()}}}
+$E$: 样本{{{nl()}}}
+$H$: 假设模型{{{nl()}}}
+$\models$: 逻辑蕴涵
+#+ATTR_HTML: :class fragment fade-in
+$H=(\Gamma,\theta)$: $\Gamma$为规则结构, $\theta$为分布参数
+{{{end_div()}}}
+{{{end_div()}}}
+{{{end_div()}}}
+** 领域知识增广样本
+** SUL学习在统计关系学习中的应用
+** 实验
+** 小结
 * 第三章：{{{nl()}}}一种领域知识辅助约束的{{{nl()}}}机器学习方法
+** 可引入FOL领域知识的机器学习方法(2)
+- {{{bbold(现状)}}}
+  - KBANN
+- {{{rbold(难点)}}}
 * 第四章：{{{nl()}}}一种机器学习驱动的{{{nl()}}}领域知识精化方法
+** 
+- {{{bbold(现状)}}}
+  - 分层学习
+  - 神经网络的逻辑规则抽取
+- {{{rbold(难点)}}}
+  - 需要大量预训练数据
 * 第五章：{{{nl()}}}一种领域知识与机器学习{{{nl()}}}互促结合框架
 * 总结

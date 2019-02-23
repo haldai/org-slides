@@ -377,10 +377,10 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{begin_div(flexbox-center)}}}
 {{{begin_div(leftcol)}}}
 #+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 3)
-- (概率)归纳逻辑程序((P)ILP){{{bsup([])}}}
+- (概率)归纳逻辑程序((P)ILP){{{bsup([107,34])}}}
   #+ATTR_REVEAL: :frag (appear) :frag_idx (4)
   - 模型为FOL规则
-- 统计关系学习(SRL){{{bsup([])}}}
+- 统计关系学习(SRL){{{bsup([54])}}}
   #+ATTR_REVEAL: :frag (appear appear) :frag_idx (5 6)
   - 将逻辑关系解释为相关性
   - FOL规则→概率图模型
@@ -523,7 +523,7 @@ $F=\{f_1,\ldots,f_n\}$: 增广特征
 ** 实验验证
 {{{bbold(任务：统计关系学习)}}}
 #+ATTR_REVEAL: :frag (appear) :frag_idx (1)
-- *输入*:
+- *输入:*
 {{{begin_div(fragment fade-in,font-size:80%;width:100%,,1)}}}
 #+BEGIN_SRC prolog :exports code
 % 基本事实（特征）
@@ -541,7 +541,7 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
 #+END_SRC
 {{{end_div()}}}
 #+ATTR_REVEAL: :frag (appear) :frag_idx (2)
-- *输出*: 带权逻辑规则集 "$w::A\leftarrow B_1\wedge\ldots\wedge B_n$".
+- *输出:* 带权逻辑规则集 "$w::A\leftarrow B_1\wedge\ldots\wedge B_n$".
 *** 领域知识: 关系型路径
 #+REVEAL_HTML: <img src="./figs/dissertation/sul_graph.svg" style="box-shadow:none;margin:20px auto;position:fixed;left:5%" width=1024px class="fragment fade-out" data-fragment-index=1 />
 #+REVEAL_HTML: <img src="./figs/dissertation/sul_graph1.svg" style="box-shadow:none;margin:20px auto;position:fixed;left:5%" width=1024px class="fragment fade-in" data-fragment-index=1 />
@@ -568,6 +568,7 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
   - *SUL-Path*: 本文方法
     - 使用三种机器学习模型: =J48=, =AdaBoost= 和 =RandomForest=.
 *** 实验结果
+#+ATTR_HTML: :class org-center :style font-size:0.8em
 {{{bbold(AUC值)}}}
 #+ATTR_HTML: :style font-size:66%;margin:30px auto
 | 算法            | author           | bib              | title            | venue            | advisedby        |
@@ -580,6 +581,7 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
 | Alchemy         | 0.597 ± 0.152   | N/A              | 0.604 ± 0.216   | N/A              | 0.393 ± 0.103   |
 | ALEPH++-MLN     | N/A              | N/A              | N/A              | N/A              | 0.127 ± 0.032   |
 *** 实验结果
+#+ATTR_HTML: :class org-center :style font-size:0.8em
 {{{bbold(学习时间(秒))}}}
 #+ATTR_HTML: :style font-size:60%;margin:30px auto
 | 算法        | author |   bib |  title | venue | advisedby |
@@ -590,6 +592,7 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
 | RDN-Boost   |   25.6 | 947.8 |  278.6 | 204.1 |      15.6 |
 | Alchemy     | 5232.3 |   N/A | 5898.1 |   N/A |    5478.0 |
 | ALEPH++-MLN |    N/A |   N/A |    N/A |   N/A |      0.07 |
+#+ATTR_HTML: :class org-center :style font-size:0.8em
 {{{bbold(SUL增广样本耗时(秒))}}}
 #+ATTR_HTML: :style font-size:60%;margin:30px auto
 |           |              |     时间开销 |          | 增广样本大小 |
@@ -603,6 +606,7 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
 | venue     |         55.4 |        491.6 |       33 |        73354 |
 | advisedby |         11.5 |         22.7 |      452 |        10625 |
 *** 实验结果
+#+ATTR_HTML: :class org-center :style font-size:0.8em
 {{{bbold(领域知识复杂度与学习模型(J48)性能的关系)}}}
 {{{begin_div(flexbox)}}}
 #+REVEAL_HTML: <img src="./figs/dissertation/sul/title-len.svg" style="box-shadow:none" width=480px />
@@ -641,22 +645,438 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
   - 与SRL相比效率更高，可实现谓词发明
 {{{begin_div(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:140px;margin:30px auto,,1)}}}
 {{{rbold(相关成果已经发表)}}}
-- _W.-Z. Dai_ and Z.-H. Zhou. Statistical unfolded logic learning. In: *Proceedings of the 7th Asian Conference on Machine Learning (ACML’15)*, Hong Kong, China, 2015, JMLR: W&CP 45, pp. 349-361. /(机器学习领域重要国际会议)/
+- _W.-Z. Dai_ and Z.-H. Zhou. Statistical unfolded logic learning. In: *Proceedings of the 7th Asian Conference on Machine Learning (ACML’15)*, Hong Kong, China, 2015, JMLR: W&CP 45, pp. 349-361. /(CCF-C类, 机器学习领域重要国际会议)/
 {{{end_div()}}}
 * 第{{{rbold(3)}}}章{{{nl()}}}{{{nl()}}}一种领域知识辅助约束的{{{nl()}}}机器学习方法
-** 主动假设检验策略
+** SUL学习的不足
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 2)
+- 若领域知识不够强，则转化为样本带来的信息量不够;
+- SUL学习增广样本被表示为:
+  \[
+    B\cup KB\color{#981E32}{\vdash}F
+  \]
+  该过程的"$\vdash$"为基于语构蕴涵(implication)的演绎, 对于某些形式的 $KB$， 该问题{{{red(不可判定)}}}{{{bsup([56])}}}.
+  #+ATTR_REVEAL: :frag appear :frag_idx 3
+  - 一次性的领域知识增广样本无法保证最优.
+#+ATTR_HTML: :class org-center fragment fade-in :data-fragment-index 4
+{{{rbold(解决方案：将 $KB$ 作为约束，对学习模型进行迭代优化)}}}
+#+BEGIN_NOTES
+一旦KB中出现递归或循环规则，便无法通过有限步推出所有满足该式的F. 这也是上一章实验中研究知识复杂度对学习性能影响的原因.
+#+END_NOTES
 ** 领域知识辅助约束
+{{{bbold(LASIN (Logical Abduction and Statistical INduction))}}}
+\begin{align}
+  \min\limits_{h\in\mathcal{H}}\quad&\frac{1}{m}\sum_{i=1}^mL(h(\mathbf{x}_i),y_i).\\
+  \text{s.t.}\quad& \text{Con}(KB\cup \mathcal{H}).\nonumber
+\end{align}
+{{{begin_div(fragment fade-in,,,1)}}}
+这里的 $\text{Con}$ 为一致性约束, *"$\models$"* 表示“逻辑满足”:
+\[
+\not\exists\varphi ((\mathcal{H}\cup KB\models \varphi)\wedge(\mathcal{H}\cup KB\models \neg\varphi))
+\]
+{{{end_div()}}}
+{{{begin_div(fragment fade-in,margin:20px auto,,2)}}}
+{{{rbold(难点：)}}}将FOL公式转化为机器学习可利用的约束.
+{{{end_div()}}}
+#+BEGIN_NOTES
+表示学得的假设模型与领域知识不产生矛盾
+#+END_NOTES
+*** "盲人摸象"
+#+REVEAL_HTML: <img src="./figs/dissertation/elephant.jpg" style="margin: 20px auto;" />
+#+ATTR_REVEAL: :frag (appear)
+1. 通过{{{rbold(反绎逻辑推理)}}}生成一个假设空间;
+2. 在假设空间中进行机器学习得到候选模型;
+3. 在数据中对候选模型进行检验;
+4. 根据检验结果来选择接受、排除或更新自己的假设.
+*** 反绎逻辑推理
+{{{bbold(三种逻辑推理)}}}:
+{{{begin_div(,font-size:0.9em)}}}
+\[
+B \cup H \models E.
+\]
+#+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (1 1 2)
+1. {{{bold(演绎)}}}: 已知{{{bold(具体)}}}事实 $B$ 与{{{bold(一般)}}}规律 $H$ 推理出{{{bold(具体)}}}结论 $E$;
+2. {{{bold(归纳)}}}: 已知{{{bold(具体)}}}事实 $B$ 与{{{bold(具体)}}}样例 $E$ 归纳出{{{bold(一般)}}}规律 $H$;
+3. {{{rbold(反绎)}}}: 已知{{{bold(一般)}}}规律 $H$ 与{{{bold(具体)}}}事实 $E$ 推理出{{{bold(具体)}}}原因 $B$.
+{{{begin_div(fragment fade-in,,,3)}}}
+{{{rbold(演绎与反绎的区别：)}}}
+\[
+H\equiv B\rightarrow E.
+\]
+- {{{bold(演绎)}}}是已知前提推出结论;
+- {{{rbold(反绎)}}}是根据结论猜测原因.
+{{{end_div()}}}
+{{{end_div()}}}
+*** 反绎逻辑推理
+{{{bbold(鞋子湿了)}}}
+- 是因为下雨还是草坪喷水器？
+{{{begin_div(org-center fragment fade-in,margin:auto,,1)}}}
+#+BEGIN_SRC prolog :exports code
+% 领域知识 KB
+wet_shoes(X) :- wet_grass(X).
+wet_grass(X) :- rained_last_night(X).
+wet_grass(X) :- sprinkler_was_on(X).
+
+% 完整性约束
+rained_last_night(X), sprinkler_was_on(X) ==> fail.
+
+% 观测事实
+?- wet_shoes(bob), not(rained_last_night(bob)).
+
+% 反绎推理结果
+sprinkler_was_on(bob) ;
+false.
+#+END_SRC
+{{{end_div()}}}
+*** 反绎逻辑推理
+{{{begin_div(remarkbox)}}}
+*定义3.1 (反绎逻辑程序)* 
+
+反绎逻辑程序是一个三元组 $(KB,A,IC)$, 其中 $KB$ 为 *领域知识*, $A$ 为 *可反绎谓词*, $IC$ 为 *完整性约束*. 当给定观测 *事实* $O$ 时, 能够推理出关于 $A$ 的 *具体* 逻辑事实集合 $\Delta$, 使得：
+
+- $\Delta\cup KB\models O$,
+- $\Delta\cup KB\models IC$,
+- $\text{Con}(KB\cup\Delta)$.
+{{{end_div()}}}
+{{{begin_div(org-center fragment fade-in,margin:30px auto,,1)}}}
+{{{rbold(换言之，$\Delta$ 是基于 $KB$ 对 $O$ 的一种具体“解释”)}}}
+{{{end_div}}}
+*** 基于反绎推理的假设空间约束
+{{{bbold(形式化)}}}
+\begin{align}
+  &KB\cup\mathcal{H}_{t+1}\models error_t.\\
+  \text{s.t.}\quad&\text{Con}(KB\cup\mathcal{H}_{t+1}).\nonumber
+\end{align}
+{{{begin_div(fragment fade-in,font-size:0.8em;margin:10px auto,,1)}}}
+这里的观测事实则为上一轮学得模型 $h_t$ 在训练数据中造成的误差: $error_t=\{\varepsilon_1,\ldots,\varepsilon_m\}$, 其中
+\begin{equation}
+  \varepsilon_i=\text{difference}(h_{t}(\mathbf{x}_i),y_i),
+\end{equation}
+{{{end_div()}}}
+{{{begin_div(remarkbox fragment fade-in,margin:10px auto,,2)}}}
+$\mathcal{H}_{t+1}$ 由反绎推理得出, 因此:
+{{{begin_div(,margin:-10px 100px,,2)}}}
+1. 它是一组具体逻辑事实构成的集合;
+2. 它必定与 $KB$ 一致, 因此满足上面的约束.
+{{{end_div()}}}
+{{{end_div()}}}
+*** LASIN算法
+#+ATTR_REVEAL: :frag (appear)
+1. 根据 $KB$ 与 $error_{t-1}$ 通过{{{rbold(反绎推理)}}}得到假设空间 $\mathcal{H}_t$;
+2. 在 $\mathcal{H}_t$ 中进行机器学习得到候选模型 $h_t$;
+3. 在数据中对 $h_t$ 进行检验, 得到误差 $error_t$;
+4. 根据检验结果来选择接受、排除或更新 $h_t$.
+** 实验验证
+{{{bbold(任务：表示学习)}}}{{{bsup([10])}}}
+{{{begin_div(fragment fade-in,,,1)}}}
+- *输入:* 手写字符图像
+#+REVEAL_HTML: <img src="./figs/dissertation/lasin/data_all.svg" width=500px style="margin:20px auto" />
+{{{end_div()}}}
+#+ATTR_REVEAL: :frag (appear) :frag_idx (2)
+- *输出:* 一组特征作为字典，以使得每个原样本在经过该字典编码后所得到的特征向量均为稀疏向量.
+#+BEGIN_NOTES
+表示学习的假设模型是一组字典，即由具体特征组成的集合
+#+END_NOTES
+*** 领域知识: 书写原语——“笔划”
+{{{begin_div(flexbox)}}}
+{{{begin_div(leftcol70)}}}
+1. 每个手写字符由多个笔划构成；
+2. 每个笔划可看作由一组子笔划（书写原语）构成；
+3. 每个子笔划是连续、较光滑的墨迹.
+{{{end_div()}}}
+{{{begin_div(rightcol30)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/yong.png" style="margin:20px auto" />
+{{{end_div()}}}
+{{{begin_div(remarkbox fragment fade-in,,,1)}}}
+*$KB$*:
+
+\begin{align}
+\mathbf{character}(C)\leftarrow & C=\{S_1,S_2,\ldots\}\wedge \mathbf{stroke}(S_1)\wedge\ldots.\\
+\mathbf{stroke}(S) \leftarrow & S=\{P_1,P_2,\ldots\}\wedge \mathbf{sub\_strk}(P_1,P_2,P_3)\wedge \mathbf{sub\_strk}(P_2,P_3,P_4)\wedge \cdots.\\
+\mathbf{sub\_strk}(A,B,C) \leftarrow &\mathbf{ink}(\mathbf{AB})\wedge\mathbf{ink}(\mathbf{BC})\wedge \mathbf{angle}(\mathbf{AB},\mathbf{BC})<\alpha).
+\end{align}
+{{{end_div()}}}
+*** 学习目标
+{{{bbold(基于稀疏编码的特征提取)}}}
+\begin{eqnarray}
+&&\min_{\mathbf{b},\mathbf{a}}\sum_k{||h^{(k)}-\sum_j{a_j^{(k)}b_j}||_2^2+\beta||a^{(k)}||_1}\label{eq:lasin:si}\\
+&\text{s.t. } &||b_j||_2\leq1, \forall j\in 1,\ldots,s.\nonumber\\
+&&\forall h^{(k)}((h^{(k)}\in\mathcal{H})\wedge (KB\vDash stroke(h^{(k)})).\nonumber
+\end{eqnarray}
+{{{rbold(符号表示)}}}
+{{{begin_div(,font-size:0.8em)}}}
+- $\mathbf{b}$: 待学习字典;
+- $\mathbf{a}$: 编码;
+- $\mathcal{H}$: 反绎推理得到的假设空间;
+- $h^{(k)}$: 假设空间中的具体假设.
+{{{end_div()}}}
+*** 实验设置
+#+ATTR_REVEAL: :frag (appear)
+- {{{bbold(实验数据)}}}
+  - *MNIST* {{{bsup([95])}}}: 70000张阿拉伯数字图片;
+  - *Omniglot* {{{bsup([92])}}}: 1628类字符，每个字符20个样例. 被分为 =OS1= 与 =OS2=;
+  - *HPL-Devanagali* {{{bsup([11])}}}: 111种印度语字符，每个字符100个样例.
+- {{{rbold(对比方法)}}}
+  - *稀疏编码 (SC)* {{{bsup([96])}}}: 未引入任何领域知识.
+  - *LASIN-stroke*: 引入关于“笔划”的FOL知识
+  - *LASIN-kmeans*: 通过聚类来得到“笔划”
+  - *LASIN-spectral*: 通过谱聚类来得到“笔划”
+*** 实验结果
+#+ATTR_HTML: :class org-center :style font-size:0.8em
+{{{bbold(手写字符图片分类精度(%))}}}
+#+ATTR_HTML: :style font-size:80%;margin:30px auto
+|        |         |         |  $\mid\mathbf{b}\mid = 20$ |          |       |         |  $\mid\mathbf{b}\mid = 50$ |          |
+| /      |       < |         |                            |        > |     < |         |                            |        > |
+| 数据集 |      SC | stroke  |                     kmeans | spectral |    SC | stroke  |                     kmeans | spectral |
+|--------+---------+---------+----------------------------+----------+-------+---------+----------------------------+----------|
+| MNIST  |   90.37 | *91.66* |                      90.48 |    90.82 | 93.89 | *94.88* |                      94.47 |    94.79 |
+| OS1    | *16.46* | 16.24   |                      15.83 |    15.33 | 21.27 | *21.82* |                      20.92 |    21.09 |
+| OS2    |   15.12 | 16.65   |                    *17.37* |    17.43 | 22.61 | *22.90* |                      21.12 |    21.05 |
+#+ATTR_HTML: :style font-size:80%;margin:30px auto
+|        |         |         | $\mid\mathbf{b}\mid = 100$ |          |       |         | $\mid\mathbf{b}\mid = 200$ |          |
+| /      |       < |         |                            |        > |     < |         |                            |        > |
+| 数据集 |      SC | stroke  |                     kmeans | spectral |    SC | stroke  |                     kmeans | spectral |
+|--------+---------+---------+----------------------------+----------+-------+---------+----------------------------+----------|
+| MNIST  |   95.23 | *96.27* |                      96.19 |    96.05 | 95.77 | *97.01* |                      96.91 |    96.97 |
+| OS1    |   23.48 | *24.74* |                      23.26 |    23.45 | 25.40 | *26.64* |                      25.94 |    26.37 |
+| OS2    |   24.74 | *25.07* |                      24.10 |    23.98 | 25.63 | *26.29* |                      26.00 |    26.21 |
+*** 实验结果
+#+ATTR_HTML: :class org-center :style font-size:0.8em
+{{{bbold(字典迁移分类精度(%))}}}
+#+ATTR_HTML: :style font-size:80%;margin:30px auto
+|      |       |         | $\mid\mathbf{b}\mid = 20$ |          |       |         | $\mid\mathbf{b}\mid = 50$ |          |
+| /    |     < |         |                           |        > |     < |         |                           |        > |
+| 任务 |    SC | stroke  |                    kmeans | spectral |    SC | stroke  |                    kmeans | spectral |
+|------+-------+---------+---------------------------+----------+-------+---------+---------------------------+----------|
+| M2O  | 19.36 | *20.69* |                     19.09 |    18.60 | 20.39 | *23.38* |                     20.86 |    21.09 |
+| O2M  | 87.72 | *88.14* |                     87.98 |    88.06 | 93.08 | *93.69* |                     93.44 |    93.67 |
+#+ATTR_HTML: :style font-size:80%;margin:30px auto
+|        |       |         | $\mid\mathbf{b}\mid = 100$ |          |       |         | $\mid\mathbf{b}\mid = 200$ |          |
+| /      |     < |         |                            |        > |     < |         |                            |        > |
+| 数据集 |    SC | stroke  | kmeans                     | spectral |    SC | stroke  |                     kmeans | spectral |
+|--------+-------+---------+----------------------------+----------+-------+---------+----------------------------+----------|
+| M2O    | 20.43 | *23.19* | 20.93                      |    21.48 | 18.62 | *24.63* |                      22.57 |    22.82 |
+| O2M    | 96.03 | 96.00   | *96.11*                    |    95.81 | 96.11 | *96.39* |                      96.19 |    96.22 |
+*** 实验结果
+#+ATTR_HTML: :class org-center :style font-size:0.8em
+{{{bbold(印度语手写字符原语学习结果)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/lasin/dev_all.svg" style="margin:-22px auto;box-shadow:none"/>
+** 小结
+- 提出了LASIN方法
+  - 将FOL领域知识嵌入机器学习优化过程;
+  - 将FOL领域知识转化转化为对假设空间的约束.
+{{{begin_div(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:180px;margin:30px auto,,1)}}}
+{{{rbold(相关成果已经发表)}}}
+- _W.-Z. Dai_ and Z.-H. Zhou. Combining logic abduction and statistical induction: Discovering written primitives with human knowledge. In: *Proceedings of the 31st AAAI Conference on Artificial Intelligence (AAAI’17)*, San Francisco, CA, 2017, pp.4392-4398. /(CCF-A类会议)/
+{{{end_div()}}}
+* 第{{{rbold(4)}}}章{{{nl()}}}{{{nl()}}}一种机器学习驱动的{{{nl()}}}领域知识精化方法
+** 领域知识精化
+- {{{bbold(目标)}}}: 从数据中学习一组描述目标概念的逻辑规则.
+{{{begin_div()}}}
+\begin{equation}
+B\cup H\models E.
+\end{equation}
+{{{end_div()}}}
+- {{{rbold(常见方法:)}}}
+  - 归纳逻辑程序设计(ILP) {{{bsup([107])}}};
+    - 概率归纳逻辑程序设计(PILP) {{{bsup([34])}}};
+  - 统计关系学习(SRL) {{{bsup([54])}}}
+{{{begin_div(popupbox-blue fragment fade-in,width:76%;font-weight:bold,,1)}}}
+{{{p(0)}}}实际任务中大量存在非逻辑符号表示的数据,{{{nl}}} 以上方法均难以适用.{{{wsup([145\,16])}}}{{{ep}}}
+{{{end_div()}}}
+{{{begin_div(remarkbox,position:absolute;width:300px;top:48%;right:0)}}}
+{{{p(0)}}}此类方法中的 $B$, $H$ 和 $E$ 均为FOL公式与事实.{{{ep}}}
+{{{end_div()}}}
+** 机器学习驱动知识精化
+{{{bbold(形式化)}}}
+\[
+KB\cup \color{#981E32}{D}\cup\{\color{#981E32}{f}\}\cup H \models \color{#981E32}{E}.
+\]
+{{{begin_div(fragment fade-in,,,1)}}}
+{{{rbold(符号表示)}}}
+{{{begin_div(,font-size:0.8em)}}}
+#+ATTR_REVEAL: :frag (appear appear appear appear appear) :frag_idx (2 2 3 4 5)
+- $KB$: 领域知识;
+- $H$: 假设模型;
+- {{{rbold($D$)}}}: $\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m\}$ 为训练样本, 其中 $\mathbf{x}_i\in\mathcal{X}$, 而 $\mathcal{X}$ 为 *非符号表示* 的输入空间, 如图像、波形、向量等等.
+- {{{rbold($E$)}}}: $\{y_1,y_2,\ldots,y_m\}$ 为每个样例的标记;
+- {{{rbold($f:\mathcal{X}\mapsto \Gamma$)}}}: 可从 $D$ 中提取基本事实的 *机器学习模型*, 其中 $\Gamma$ 表示 $KB$ 的Herbrand域{{{bsup([43])}}}.
+{{{end_div}}}
+{{{end_div}}}
+*** KRL方法
+{{{bbold(Knowledge Refinement by Learning)}}}
+{{{begin_div(fragment fade-in,,,1)}}}
+- 使用机器学习模型从样本中提取必要的逻辑事实 $F$，以对 $KB$ 进行增广.
+{{{begin_div()}}}
+\[
+KB\cup \color{#981E32}{F}\models D
+\]
+{{{end_div()}}}
+{{{end_div()}}}
+{{{begin_div(fragment fade-in,,,3)}}}
+{{{rbold($F$ 为 $D$ 中采样得到的具体事实，可通过反绎推理获取.)}}}
+{{{end_div()}}}
+{{{begin_div(fragment fade-in,,,2)}}}
+- 对增广后的 $KB\cup F$ 使用基于FOL表示的机器学习方法进行知识精化.
+{{{begin_div()}}}
+\[
+KB\cup F\cup\color{#981E32}{H}\models E
+\]
+{{{end_div()}}}
+{{{end_div()}}}
+{{{begin_div(fragment fade-in,,,4)}}}
+{{{rbold($H$ 为FOL规则，可通过归纳推理学得.)}}}
+{{{end_div()}}}
+*** 基于机器学习的领域知识增广
+- {{{rbold(目标)}}}：使用机器学习模型从样本中提取必要的逻辑事实，以对 $KB$ 进行增广.
+{{{begin_div()}}}
+\[
+KB\cup \color{#981E32}{F}\models D
+\]
+{{{end_div()}}}
+{{{begin_div(fragment fade-in,,,1)}}}
+- {{{bbold(难点)}}}: $D$ 为 *非符号表示* 的样本, 无法直接用于反绎推理.
+{{{begin_div(remarkbox fragment fade-in,,,2)}}}
+对每个样本 $\mathbf{x}_i\in D$ 利用机器学习模型 $f$ 对 $D$ 进行采样，以获得具体逻辑事实 $F$.
+{{{begin_div(,width:100%)}}}
+\begin{equation}
+KB\cup F\models f(\mathbf{x}_i)
+\end{equation}
+{{{end_div()}}}
+{{{begin_div(fragment fade-in,width:100%,,3)}}}
+可根据反绎推理（主动假设检验）的特点, 实现按需采样.
+{{{end_div()}}}
+{{{end_div()}}}
+{{{end_div()}}}
+*** 基于机器学习的领域知识精化
+- {{{rbold(目标)}}}：对增广后的 $KB\cup F$ 使用基于FOL表示的机器学习方法进行知识精化.
+{{{begin_div()}}}
+\[
+KB\cup F\cup\color{#981E32}{H}\models E
+\]
+{{{end_div()}}}
+{{{begin_div(remarkbox fragment fade-in,margin:20px auto,,2)}}}
+*元解释学习(Meta-Interpretive Learning)* {{{bsup([114])}}}
+{{{begin_div(,width:100%)}}}
+ \begin{align*}
+          &prove([], Prog, Prog)\leftarrow.\\
+          &prove([Atom|As], Prog1, Prog2)\leftarrow\\
+          &\quad metarule(Name,MetaSub, (Atom\leftarrow Body), Order)\\
+          &\quad\wedge Order\\
+          &\quad\wedge save\_subst(metasub(Name,MetaSub), Prog1, Prog3)\\
+          &\quad\wedge prove(Body, Prog3, Prog4)\\
+          &\quad\wedge prove(As, Prog4, Prog2).
+\end{align*}
+{{{end_div()}}}
+{{{end_div()}}}
+** 实验验证
+{{{bbold(任务: 视觉概念精化)}}}
+{{{begin_div(fragment fade-in,,,1)}}}
+- *输入:*
+#+REVEAL_HTML: <img src="./figs/dissertation/logvis/ex_regular.svg" width=500px style="margin:20px auto" />
+{{{end_div()}}}
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (2 3)
+- *输出:* 一组逻辑规则, 形式化描述图片中的目标概念
+  - 如“正多边形是内角全部相等的多边形”.
+*** 机器学习模型与领域知识
+- *机器学习模型*: 采样图中的 "点".
+  - 无噪声: Sobel算子
+  - 有噪声: 前/背景分割模型{{{bsup([176])}}}
+{{{begin_div(fragment fade-in,,,1)}}}
+- *领域知识*: 基本几何概念（点、线、面、圆、角度、亮度等等）, 实现按需采样的反绎逻辑程序.
+{{{begin_div(remarkbox)}}}
+\begin{align}
+\mathbf{polygon}(Pol_i,[Edge_1,\ldots,Edge_n])&\leftarrow\mathbf{edge}(Edge_1)\wedge\ldots\wedge \mathbf{edge}(Edge_n)\nonumber\\
+  &\hspace{-3em}\wedge \mathbf{connected}(Edge_1,Edge_2)\wedge\ldots\wedge \mathbf{connected}(Edge_n,Edge_1).
+\end{align}
+{{{end_div()}}}
+{{{end_div()}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/logvis/fit-tri.svg" style="height: 200px;margin:10px auto;box-shadow:none;" class="fragment fade-in" data-fragment-index=2 />
+*** 实验设置
+- {{{bbold(实验数据)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/logvis/data-all.svg" style="height:340px;margin:10px auto;box-shadow:none" />
+{{{begin_div(fragment fade-in,,,1)}}}
+- {{{rbold(目标概念)}}}
+  - 多边形定义: =triangle=, =quadrilateral=, =pentagon=, =hexagon=, =regular=, =right_triangle=
+  - 光源与位置: =light_source=, =light_source_angle=
+{{{end_div()}}}
+*** 实验结果
+{{{bbold(三角形概念)}}}
+{{{begin_div(,font-size:0.9em)}}}
+\begin{align}
+  \mathbf{triangle_2}(A,C,H)&\leftarrow \mathbf{rmv\_rdndnt}(A,B,C)\wedge \mathbf{\color{#981E32}{list\_length}}(B,H).\\
+  \mathbf{triangle_1}(A,A2,B2)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{triangle\_2}(B,A2,B2).\\
+  \mathbf{triangle}(A)&\leftarrow \mathbf{triangle_0}(A,0.04,\mathbf{\color{#981E32}{3}}).\\
+  \mathbf{triangle_1}(A,G)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{list\_length}(B,G).\\
+  \mathbf{triangle}(A)&\leftarrow \mathbf{triangle}_1(A,\mathbf{\color{#981E32}{3}}).
+\end{align}
+{{{begin_div()}}}
+{{{begin_div(fragment fade-in,,,1)}}}
+{{{bbold(正多边形概念)}}}
+{{{begin_div(,font-size:0.8em)}}}
+\begin{align}
+  \mathbf{regular\_poly_2}(A,G)&\leftarrow \mathbf{angles\_list}(A,B)\wedge \mathbf{\color{#981E32}{std\_dev\_bounded}}(B,G).\\
+  \mathbf{regular\_poly_1}(A,A2)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{regular\_poly_2}(B,A2).\\
+  \mathbf{regular\_poly}(A)&\leftarrow \mathbf{regular\_poly_1}(A,\mathbf{\color{#981E32}{0.02}})
+\end{align}
+{{{end_div()}}}
+{{{end_div()}}}
+{{{begin_div(popupbox fragment fade-in,width:800px;;padding:30px;position:absolute;top:40%;left:7%,,2)}}}
+与其他图像识别方法相比，习得模型不仅更具可理解性，在图片分类精度上也更高.
+{{{end_div()}}}
+#+BEGIN_NOTES
+的确学会了多边形概念的形式化定义.
+#+END_NOTES
+*** 实验结果
+{{{bbold(天文与显微镜图片中的光照角度)}}}
+
+\begin{align}
+\mathbf{clock\_angle}(A,B,C)&\leftarrow \mathbf{clock\_angle_1}(A,B,D)\\
+&\wedge\mathbf{\color{#981E32}{light\_source\_angle}}(A,D,C).\\
+\mathbf{clock\_angle_1}(A,B,C)&\leftarrow \mathbf{highlight}(A,B)\wedge \mathbf{clock\_angle_2}(A)\\
+&\wedge\mathbf{clock\_angle_3}(C).\\
+\mathbf{\color{#981E32}{clock\_angle_2}}(Obj).&\\
+\mathbf{\color{#981E32}{clock\_angle_3}}(Light).&
+\end{align}
+
+{{{begin_div(popupbox fragment fade-in,width:560px;font-size:0.8em;padding: 10px 30px;,,1)}}}
+*谓词发明*:
+- $\mathbf{clock\_angle_2}$: 反光面凹凸性;
+- $\mathbf{clock\_angle_3}$: 光源名称.
+{{{end_div}}}
+*** 模型重用
+{{{bbold(直角三角形概念(重用三角形概念))}}}
+
+{{{begin_div(,font-size:0.8em)}}}
+\begin{align}
+  \mathbf{right\_tri_3}(A,G,H)&\leftarrow \mathbf{angles\_list}(A,B)\wedge \mathbf{has\_angle}(B,G,H).\\
+  \mathbf{right\_tri_2}(A,A2,B2)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{right\_tri_3}(B,A2,B2).\\
+  \mathbf{right\_tri_1}(A,A2,B2)&\leftarrow \mathbf{right\_tri_2}(A,A2,B2)\wedge \mathbf{\color{#981E32}{triangle}}(A).\\
+  \mathbf{right\_tri}(A)&\leftarrow \mathbf{right\_tri_1}(A,0.5,0.015).
+\end{align}
+{{{end_div()}}}
+{{{begin_div(fragment fade-in,,,1)}}}
+{{{bbold(环形山光照歧义(重用光照角度概念))}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/logvis/ambi.svg" style="margin:-15px auto;box-shadow:none;" height=300px/>
+{{{end_div()}}}
+#+BEGIN_NOTES
+得益于FOL的表达能力，基于逻辑表示学习的模型能够将学得的模型可以作为领域知识被直接重用于其他任务。
+
+一个有趣的例子便是将光照角度的概念重用在类型完全不同的图像里。
+#+END_NOTES
+** 小结
+- 提出了KRL方法
+  - 利用机器学习模型对FOL领域知识进行增广;
+  - 需求数据量少，学得模型能够直接重用.
+{{{begin_div(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:360px;margin:30px auto,,1)}}}
+{{{rbold(相关成果已经发表)}}}
+- _W.-Z. Dai_, S. H. Muggleton, J. Wen, A. Tamaddoni-Nezhad and Z.-H. Zhou. Logical vision: One-Shot Meta-Interpretive Learning on Real Images. In: *Proceedings of the 27th International Conference on Inductive Logic Programming (ILP’17)*, Orleans, France, 2017, pp.46-62. /(CCF-C类, 归纳逻辑程序设计领域旗舰会议)/
+- _W.-Z. Dai_, S. H. Muggleton, and Z.-H. Zhou. Logical vision: Meta-interpretive learning for simple geometrical concepts. In: *Proceedings of the 25th International Conference on Inductive Logic Programming (ILP’15)*. Kyoto, Japan, 2015, pp.1-16. /(CCF-C类, 归纳逻辑程序设计领域旗舰会议)/
+- S. H. Muggleton, _W.-Z. Dai_, C. Sammut, A. Tamaddoni-Nezhad, J. Wen, and Z.-H. Zhou. Meta-interpretive learning from noisy images. *Machine Learning*. 107(7): 749-766, 2018. (机器学习领域重要国际期刊)
+{{{end_div()}}}
+* 第{{{rbold(5)}}}章{{{nl()}}}{{{nl()}}}一种领域知识与机器学习{{{nl()}}}互促结合框架
+** 领域知识与机器学习互促结合
+** Neural Logical Machine
 ** 实验验证
 ** 小结
-- {{{bbold(现状)}}}
-  - KBANN
-- {{{rbold(难点)}}}
-* 第{{{rbold(4)}}}章{{{nl()}}}{{{nl()}}}一种机器学习驱动的{{{nl()}}}领域知识精化方法
-** 
-- {{{bbold(现状)}}}
-  - 分层学习
-  - 神经网络的逻辑规则抽取
-- {{{rbold(难点)}}}
-  - 需要大量预训练数据
-* 第{{{rbold(5)}}}章{{{nl()}}}{{{nl()}}}一种领域知识与机器学习{{{nl()}}}互促结合框架
 * 总结

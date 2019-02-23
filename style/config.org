@@ -28,6 +28,8 @@
 # macros
 #+macro: cmt @@comment:$1@@
 #+MACRO: nl @@html:<br \>@@
+#+MACRO: p @@html:<p style="margin:$1">@@
+#+MACRO: ep @@html:</p>@@
 #+MACRO: begin_div @@html:<div class="$1" style="$2" id="$3" data-fragment-index="$4">@@
 #+MACRO: end_div @@html:</div>@@
 #+MACRO: img @@html:<img src="$1" width="$2" height="$3" class="$4" style="$5" />@@
@@ -51,6 +53,7 @@
 #+MACRO: bsmall @@html:<font color="#1A53A1"><small>$1</small></font>@@
 #+MACRO: rsup @@html:<font color="#981E32"><sup>$1</sup></font>@@
 #+MACRO: bsup @@html:<font color="#1A53A1"><sup>$1</sup></font>@@
+#+MACRO: wsup @@html:<font color="#FFF"><sup>$1</sup></font>@@
 #+MACRO: rmark @@html:<mark style="background-color: #981E32;">$1</mark>@@
 #+MACRO: bmark @@html:<mark style="background-color: #1A53A1;">$1</mark>@@
 

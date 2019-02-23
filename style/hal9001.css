@@ -127,8 +127,8 @@ body {
     font-weight: bold;
     text-align: center;
     line-height: 1.5;
-    width: 90%;
-    margin: 0 5% auto;
+    width: 100%;
+    margin: 0 auto;
     border-bottom: solid #981E32 0.1em;
 }
 

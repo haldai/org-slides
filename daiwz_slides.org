@@ -58,7 +58,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
     <img class="fragment appear" data-fragment-index=2 src="http://5b0988e595225.cdn.sohucs.com/images/20170727/a6fbd258cec24b81aa29da7747a633c9.png" height=180 width=320 />    
     <img src="https://www.citibank.com.sg/citigold/images/insights/infograph-1a.gif" height=180 width=280 />
     <img class="fragment appear" data-fragment-index=3 src="./figs/dissertation/trump.png" height=180 width=380 />
-    <img class="fragment appear" data-fragment-index=1 src="https://storage.googleapis.com/deepmind-live-cms/documents/sc2-agent-vis%2520%25281%2529.gif" height=180 width=auto />
+    <img class="fragment appear" data-fragment-index=1 src="./figs/dissertation/sc2.gif" height=180 width=auto />
     <img class="fragment appear" data-fragment-index=1 src="https://thumbs.gfycat.com/DeliciousWeepyBullfrog-small.gif" height=180 width=340 />
     <img class="fragment appear" data-fragment-index=1 src="https://thumbs.gfycat.com/AmusingConfusedBobwhite-max-1mb.gif" height=180 width=auto />    
 </div>
@@ -371,7 +371,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 # {{{ed()}}}
 # {{{d(rightcol fragment fade-in,,,7)}}}
 # #+ATTR_HTML: :style margin:5px auto;
-#[[./figs/dissertation/mln.png]] 
+# [[./figs/dissertation/mln.png]] 
 # {{{d(scalebox60 flex-box,flex-direction:column;margin:0;flex-wrap:none auto;width:450px;height:600px)}}}
 # \begin{align}
 # \mathbf{friends}(X,Z)\leftrightarrow&\mathbf{friends}(X,Y)\\

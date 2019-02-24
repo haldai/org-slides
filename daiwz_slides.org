@@ -14,6 +14,7 @@
 #+BEGIN_EXPORT html
 <section id="slide-title">
 <img src="./figs/dissertation/nju.jpg" style="position:absolute;top:5%;right:5%;width:300px;box-shadow:none" />
+<img src="./figs/dissertation/lamda.png" style="position:absolute;top:5%;right:37%;width:200px;box-shadow:none" />
 <div class="talk-title">
     <p style="font-size:0.8em;color:rgba(0,0,0,0.6)">博士论文答辩汇报</p>
     <h1 class="no-toc-progress">一阶逻辑领域知识<br>与机器学习的结合研究</h1>
@@ -63,8 +64,8 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 </div>
 #+END_EXPORT
 *** 早期人工智能
-{{{begin_div(flexbox)}}}
-{{{begin_div(leftcol60)}}}
+{{{d(flexbox)}}}
+{{{d(leftcol60)}}}
 - 一般问题求解:
   - General Problem Solver, 1957
   - 自动定理证明, 1960s
@@ -72,11 +73,11 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
   - 专家系统, 1960s
   - 逻辑程序, 1970s
   - "五代机", 1980s
-{{{end_div()}}}
-{{{begin_div(rightcol40)}}}
+{{{ed()}}}
+{{{d(rightcol40)}}}
 [[http://diva.library.cmu.edu/Newell/newell-simon.jpg]]
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
 #+ATTR_HTML: :class org-center fragment appear
 {{{bbold(“推理引擎+领域知识”)}}}
 #+BEGIN_NOTES
@@ -94,12 +95,12 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 
 #+ATTR_HTML: :class org-center fragment appear
 {{{bbold(解决办法: 通过计算、利用经验来改善系统自身性能)}}}
-*** 机器学习
-{{{begin_div(flexbox)}}}
-{{{begin_div(leftcol40)}}}
+** 机器学习
+{{{d(flexbox)}}}
+{{{d(leftcol40)}}}
 [[./figs/dissertation/ml.svg]]
-{{{end_div()}}}
-{{{begin_div(rightcol60)}}}
+{{{ed()}}}
+{{{d(rightcol60)}}}
 \[
 \min_f E_{\langle x,y\rangle\sim D}loss(f(x),y)
 \]
@@ -111,47 +112,32 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
     <img class="fragment appear" data-fragment-index=3 src="https://cdn-images-1.medium.com/max/1600/1*Nx6IyGfRAV1ly6uDGnVCxQ.gif" width=230px height=220px>
 </div>
 #+END_EXPORT
-{{{end_div}}}
-{{{end_div}}}
+{{{ed}}}
+{{{ed}}}
 #+BEGIN_NOTES
 机器学习的目标，代表性模型有神经网络、支持向量机、决策树等监督学习方法，以及非监督学习方法
 #+END_NOTES
-** 机器学习中待解决的问题
-{{{begin_div(flexbox)}}}
-{{{begin_div(leftcol)}}}
+** 待解决的问题
+{{{d(flexbox)}}}
+{{{d(leftcol)}}}
 - 可理解性
   - Human Aware AI: [[https://aaai.org/Library/Workshops/ws17-10.php][AAAI'17 WS]], [[http://rakaposhi.eas.asu.edu/haai-aaai/AAAI-Presidential-Address-final.pdf][AAAI'18 Presidential Adress]].
   - Interpretable Machine Learning: [[https://nips.cc/Conferences/2017/Schedule?showEvent=8744][NIPS'17 WS]], [[https://sites.google.com/site/nips2016interpretml/][NIPS'16 WS]].
   - Explainable AI (XAI): [[http://home.earthlink.net/~dwaha/research/meetings/faim18-xai/][IJCAI'18 WS]], [[http://home.earthlink.net/~dwaha/research/meetings/ijcai17-xai/][IJCAI'17 WS]], [[https://www.darpa.mil/program/explainable-artificial-intelligence][DARPA Program]].
   - Human in the Loop Machine Learning: [[https://machlearn.gitlab.io/hitl2017/][ICML'17 WS]].
-{{{end_div()}}}
-{{{begin_div(rightcol)}}}
+{{{ed()}}}
+{{{d(rightcol)}}}
 {{{img(https://imgs.xkcd.com/comics/machine_learning.png, 100%, auto)}}}
-{{{end_div()}}}
-{{{end_div()}}}
-*** TODO 可理解性的来源
-{{{begin_div(flexbox)}}}
-{{{begin_div(leftcol)}}}
-- 机器学习模型本身的结构
-  - 逻辑规则，决策树
-  - 图模型
-  - 线性模型
-  - 核方法
-  - 深度神经网络
-{{{end_div()}}}
-{{{begin_div(rightcol)}}}
-- 领域知识的形式
-  - 特征
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
 ** 一种可能的解决方案
 #+ATTR_HTML: :class org-center
 {{{rbold(将机器学习与一阶逻辑表示的知识相结合)}}}
 
-{{{begin_div(flexbox-center,font-size:80%)}}}
+{{{d(flexbox-center,font-size:80%)}}}
 #+ATTR_HTML: :class fragment appear :data-fragment-index 1 :style text-align:left
 *一阶逻辑* (First-Order Logic, FOL)是一种[[https://zh.wikipedia.org/zh-cn/%25E5%25BD%25A2%25E5%25BC%258F%25E8%25AF%25AD%25E8%25A8%2580][形式语言]].
-{{{begin_div(leftcol60)}}}
+{{{d(leftcol60)}}}
 #+ATTR_REVEAL: :frag (appear appear appear appear appear appear appear) :frag_idx (2 2 2 3 3 4 5)
 - 常量: $socrates$
 - 变量: $X,Y,\ldots$
@@ -160,29 +146,29 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 - {{{rbold(量词)}}}: $\forall$, $\exists$
 - 项: $man(socrates)$, $mortal(X)$, $\ldots$
 - {{{rbold(公式)}}}: $\forall X(mortal(X)\leftarrow man(X)).$
-{{{end_div()}}}
-{{{begin_div(rightcol40)}}}
+{{{ed()}}}
+{{{d(rightcol40)}}}
 #+ATTR_HTML: :height 400px :class fragment appear :data-fragment-index 1
 [[http://www.quickmeme.com/img/a3/a31f18eace4a2930460d85351cb584fc88ff5971bddf657816ce54115d9e7cfd.jpg]]
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
 #+BEGIN_NOTES
 什么是一阶逻辑
 #+END_NOTES
-*** 引入FOL领域知识的好处
-{{{begin_div(flexbox)}}}
-{{{begin_div(leftcol60)}}}
-{{{begin_div(scalebox90,font-size:0.8em)}}}
+*** FOL领域知识
+{{{d(flexbox)}}}
+{{{d(leftcol60)}}}
+{{{d(scalebox90,font-size:0.8em)}}}
 {{{bold(目标概念)}}}/{{{rbold(发明谓词)}}}/{{{bbold(领域知识)}}}:
 \begin{align}
 \mathbf{stair}(P)\leftarrow&\color{#981E32}{\mathbf{s}_1}(P).\\
 \mathbf{stair}([X,Y,Z|P])\leftarrow&\color{#981E32}{\mathbf{s}_1}(X,Y,Z)\wedge\mathbf{stair}([Z|P]).\\
 \color{#981E32}{\mathbf{s}_1}(X,Y,Z)\leftarrow& \color{#1A53A1}{\mathbf{hori}}(X,Y)\wedge\color{#1A53A1}{\mathbf{vert}}(Y,Z).
 \end{align}
-{{{end_div()}}}
+{{{ed()}}}
 #+REVEAL_HTML: <img src="./figs/dissertation/stairs.svg" height=300px style="box-shadow:none;position:relative;left:21%"/>
-{{{end_div()}}}
-{{{begin_div(rightcol40)}}}
+{{{ed()}}}
+{{{d(rightcol40)}}}
 #+ATTR_REVEAL: :frag (appear)
 1. 良好的{{{rbold(可理解性)}}}
    - 模型形式为 $A\leftarrow B_1\wedge\ldots\wedge B_n$
@@ -192,34 +178,32 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
    - 强于函数形式表达的优化约束
 3. 优秀的{{{rbold(推理能力)}}}
    - 是完备的形式系统
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
 #+BEGIN_NOTES
 完备的，意味着所有真命题都可以通过有限步推理证明；那些不可判定的均为假命题。
 #+END_NOTES
-*** 引入FOL领域知识的其他好处
-{{{begin_div(flexbox)}}}
-{{{begin_div(leftcol)}}}
+*** FOL领域知识
+{{{d(flexbox)}}}
+{{{d(leftcol)}}}
 - 可重用性
-  - 迁移学习（Transfer Learning）
-  - 类比推理（Analogical Reasoning）
-  - 学件（Learnware）
-  - 通用人工智能（Artificial General Intelligence）
-- 训练数据量
-  - 强化学习（Reinforcement Learning）
-{{{end_div()}}}
-{{{begin_div(rightcol)}}}
+  - 知识迁移
+  - 类比推理
+  - 学件
+  - 通用人工智能
+- 降低训练数据量需求
+{{{ed()}}}
+{{{d(rightcol)}}}
 {{{img(./figs/dissertation/learnware.png, 100%, auto)}}}
-{{{end_div()}}}
-{{{end_div()}}}
-*** TODO FOL知识解决了前面的问题
+{{{ed()}}}
+{{{ed()}}}
 ** 本文工作
-{{{begin_div(flexbox-center)}}}
+{{{d(flexbox-center)}}}
 [[./figs/dissertation/chpts.svg]]
-{{{end_div()}}}
+{{{ed()}}}
 *** 领域知识辅助机器学习
-{{{begin_div(flexbox)}}}
-{{{begin_div(leftcol65)}}}
+{{{d(flexbox)}}}
+{{{d(leftcol65)}}}
 - {{{rbold(任务目标)}}}:
   #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (1 1 2)
   - FOL领域知识完备{{{rawesome(087)}}}
@@ -234,9 +218,9 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
   #+ATTR_REVEAL: :frag (appear appear) :frag_idx (7 7)
   - 第二章：领域知识增广样本（SUL）
   - 第三章：领域知识辅助约束（LASIN）
-{{{end_div()}}}
-{{{begin_div(rightcol40)}}}
-{{{begin_div(scalebox90,font-size:0.8em)}}}
+{{{ed()}}}
+{{{d(rightcol40)}}}
+{{{d(scalebox90,font-size:0.8em)}}}
 #+BEGIN_EXPORT html
 <img src="./figs/dissertation/lasin/data_1.svg" width=200px height="auto" style="position:fixed;right:20%" class="fragment fade-out" data-fragment-index=3 />
 <div class="fragment fade-out" data-fragment-index=3>
@@ -253,16 +237,16 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 &\hspace{2em}\wedge\mathbf{angle}(\mathbf{AB},\mathbf{BC})<\alpha\\
 &\hspace{2em}\wedge\mathbf{stroke}([B,C|T]).
 \end{align}
-{{{end_div()}}}
+{{{ed()}}}
 #+BEGIN_EXPORT html
 <img class="fragment fade-out" data-fragment-index=3 style="position:relative" width="350" height="auto" src="./figs/dissertation/lasin/origin_dict.svg" />
 <img class="fragment fade-in" data-fragment-index=3 style="position:fixed;margin:5px;right:0" width="350" height="auto" src="./figs/dissertation/lasin/stroke_dict.svg" />
 #+END_EXPORT
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
 *** 机器学习驱动领域知识精化
-{{{begin_div(flexbox)}}}
-{{{begin_div(leftcol65)}}}
+{{{d(flexbox)}}}
+{{{d(leftcol65)}}}
 - {{{rbold(任务目标)}}}:
   #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (1 1 2)
   - FOL领域知识不完备{{{rawesome(165)}}}
@@ -275,9 +259,9 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 - {{{bold(本文工作)}}}:
   #+ATTR_REVEAL: :frag (appear) :frag_idx (6)
   - 第四章：机器学习驱动领域知识精化方法（KRL）
-{{{end_div()}}}
-{{{begin_div(rightcol40)}}}
-{{{begin_div(scalebox90,font-size:0.8em)}}}
+{{{ed()}}}
+{{{d(rightcol40)}}}
+{{{d(scalebox90,font-size:0.8em)}}}
 #+ATTR_REVEAL: :frag fade-out :frag_idx 3
 \begin{align}
 &\mathbf{polygon}(p1,[(0,0),(0,1),\ldots]).\\
@@ -287,7 +271,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 &\mathbf{regular}(p3).\\
 &\ldots
 \end{align}
-{{{end_div()}}}
+{{{ed()}}}
 #+BEGIN_EXPORT html
 <img src="./figs/dissertation/logvis/ex_regular.svg" width=350px height="auto" style="position:fixed;top:25%;right:0%" class="fragment fade-in" data-fragment-index=3 />
 <div>
@@ -295,7 +279,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 <div style="position:fixed;top:47.5%;right:12%;font-size:0.8em">精化</div>
 </div>
 #+END_EXPORT
-{{{begin_div(scalebox90,font-size:0.8em)}}}
+{{{d(scalebox90,font-size:0.8em)}}}
 \begin{align}
 &\mathbf{regular\_poly_2}(A,G)\leftarrow\\
 &\hspace{2em}\mathbf{angles\_list}(A,B)\\
@@ -306,12 +290,12 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 &\mathbf{regular\_poly}(A)\leftarrow\\
 &\hspace{2em}\mathbf{regular\_poly_1}(A,0.02).
 \end{align}
-{{{end_div()}}}
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{ed()}}}
 *** 领域知识与机器学习互促结合
-{{{begin_div(flexbox)}}}
-{{{begin_div(leftcol65)}}}
+{{{d(flexbox)}}}
+{{{d(leftcol65)}}}
 - {{{rbold(任务目标)}}}:
   #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (1 1 2)
   - FOL领域知识不完备{{{rawesome(165)}}}
@@ -324,152 +308,147 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 - {{{bold(本文工作)}}}:
   #+ATTR_REVEAL: :frag (appear appear) :frag_idx (5)
   - 第五章：领域知识与机器学习{{{nl()}}}互促结合（反绎学习）
-{{{end_div()}}}
-{{{begin_div(rightcol40)}}}
-{{{begin_div(flexbox-center)}}}
+{{{ed()}}}
+{{{d(rightcol40)}}}
+{{{d(flexbox-center)}}}
 #+BEGIN_EXPORT html
 <img src="./figs/dissertation/al/before_learn.svg" class="fragment fade-out" style="box-shadow:none;position:fixed;right:0;" data-fragment-index=3 width=350px height=auto />
 <img src="./figs/dissertation/al/after_learn.svg" class="fragment fade-in" style="box-shadow:none;position:fixed;right:0" data-fragment-index=3 width=350px height=auto />
 #+END_EXPORT
-{{{end_div()}}}
-{{{end_div()}}}
-{{{end_div()}}}
-* 第{{{rbold(2)}}}章{{{nl()}}}{{{nl()}}}一种领域知识增广样本的{{{nl()}}}机器学习方法
+{{{ed()}}}
+{{{ed()}}}
+{{{ed()}}}
+* 第{{{rbold(2)}}}章{{{p}}}一种领域知识增广样本的{{{nl()}}}机器学习方法{{{ep}}}
 ** 机器学习中的领域知识
-{{{begin_div(flexbox-start)}}}
-{{{begin_div(leftcol)}}}
+{{{d(flexbox-start)}}}
+{{{d(leftcol)}}}
 {{{bbold(常见的领域知识：)}}}
-#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 9)
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 2)
 - *类型*:
-  #+ATTR_REVEAL: :frag (appear appear appear appear) :frag_idx (2 3 4 8)
-  - 模型选择
-  - 特征工程  
-  - 目标函数
-    #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (5 6 7)
-    - 损失函数
-    - 正则化项
-    - 函数空间约束
-  - 先验分布
-- *特点*: 一般连续可微
-#+ATTR_HTML: :class fragment appear :data-fragment-index 19
+  - 模型选择;
+  - 特征工程; 
+  - 目标函数;
+    - 损失函数;
+    - 正则化项;
+    - 函数空间约束;
+  - 先验分布;
+- *特点*: 一般连续可微.
+#+ATTR_HTML: :class fragment appear :data-fragment-index 5
 {{{bbold(常用于SVM、NN，<br />一般作为凸优化约束)}}}
-{{{end_div()}}}
-{{{begin_div(rightcol)}}}
+{{{ed()}}}
+{{{d(rightcol)}}}
 {{{rbold(FOL领域知识：)}}}
-#+ATTR_REVEAL: :frag (appear appear) :frag_idx (10 18)
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (3 4)
 - *类型*:
-  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (11 14 17)
-  - 标记间的关系
-    #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (12 13)
-    - 层次标记
-    - 相关性
-  - 特征间的关系
-    #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (15 16)
-    - 因果关系
-    - 相关性
-  - 样本间的关系
-- *特点*: 离散，关系型知识
-#+ATTR_HTML: :class org-center fragment appear :data-fragment-index 20 :style padding:9px 0 0 0
+  - 标记间的关系;
+    - 层次标记;
+    - 相关性;
+  - 特征间的关系;
+    - 因果关系;
+    - 相关性;
+  - 样本间的关系;
+- *特点*: 离散，关系型知识.
+#+ATTR_HTML: :class org-center fragment appear :data-fragment-index 6 :style padding:9px 0 0 0
 {{{rbold(常用于统计关系学习，<br />一般作为组合优化约束)}}}
-{{{end_div()}}}
-{{{end_div()}}}
-** 引入FOL领域知识的机器学习方法
-{{{begin_div(flexbox-center)}}}
-{{{begin_div(leftcol)}}}
-#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 3)
-- (概率)归纳逻辑程序((P)ILP){{{bsup([107,34])}}}
-  #+ATTR_REVEAL: :frag (appear) :frag_idx (4)
-  - 模型为FOL规则
-- 统计关系学习(SRL){{{bsup([54])}}}
-  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (5 6)
-  - 将逻辑关系解释为相关性
-  - FOL规则→概率图模型
-{{{begin_div(fragment fade-in,,,8)}}}
-{{{rbold(难点)}}}
-- FOL规则学习和图模型结构学习均为NP难{{{bsup([])}}}
-- 只能用于小数据
-{{{end_div()}}}
-{{{end_div()}}}
-{{{begin_div(rightcol fragment fade-in,,,7)}}}
-#+ATTR_HTML: :style margin:5px auto;
-[[./figs/dissertation/mln.png]]
-{{{begin_div(scalebox60 flex-box,flex-direction:column;margin:0;flex-wrap:none auto;width:450px;height:600px)}}}
-\begin{align}
-\mathbf{friends}(X,Z)\leftrightarrow&\mathbf{friends}(X,Y)\\
-&\wedge \mathbf{friends}(Y,Z).\\
-\mathbf{cancer}(X)\leftarrow&\mathbf{smokes}(X).\\
-\mathbf{smokes}(Y)\leftarrow&\mathbf{smokes}(X)\\
-&\wedge\mathbf{friends}(X,Y).\\
-\mathbf{smokes}(X)\leftarrow&\neg\mathbf{friends}(X).
-\end{align}
-{{{begin_div(,width:700px;font-size:1.19em)}}}
-#+BEGIN_SRC prolog :exports code
-% (P)ILP与SRL使用的关系型数据集
-smokes(alan).      smokes(bob).
-friends(alan,bob). friends(bob,charlie).
-cancer(charlie).
-...
-?- cancer(jack).
-#+END_SRC
-{{{end_div()}}}
-{{{end_div()}}}
-{{{end_div()}}}
-{{{end_div()}}}
-*** 基于FOL表示的机器学习方法
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{ed()}}}
+{{{ed()}}}
+# ** 引入FOL领域知识的机器学习方法
+# {{{d(flexbox-center)}}}
+# {{{d(leftcol)}}}
+# #+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 3)
+# - (概率)归纳逻辑程序((P)ILP){{{bsup([107\,34])}}};
+#   #+ATTR_REVEAL: :frag (appear) :frag_idx (4)
+#   - 模型为FOL规则;
+# - 统计关系学习(SRL){{{bsup([54])}}};
+#   #+ATTR_REVEAL: :frag (appear appear) :frag_idx (5 6)
+#   - 将逻辑关系解释为相关性;
+#   - FOL规则→概率图模型.
+# {{{d(fragment fade-in,,,8)}}}
+# {{{rbold(难点)}}}
+# - FOL规则学习和图模型结构学习均为NP难{{{bsup([24])}}};
+# - 只能在小数据中学习.
+# {{{ed()}}}
+# {{{ed()}}}
+# {{{d(rightcol fragment fade-in,,,7)}}}
+# #+ATTR_HTML: :style margin:5px auto;
+#[[./figs/dissertation/mln.png]] 
+# {{{d(scalebox60 flex-box,flex-direction:column;margin:0;flex-wrap:none auto;width:450px;height:600px)}}}
+# \begin{align}
+# \mathbf{friends}(X,Z)\leftrightarrow&\mathbf{friends}(X,Y)\\
+# &\wedge \mathbf{friends}(Y,Z).\\
+# \mathbf{cancer}(X)\leftarrow&\mathbf{smokes}(X).\\
+# \mathbf{smokes}(Y)\leftarrow&\mathbf{smokes}(X)\\
+# &\wedge\mathbf{friends}(X,Y).\\
+# \mathbf{smokes}(X)\leftarrow&\neg\mathbf{friends}(X).
+# \end{align}
+# {{{d(,width:700px;font-size:1.19em)}}}
+# #+BEGIN_SRC prolog :exports code
+# % (P)ILP与SRL使用的关系型数据集
+# smokes(alan).      smokes(bob).
+# friends(alan,bob). friends(bob,charlie).
+# cancer(charlie).
+# ...
+# ?- cancer(jack).
+# #+END_SRC
+# {{{ed()}}}
+# {{{ed()}}}
+# {{{ed()}}}
+# {{{ed()}}}
+** 以往引入FOL领域知识的机器学习
+{{{d(fragment fade-in,,,1)}}}
 - 领域知识库 $KB$ 由FOL规则组成:
 \[
 A\leftarrow B_1\wedge B_2\wedge\ldots\wedge B_n.
 \]
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,,,2)}}}
+{{{ed()}}}
+{{{d(fragment fade-in,,,2)}}}
 - 假设模型 $H=(\Gamma,\theta)$ 由（带权）FOL规则组成:
 \[
 \color{#981E32}{w::}A\leftarrow B_1\wedge B_2\wedge\ldots\wedge B_n.
 \]
-{{{end_div}}}
+{{{ed}}}
 #+ATTR_REVEAL: :frag (appear) :frag_idx (3)
 - 学习方式:
   1. 更新规则结构 $\Gamma$;
   2. 最大化似然，求解参数 $\theta$;
   3. 若达到终止条件, 输出 $H=(\Gamma,\theta)$; 否则, goto 2.
-{{{begin_div(popupbox fragment fade-in,position:absolute;top:40%;left:4%,,4)}}}
-*目标函数不可微，无法使用梯度下降等速度较快的{{{nl}}}优化方法求解*
-{{{end_div}}}
+{{{d(popupbox fragment fade-in,position:absolute;top:40%;left:4%,,4)}}}
+*可直接引入FOL领域知识. 但目标函数不可微，{{{nl}}}无法使用梯度下降等速度较快的优化方法求解*
+{{{ed}}}
 #+BEGIN_NOTES
 由于领域知识和背景知识采用了相同的形式，归纳逻辑程序设计和统计关系学习均直接对这些领域知识进行利用。
 #+END_NOTES
 *** 常规机器学习方法
-{{{begin_div(flexbox-start)}}}
-{{{begin_div(leftcol60)}}}
+{{{d(flexbox-start)}}}
+{{{d(leftcol60)}}}
 {{{bbold(问题形式化)}}}
-{{{begin_div(fragment fade-in,,,0)}}}
+{{{d(fragment fade-in,,,0)}}}
 - 经验风险最小化
 \begin{equation}
 \min_{h\in\mathcal{H}}\frac{1}{m}\sum_{i=1}^mL(h(\mathbf{x}_i),y_i),
 \end{equation}
-{{{end_div()}}}
-{{{end_div()}}}
-{{{begin_div(rightcol40 fragment fade-in,width:430px,,1)}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{d(rightcol40 fragment fade-in,width:430px,,1)}}}
 {{{rbold(符号表示)}}}
-{{{begin_div(,font-size:0.8em)}}}
+{{{d(,font-size:0.8em)}}}
 $\mathbf{x}_i\in\mathcal{X}$: 样本与样本空间{{{nl()}}}
 $y_i\in\mathcal{Y}$: 标记与标记空间{{{nl()}}}
 $h$: 假设模型{{{nl()}}}
 $\mathcal{H}$: 假设空间{{{nl()}}}
 $L$: 损失函数
-{{{end_div()}}}
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{ed()}}}
 #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (3 4 5)
 1. 利用FOL规则初始化神经网络结构{{{bsup([37\,51\,143\,155])}}};
 2. 端到端学习，将FOL知识作为序列输入{{{bsup([57\,58\,170])}}};
 3. LDA中将FOL知识作为先验分布或后验分布约束，采用SRL类似的方式学习{{{bsup([2\,102])}}}.
-{{{begin_div(popupbox-blue fragment fade-in,position:absolute;top:40%;left:8%,,6)}}}
+{{{d(popupbox-blue fragment fade-in,position:absolute;top:40%;left:8%,,6)}}}
 1. *无法进行真正的逻辑推理*;
 2. *基于嵌入表示的模型难以泛化至未见数据*;
 3. *仅能使用形式十分受限的FOL规则*.
-{{{end_div}}}
+{{{ed}}}
 ** 领域知识增广样本
 #+ATTR_HTML: :class org-center fragment fade-in :data-fragment-index 1
 {{{rbold(将领域知识 $KB$ 增广样本\,<br/>在新的训练数据集中进行学习)}}}
@@ -487,15 +466,15 @@ $L$: 损失函数
 2. (Learning): 在新空间中进行机器学习；
 3. (Folding): 将学得的模型转化为原始问题假设空间中的模型.
 *** 领域知识增广样本
-{{{begin_div(flexbox-start)}}}
-{{{begin_div(leftcol)}}}
+{{{d(flexbox-start)}}}
+{{{d(leftcol)}}}
 {{{bbold(形式化)}}}
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{d(fragment fade-in,,,1)}}}
 \begin{equation}
 B\cup KB\vdash F
 \end{equation}
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,font-size:0.8em,,3)}}}
+{{{ed()}}}
+{{{d(fragment fade-in,font-size:0.8em,,3)}}}
 - 通过 $F$ 提取新特征向量 $\mathbf{u}_i=\langle u_{i1},\ldots,u_{ik}\rangle$, 其中:
 #+ATTR_HTML: :style margin:20px 0
 \begin{equation}
@@ -506,25 +485,25 @@ B\cup KB\vdash F
       \end{aligned}
     \right.
 \end{equation}
-{{{end_div()}}}
-{{{end_div()}}}
-{{{begin_div(rightcol fragment fade-in,,,2)}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{d(rightcol fragment fade-in,,,2)}}}
 {{{rbold(符号表示)}}}
 #+ATTR_HTML: :style font-size:0.8em;line-height:2.3em
 $B=\{\mathbf{x}_1,\ldots,\mathbf{x}_m\}$: 样本(背景知识){{{nl()}}}
 $KB$: 领域知识{{{nl()}}}
 $\vdash$: 逻辑"推出"{{{nl()}}}
 $F=\{f_1,\ldots,f_n\}$: 增广特征
-{{{end_div()}}}
-{{{end_div()}}}
-{{{begin_div(remarkbox fragment fade-in,font-size:0.8em,,4)}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{d(remarkbox fragment fade-in,font-size:0.8em,,4)}}}
 "$\vdash$"可用前向链推理{{{bsup([71])}}}实现, 它表示根据 $B\cup KB$ 演绎推理得到 $F.$ 因此这些特征 $f_i\in F$ 作为推理的“结论”均至少包含一部分 $KB$ 中的语义.
-{{{end_div()}}}
+{{{ed()}}}
 ** 实验验证
 {{{bbold(任务：统计关系学习)}}}
 #+ATTR_REVEAL: :frag (appear) :frag_idx (1)
 - *输入:*
-{{{begin_div(fragment fade-in,font-size:80%;width:100%,,1)}}}
+{{{d(fragment fade-in,font-size:80%;width:100%,,1)}}}
 #+BEGIN_SRC prolog :exports code
 % 基本事实（特征）
 author(class_1000,author_m_kearns_).    haswordauthor(author_kearns_michael_, word_michael).
@@ -539,22 +518,22 @@ samebib(class_693,class_711).
 sametitle(title_warmuth_how_to_use_expert_advice_,title_how_to_use_expert_advice_).
 samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_computing_).
 #+END_SRC
-{{{end_div()}}}
+{{{ed()}}}
 #+ATTR_REVEAL: :frag (appear) :frag_idx (2)
 - *输出:* 带权逻辑规则集 "$w::A\leftarrow B_1\wedge\ldots\wedge B_n$".
 *** 领域知识: 关系型路径
 #+REVEAL_HTML: <img src="./figs/dissertation/sul_graph.svg" style="box-shadow:none;margin:20px auto;position:fixed;left:5%" width=1024px class="fragment fade-out" data-fragment-index=1 />
 #+REVEAL_HTML: <img src="./figs/dissertation/sul_graph1.svg" style="box-shadow:none;margin:20px auto;position:fixed;left:5%" width=1024px class="fragment fade-in" data-fragment-index=1 />
-{{{begin_div(,height:310px;width:1024px)}}}
-{{{end_div()}}}
-{{{begin_div(remarkbox)}}}
+{{{d(,height:310px;width:1024px)}}}
+{{{ed()}}}
+{{{d(remarkbox)}}}
 *关系型路径假设* {{{bsup([139])}}} 对于所有正样本事实中的逻辑常量，在基本事实构成的超图中总存在长度有限的路径连接它们.
 #+ATTR_HTML: :class org-center :style margin:10px auto
 \begin{align}
   \forall i,j\in[1..l](\mathbf{t}(X_1,\ldots,X_l)&\leftarrow i\neq j\wedge \mathbf{path}(X_i,X_j)).\\
   \exists \mathbf{R}(\mathbf{path}(X,Y)&\leftarrow \mathbf{R}(X,Z)\wedge \mathbf{path}(Z,Y)).
 \end{align}
-{{{end_div}}}
+{{{ed}}}
 *** 实验设置
 #+ATTR_REVEAL: :frag (appear)
 - {{{bbold(实验数据)}}}
@@ -608,10 +587,10 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
 *** 实验结果
 #+ATTR_HTML: :class org-center :style font-size:0.8em
 {{{bbold(领域知识复杂度与学习模型(J48)性能的关系)}}}
-{{{begin_div(flexbox)}}}
+{{{d(flexbox)}}}
 #+REVEAL_HTML: <img src="./figs/dissertation/sul/title-len.svg" style="box-shadow:none" width=480px />
 #+REVEAL_HTML: <img src="./figs/dissertation/sul/uw-len.svg" style="box-shadow:none" width=480px />
-{{{end_div()}}}
+{{{ed()}}}
 #+BEGIN_NOTES
 增加路径长度确实对提升 SUL-Path 的表现有所帮助.不过一旦长度超过某个阈值，它带来提升就变得十分有限了.领域知识，关系型路径假设：“有限长度路径”的猜想基本是正确的.
 
@@ -631,10 +610,10 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
   &\hspace{1em}\wedge \mathbf{haswordauthor}(X_1,X_6)\\
   &\hspace{1em}\wedge \mathbf{haswordauthor}(X_2,X_6).
 \end{align}
-{{{begin_div(popupbox fragment fade-in,position:absolute;top:17%;left:7%;font-size:0.8em,,1)}}}
-- $path_0$: 作者 $X_1$ 和 $X_2$ 标题一样的论文；
+{{{d(popupbox fragment fade-in,position:absolute;top:17%;left:7%;font-size:0.8em,,1)}}}
+- $path_0$: 作者 $X_1$ 和 $X_2$ 发表了标题一样的论文；
 - $path_{0,0}$: $X_1$ 和 $X_2$ 的名字中至少还拥有一个相同的单词.
-{{{end_div()}}}
+{{{ed()}}}
 #+BEGIN_NOTES
 借助不同新谓词的组合，SUL-Path可以学得拥有较大长度规则，因此能够表示关系较为复杂的目标概念，这在目前其他的SRL和PILP算法中较难做到。
 #+END_NOTES
@@ -643,11 +622,11 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
   - 将FOL领域知识转化为样本
   - 为常规机器学习方法引入FOL知识
   - 与SRL相比效率更高，可实现谓词发明
-{{{begin_div(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:140px;margin:30px auto,,1)}}}
+{{{d(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:140px;margin:30px auto,,1)}}}
 {{{rbold(相关成果已经发表)}}}
 - _W.-Z. Dai_ and Z.-H. Zhou. Statistical unfolded logic learning. In: *Proceedings of the 7th Asian Conference on Machine Learning (ACML’15)*, Hong Kong, China, 2015, JMLR: W&CP 45, pp. 349-361. /(CCF-C类, 机器学习领域重要国际会议)/
-{{{end_div()}}}
-* 第{{{rbold(3)}}}章{{{nl()}}}{{{nl()}}}一种领域知识辅助约束的{{{nl()}}}机器学习方法
+{{{ed()}}}
+* 第{{{rbold(3)}}}章{{{p}}}一种领域知识辅助约束的{{{nl()}}}机器学习方法{{{ep}}}
 ** SUL学习的不足
 #+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 2)
 - 若领域知识不够强，则转化为样本带来的信息量不够;
@@ -669,28 +648,29 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
   \min\limits_{h\in\mathcal{H}}\quad&\frac{1}{m}\sum_{i=1}^mL(h(\mathbf{x}_i),y_i).\\
   \text{s.t.}\quad& \text{Con}(KB\cup \mathcal{H}).\nonumber
 \end{align}
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{d(fragment fade-in,,,1)}}}
 这里的 $\text{Con}$ 为一致性约束, *"$\models$"* 表示“逻辑满足”:
 \[
 \not\exists\varphi ((\mathcal{H}\cup KB\models \varphi)\wedge(\mathcal{H}\cup KB\models \neg\varphi))
 \]
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,margin:20px auto,,2)}}}
-{{{rbold(难点：)}}}将FOL公式转化为机器学习可利用的约束.
-{{{end_div()}}}
+{{{ed()}}}
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (2 3)
+- {{{rbold(难点：)}}}将FOL公式转化为机器学习可利用的约束;
+- {{{bbold(本文：)}}}通过 *反绎推理* 将FOL公式转化为假设空间约束;
+
 #+BEGIN_NOTES
 表示学得的假设模型与领域知识不产生矛盾
 #+END_NOTES
-*** "盲人摸象"
-#+REVEAL_HTML: <img src="./figs/dissertation/elephant.jpg" style="margin: 20px auto;" />
-#+ATTR_REVEAL: :frag (appear)
-1. 通过{{{rbold(反绎逻辑推理)}}}生成一个假设空间;
-2. 在假设空间中进行机器学习得到候选模型;
-3. 在数据中对候选模型进行检验;
-4. 根据检验结果来选择接受、排除或更新自己的假设.
+# *** "盲人摸象"
+# #+REVEAL_HTML: <img src="./figs/dissertation/elephant.jpg" style="margin: 20px auto;" />
+# #+ATTR_REVEAL: :frag (appear)
+# 1. 通过{{{rbold(反绎逻辑推理)}}}生成一个假设空间;
+# 2. 在假设空间中进行机器学习得到候选模型;
+# 3. 在数据中对候选模型进行检验;
+# 4. 根据检验结果来选择接受、排除或更新自己的假设.
 *** 反绎逻辑推理
 {{{bbold(三种逻辑推理)}}}:
-{{{begin_div(,font-size:0.9em)}}}
+{{{d(,font-size:0.9em)}}}
 \[
 B \cup H \models E.
 \]
@@ -698,19 +678,19 @@ B \cup H \models E.
 1. {{{bold(演绎)}}}: 已知{{{bold(具体)}}}事实 $B$ 与{{{bold(一般)}}}规律 $H$ 推理出{{{bold(具体)}}}结论 $E$;
 2. {{{bold(归纳)}}}: 已知{{{bold(具体)}}}事实 $B$ 与{{{bold(具体)}}}样例 $E$ 归纳出{{{bold(一般)}}}规律 $H$;
 3. {{{rbold(反绎)}}}: 已知{{{bold(一般)}}}规律 $H$ 与{{{bold(具体)}}}事实 $E$ 推理出{{{bold(具体)}}}原因 $B$.
-{{{begin_div(fragment fade-in,,,3)}}}
+{{{d(fragment fade-in,,,3)}}}
 {{{rbold(演绎与反绎的区别：)}}}
 \[
 H\equiv B\rightarrow E.
 \]
 - {{{bold(演绎)}}}是已知前提推出结论;
 - {{{rbold(反绎)}}}是根据结论猜测原因.
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
 *** 反绎逻辑推理
 {{{bbold(鞋子湿了)}}}
 - 是因为下雨还是草坪喷水器？
-{{{begin_div(org-center fragment fade-in,margin:auto,,1)}}}
+{{{d(org-center fragment fade-in,margin:auto,,1)}}}
 #+BEGIN_SRC prolog :exports code
 % 领域知识 KB
 wet_shoes(X) :- wet_grass(X).
@@ -727,9 +707,9 @@ rained_last_night(X), sprinkler_was_on(X) ==> fail.
 sprinkler_was_on(bob) ;
 false.
 #+END_SRC
-{{{end_div()}}}
+{{{ed()}}}
 *** 反绎逻辑推理
-{{{begin_div(remarkbox)}}}
+{{{d(remarkbox)}}}
 *定义3.1 (反绎逻辑程序)* 
 
 反绎逻辑程序是一个三元组 $(KB,A,IC)$, 其中 $KB$ 为 *领域知识*, $A$ 为 *可反绎谓词*, $IC$ 为 *完整性约束*. 当给定观测 *事实* $O$ 时, 能够推理出关于 $A$ 的 *具体* 逻辑事实集合 $\Delta$, 使得：
@@ -737,29 +717,29 @@ false.
 - $\Delta\cup KB\models O$,
 - $\Delta\cup KB\models IC$,
 - $\text{Con}(KB\cup\Delta)$.
-{{{end_div()}}}
-{{{begin_div(org-center fragment fade-in,margin:30px auto,,1)}}}
+{{{ed()}}}
+{{{d(org-center fragment fade-in,margin:30px auto,,1)}}}
 {{{rbold(换言之，$\Delta$ 是基于 $KB$ 对 $O$ 的一种具体“解释”)}}}
-{{{end_div}}}
+{{{ed}}}
 *** 基于反绎推理的假设空间约束
 {{{bbold(形式化)}}}
 \begin{align}
   &KB\cup\mathcal{H}_{t+1}\models error_t.\\
   \text{s.t.}\quad&\text{Con}(KB\cup\mathcal{H}_{t+1}).\nonumber
 \end{align}
-{{{begin_div(fragment fade-in,font-size:0.8em;margin:10px auto,,1)}}}
+{{{d(fragment fade-in,font-size:0.8em;margin:10px auto,,1)}}}
 这里的观测事实则为上一轮学得模型 $h_t$ 在训练数据中造成的误差: $error_t=\{\varepsilon_1,\ldots,\varepsilon_m\}$, 其中
 \begin{equation}
   \varepsilon_i=\text{difference}(h_{t}(\mathbf{x}_i),y_i),
 \end{equation}
-{{{end_div()}}}
-{{{begin_div(remarkbox fragment fade-in,margin:10px auto,,2)}}}
+{{{ed()}}}
+{{{d(remarkbox fragment fade-in,margin:10px auto,,2)}}}
 $\mathcal{H}_{t+1}$ 由反绎推理得出, 因此:
-{{{begin_div(,margin:-10px 100px,,2)}}}
+{{{d(,margin:-10px 100px,,2)}}}
 1. 它是一组具体逻辑事实构成的集合;
 2. 它必定与 $KB$ 一致, 因此满足上面的约束.
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
 *** LASIN算法
 #+ATTR_REVEAL: :frag (appear)
 1. 根据 $KB$ 与 $error_{t-1}$ 通过{{{rbold(反绎推理)}}}得到假设空间 $\mathcal{H}_t$;
@@ -768,26 +748,26 @@ $\mathcal{H}_{t+1}$ 由反绎推理得出, 因此:
 4. 根据检验结果来选择接受、排除或更新 $h_t$.
 ** 实验验证
 {{{bbold(任务：表示学习)}}}{{{bsup([10])}}}
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{d(fragment fade-in,,,1)}}}
 - *输入:* 手写字符图像
 #+REVEAL_HTML: <img src="./figs/dissertation/lasin/data_all.svg" width=500px style="margin:20px auto" />
-{{{end_div()}}}
+{{{ed()}}}
 #+ATTR_REVEAL: :frag (appear) :frag_idx (2)
 - *输出:* 一组特征作为字典，以使得每个原样本在经过该字典编码后所得到的特征向量均为稀疏向量.
 #+BEGIN_NOTES
 表示学习的假设模型是一组字典，即由具体特征组成的集合
 #+END_NOTES
 *** 领域知识: 书写原语——“笔划”
-{{{begin_div(flexbox)}}}
-{{{begin_div(leftcol70)}}}
+{{{d(flexbox)}}}
+{{{d(leftcol70)}}}
 1. 每个手写字符由多个笔划构成；
 2. 每个笔划可看作由一组子笔划（书写原语）构成；
 3. 每个子笔划是连续、较光滑的墨迹.
-{{{end_div()}}}
-{{{begin_div(rightcol30)}}}
+{{{ed()}}}
+{{{d(rightcol30)}}}
 #+REVEAL_HTML: <img src="./figs/dissertation/yong.png" style="margin:20px auto" />
-{{{end_div()}}}
-{{{begin_div(remarkbox fragment fade-in,,,1)}}}
+{{{ed()}}}
+{{{d(remarkbox fragment fade-in,,,1)}}}
 *$KB$*:
 
 \begin{align}
@@ -795,7 +775,7 @@ $\mathcal{H}_{t+1}$ 由反绎推理得出, 因此:
 \mathbf{stroke}(S) \leftarrow & S=\{P_1,P_2,\ldots\}\wedge \mathbf{sub\_strk}(P_1,P_2,P_3)\wedge \mathbf{sub\_strk}(P_2,P_3,P_4)\wedge \cdots.\\
 \mathbf{sub\_strk}(A,B,C) \leftarrow &\mathbf{ink}(\mathbf{AB})\wedge\mathbf{ink}(\mathbf{BC})\wedge \mathbf{angle}(\mathbf{AB},\mathbf{BC})<\alpha).
 \end{align}
-{{{end_div()}}}
+{{{ed()}}}
 *** 学习目标
 {{{bbold(基于稀疏编码的特征提取)}}}
 \begin{eqnarray}
@@ -804,12 +784,12 @@ $\mathcal{H}_{t+1}$ 由反绎推理得出, 因此:
 &&\forall h^{(k)}((h^{(k)}\in\mathcal{H})\wedge (KB\vDash stroke(h^{(k)})).\nonumber
 \end{eqnarray}
 {{{rbold(符号表示)}}}
-{{{begin_div(,font-size:0.8em)}}}
+{{{d(,font-size:0.8em)}}}
 - $\mathbf{b}$: 待学习字典;
 - $\mathbf{a}$: 编码;
 - $\mathcal{H}$: 反绎推理得到的假设空间;
 - $h^{(k)}$: 假设空间中的具体假设.
-{{{end_div()}}}
+{{{ed()}}}
 *** 实验设置
 #+ATTR_REVEAL: :frag (appear)
 - {{{bbold(实验数据)}}}
@@ -865,99 +845,99 @@ $\mathcal{H}_{t+1}$ 由反绎推理得出, 因此:
 - 提出了LASIN方法
   - 将FOL领域知识嵌入机器学习优化过程;
   - 将FOL领域知识转化转化为对假设空间的约束.
-{{{begin_div(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:180px;margin:30px auto,,1)}}}
+{{{d(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:180px;margin:30px auto,,1)}}}
 {{{rbold(相关成果已经发表)}}}
 - _W.-Z. Dai_ and Z.-H. Zhou. Combining logic abduction and statistical induction: Discovering written primitives with human knowledge. In: *Proceedings of the 31st AAAI Conference on Artificial Intelligence (AAAI’17)*, San Francisco, CA, 2017, pp.4392-4398. /(CCF-A类会议)/
-{{{end_div()}}}
-* 第{{{rbold(4)}}}章{{{nl()}}}{{{nl()}}}一种机器学习驱动的{{{nl()}}}领域知识精化方法
+{{{ed()}}}
+* 第{{{rbold(4)}}}章{{{p}}}一种机器学习驱动的{{{nl()}}}领域知识精化方法{{{ep}}}
 ** 领域知识精化
 - {{{bbold(目标)}}}: 从数据中学习一组描述目标概念的逻辑规则.
-{{{begin_div()}}}
+{{{d()}}}
 \begin{equation}
 B\cup H\models E.
 \end{equation}
-{{{end_div()}}}
+{{{ed()}}}
 - {{{rbold(常见方法:)}}}
   - 归纳逻辑程序设计(ILP) {{{bsup([107])}}};
     - 概率归纳逻辑程序设计(PILP) {{{bsup([34])}}};
   - 统计关系学习(SRL) {{{bsup([54])}}}
-{{{begin_div(popupbox-blue fragment fade-in,width:76%;font-weight:bold,,1)}}}
+{{{d(popupbox-blue fragment fade-in,width:76%;font-weight:bold,,1)}}}
 {{{p(0)}}}实际任务中大量存在非逻辑符号表示的数据,{{{nl}}} 以上方法均难以适用.{{{wsup([145\,16])}}}{{{ep}}}
-{{{end_div()}}}
-{{{begin_div(remarkbox,position:absolute;width:300px;top:48%;right:0)}}}
+{{{ed()}}}
+{{{d(remarkbox,position:absolute;width:300px;top:40%;right:0)}}}
 {{{p(0)}}}此类方法中的 $B$, $H$ 和 $E$ 均为FOL公式与事实.{{{ep}}}
-{{{end_div()}}}
+{{{ed()}}}
 ** 机器学习驱动知识精化
 {{{bbold(形式化)}}}
 \[
 KB\cup \color{#981E32}{D}\cup\{\color{#981E32}{f}\}\cup H \models \color{#981E32}{E}.
 \]
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{d(fragment fade-in,,,1)}}}
 {{{rbold(符号表示)}}}
-{{{begin_div(,font-size:0.8em)}}}
+{{{d(,font-size:0.8em)}}}
 #+ATTR_REVEAL: :frag (appear appear appear appear appear) :frag_idx (2 2 3 4 5)
 - $KB$: 领域知识;
 - $H$: 假设模型;
 - {{{rbold($D$)}}}: $\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m\}$ 为训练样本, 其中 $\mathbf{x}_i\in\mathcal{X}$, 而 $\mathcal{X}$ 为 *非符号表示* 的输入空间, 如图像、波形、向量等等.
 - {{{rbold($E$)}}}: $\{y_1,y_2,\ldots,y_m\}$ 为每个样例的标记;
 - {{{rbold($f:\mathcal{X}\mapsto \Gamma$)}}}: 可从 $D$ 中提取基本事实的 *机器学习模型*, 其中 $\Gamma$ 表示 $KB$ 的Herbrand域{{{bsup([43])}}}.
-{{{end_div}}}
-{{{end_div}}}
+{{{ed}}}
+{{{ed}}}
 *** KRL方法
 {{{bbold(Knowledge Refinement by Learning)}}}
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{d(fragment fade-in,,,1)}}}
 - 使用机器学习模型从样本中提取必要的逻辑事实 $F$，以对 $KB$ 进行增广.
-{{{begin_div()}}}
+{{{d()}}}
 \[
 KB\cup \color{#981E32}{F}\models D
 \]
-{{{end_div()}}}
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,,,3)}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{d(fragment fade-in,,,3)}}}
 {{{rbold($F$ 为 $D$ 中采样得到的具体事实，可通过反绎推理获取.)}}}
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,,,2)}}}
+{{{ed()}}}
+{{{d(fragment fade-in,,,2)}}}
 - 对增广后的 $KB\cup F$ 使用基于FOL表示的机器学习方法进行知识精化.
-{{{begin_div()}}}
+{{{d()}}}
 \[
 KB\cup F\cup\color{#981E32}{H}\models E
 \]
-{{{end_div()}}}
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,,,4)}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{d(fragment fade-in,,,4)}}}
 {{{rbold($H$ 为FOL规则，可通过归纳推理学得.)}}}
-{{{end_div()}}}
+{{{ed()}}}
 *** 基于机器学习的领域知识增广
 - {{{rbold(目标)}}}：使用机器学习模型从样本中提取必要的逻辑事实，以对 $KB$ 进行增广.
-{{{begin_div()}}}
+{{{d()}}}
 \[
 KB\cup \color{#981E32}{F}\models D
 \]
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{ed()}}}
+{{{d(fragment fade-in,,,1)}}}
 - {{{bbold(难点)}}}: $D$ 为 *非符号表示* 的样本, 无法直接用于反绎推理.
-{{{begin_div(remarkbox fragment fade-in,,,2)}}}
+{{{d(remarkbox fragment fade-in,,,2)}}}
 对每个样本 $\mathbf{x}_i\in D$ 利用机器学习模型 $f$ 对 $D$ 进行采样，以获得具体逻辑事实 $F$.
-{{{begin_div(,width:100%)}}}
+{{{d(,width:100%)}}}
 \begin{equation}
 KB\cup F\models f(\mathbf{x}_i)
 \end{equation}
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,width:100%,,3)}}}
+{{{ed()}}}
+{{{d(fragment fade-in,width:100%,,3)}}}
 可根据反绎推理（主动假设检验）的特点, 实现按需采样.
-{{{end_div()}}}
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{ed()}}}
 *** 基于机器学习的领域知识精化
 - {{{rbold(目标)}}}：对增广后的 $KB\cup F$ 使用基于FOL表示的机器学习方法进行知识精化.
-{{{begin_div()}}}
+{{{d()}}}
 \[
 KB\cup F\cup\color{#981E32}{H}\models E
 \]
-{{{end_div()}}}
-{{{begin_div(remarkbox fragment fade-in,margin:20px auto,,2)}}}
+{{{ed()}}}
+{{{d(remarkbox fragment fade-in,margin:20px auto,,2)}}}
 *元解释学习(Meta-Interpretive Learning)* {{{bsup([114])}}}
-{{{begin_div(,width:100%)}}}
+{{{d(,width:100%)}}}
  \begin{align*}
           &prove([], Prog, Prog)\leftarrow.\\
           &prove([Atom|As], Prog1, Prog2)\leftarrow\\
@@ -967,14 +947,14 @@ KB\cup F\cup\color{#981E32}{H}\models E
           &\quad\wedge prove(Body, Prog3, Prog4)\\
           &\quad\wedge prove(As, Prog4, Prog2).
 \end{align*}
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
 ** 实验验证
 {{{bbold(任务: 视觉概念精化)}}}
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{d(fragment fade-in,,,1)}}}
 - *输入:*
 #+REVEAL_HTML: <img src="./figs/dissertation/logvis/ex_regular.svg" width=500px style="margin:20px auto" />
-{{{end_div()}}}
+{{{ed()}}}
 #+ATTR_REVEAL: :frag (appear appear) :frag_idx (2 3)
 - *输出:* 一组逻辑规则, 形式化描述图片中的目标概念
   - 如“正多边形是内角全部相等的多边形”.
@@ -982,27 +962,27 @@ KB\cup F\cup\color{#981E32}{H}\models E
 - *机器学习模型*: 采样图中的 "点".
   - 无噪声: Sobel算子
   - 有噪声: 前/背景分割模型{{{bsup([176])}}}
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{d(fragment fade-in,,,1)}}}
 - *领域知识*: 基本几何概念（点、线、面、圆、角度、亮度等等）, 实现按需采样的反绎逻辑程序.
-{{{begin_div(remarkbox)}}}
+{{{d(remarkbox)}}}
 \begin{align}
 \mathbf{polygon}(Pol_i,[Edge_1,\ldots,Edge_n])&\leftarrow\mathbf{edge}(Edge_1)\wedge\ldots\wedge \mathbf{edge}(Edge_n)\nonumber\\
   &\hspace{-3em}\wedge \mathbf{connected}(Edge_1,Edge_2)\wedge\ldots\wedge \mathbf{connected}(Edge_n,Edge_1).
 \end{align}
-{{{end_div()}}}
-{{{end_div()}}}
+{{{ed()}}}
+{{{ed()}}}
 #+REVEAL_HTML: <img src="./figs/dissertation/logvis/fit-tri.svg" style="height: 200px;margin:10px auto;box-shadow:none;" class="fragment fade-in" data-fragment-index=2 />
 *** 实验设置
 - {{{bbold(实验数据)}}}
 #+REVEAL_HTML: <img src="./figs/dissertation/logvis/data-all.svg" style="height:340px;margin:10px auto;box-shadow:none" />
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{d(fragment fade-in,,,1)}}}
 - {{{rbold(目标概念)}}}
   - 多边形定义: =triangle=, =quadrilateral=, =pentagon=, =hexagon=, =regular=, =right_triangle=
   - 光源与位置: =light_source=, =light_source_angle=
-{{{end_div()}}}
+{{{ed()}}}
 *** 实验结果
 {{{bbold(三角形概念)}}}
-{{{begin_div(,font-size:0.9em)}}}
+{{{d(,font-size:0.9em)}}}
 \begin{align}
   \mathbf{triangle_2}(A,C,H)&\leftarrow \mathbf{rmv\_rdndnt}(A,B,C)\wedge \mathbf{\color{#981E32}{list\_length}}(B,H).\\
   \mathbf{triangle_1}(A,A2,B2)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{triangle\_2}(B,A2,B2).\\
@@ -1010,20 +990,20 @@ KB\cup F\cup\color{#981E32}{H}\models E
   \mathbf{triangle_1}(A,G)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{list\_length}(B,G).\\
   \mathbf{triangle}(A)&\leftarrow \mathbf{triangle}_1(A,\mathbf{\color{#981E32}{3}}).
 \end{align}
-{{{begin_div()}}}
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{d()}}}
+{{{d(fragment fade-in,,,1)}}}
 {{{bbold(正多边形概念)}}}
-{{{begin_div(,font-size:0.8em)}}}
+{{{d(,font-size:0.8em)}}}
 \begin{align}
   \mathbf{regular\_poly_2}(A,G)&\leftarrow \mathbf{angles\_list}(A,B)\wedge \mathbf{\color{#981E32}{std\_dev\_bounded}}(B,G).\\
   \mathbf{regular\_poly_1}(A,A2)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{regular\_poly_2}(B,A2).\\
   \mathbf{regular\_poly}(A)&\leftarrow \mathbf{regular\_poly_1}(A,\mathbf{\color{#981E32}{0.02}})
 \end{align}
-{{{end_div()}}}
-{{{end_div()}}}
-{{{begin_div(popupbox fragment fade-in,width:800px;;padding:30px;position:absolute;top:40%;left:7%,,2)}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{d(popupbox fragment fade-in,width:800px;;padding:30px;position:absolute;top:40%;left:7%,,2)}}}
 与其他图像识别方法相比，习得模型不仅更具可理解性，在图片分类精度上也更高.
-{{{end_div()}}}
+{{{ed()}}}
 #+BEGIN_NOTES
 的确学会了多边形概念的形式化定义.
 #+END_NOTES
@@ -1039,26 +1019,26 @@ KB\cup F\cup\color{#981E32}{H}\models E
 \mathbf{\color{#981E32}{clock\_angle_3}}(Light).&
 \end{align}
 
-{{{begin_div(popupbox fragment fade-in,width:560px;font-size:0.8em;padding: 10px 30px;,,1)}}}
+{{{d(popupbox fragment fade-in,width:560px;font-size:0.8em;padding: 10px 30px;,,1)}}}
 *谓词发明*:
 - $\mathbf{clock\_angle_2}$: 反光面凹凸性;
 - $\mathbf{clock\_angle_3}$: 光源名称.
-{{{end_div}}}
+{{{ed}}}
 *** 模型重用
 {{{bbold(直角三角形概念(重用三角形概念))}}}
 
-{{{begin_div(,font-size:0.8em)}}}
+{{{d(,font-size:0.8em)}}}
 \begin{align}
   \mathbf{right\_tri_3}(A,G,H)&\leftarrow \mathbf{angles\_list}(A,B)\wedge \mathbf{has\_angle}(B,G,H).\\
   \mathbf{right\_tri_2}(A,A2,B2)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{right\_tri_3}(B,A2,B2).\\
   \mathbf{right\_tri_1}(A,A2,B2)&\leftarrow \mathbf{right\_tri_2}(A,A2,B2)\wedge \mathbf{\color{#981E32}{triangle}}(A).\\
   \mathbf{right\_tri}(A)&\leftarrow \mathbf{right\_tri_1}(A,0.5,0.015).
 \end{align}
-{{{end_div()}}}
-{{{begin_div(fragment fade-in,,,1)}}}
+{{{ed()}}}
+{{{d(fragment fade-in,,,1)}}}
 {{{bbold(环形山光照歧义(重用光照角度概念))}}}
 #+REVEAL_HTML: <img src="./figs/dissertation/logvis/ambi.svg" style="margin:-15px auto;box-shadow:none;" height=300px/>
-{{{end_div()}}}
+{{{ed()}}}
 #+BEGIN_NOTES
 得益于FOL的表达能力，基于逻辑表示学习的模型能够将学得的模型可以作为领域知识被直接重用于其他任务。
 
@@ -1068,15 +1048,302 @@ KB\cup F\cup\color{#981E32}{H}\models E
 - 提出了KRL方法
   - 利用机器学习模型对FOL领域知识进行增广;
   - 需求数据量少，学得模型能够直接重用.
-{{{begin_div(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:360px;margin:30px auto,,1)}}}
+{{{d(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:360px;margin:30px auto,,1)}}}
 {{{rbold(相关成果已经发表)}}}
 - _W.-Z. Dai_, S. H. Muggleton, J. Wen, A. Tamaddoni-Nezhad and Z.-H. Zhou. Logical vision: One-Shot Meta-Interpretive Learning on Real Images. In: *Proceedings of the 27th International Conference on Inductive Logic Programming (ILP’17)*, Orleans, France, 2017, pp.46-62. /(CCF-C类, 归纳逻辑程序设计领域旗舰会议)/
 - _W.-Z. Dai_, S. H. Muggleton, and Z.-H. Zhou. Logical vision: Meta-interpretive learning for simple geometrical concepts. In: *Proceedings of the 25th International Conference on Inductive Logic Programming (ILP’15)*. Kyoto, Japan, 2015, pp.1-16. /(CCF-C类, 归纳逻辑程序设计领域旗舰会议)/
-- S. H. Muggleton, _W.-Z. Dai_, C. Sammut, A. Tamaddoni-Nezhad, J. Wen, and Z.-H. Zhou. Meta-interpretive learning from noisy images. *Machine Learning*. 107(7): 749-766, 2018. (机器学习领域重要国际期刊)
-{{{end_div()}}}
-* 第{{{rbold(5)}}}章{{{nl()}}}{{{nl()}}}一种领域知识与机器学习{{{nl()}}}互促结合框架
+- S. H. Muggleton, _W.-Z. Dai_, C. Sammut, A. Tamaddoni-Nezhad, J. Wen, and Z.-H. Zhou. Meta-interpretive learning from noisy images. *Machine Learning*. 107(7): 749-766, 2018. /(CCF-B类, 机器学习领域重要国际期刊)/
+{{{ed()}}}
+* 第{{{rbold(5)}}}章{{{p}}}一种领域知识与机器学习{{{nl()}}}互促结合框架{{{ep}}}
 ** 领域知识与机器学习互促结合
+{{{d(flexbox-start)}}}
+{{{d(rightcol flexcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/adp.jpg" height=203px style="margin:10px auto;" />
+{{{d(fragment fade-in flexcol,width:100%,,2)}}}
+{{{bsarrow(200,290,100,0,100,250,25)}}}
+{{{ed()}}}
+{{{d(fragment fade-in,margin:0px auto,,2)}}}
+{{{bbold(皮耶罗; 吐舌头)}}}
+{{{ed}}}
+{{{d(popupbox-blue fragment fade-in,position:absolute;height:100px;padding:20px;top:54%;left:14%,,3)}}}
+{{{p(auto)}}} *感知* {{{nl}}}机器学习{{{ep}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{d(leftcol flexcol)}}}
+{{{d(fragment fade-in,width:100%;height:182px;margin:-20px auto 55px auto,,2)}}}
+#+BEGIN_SRC prolog :exports code
+...
+celebration(X) :- 
+    action(X, knee_sliding).
+celebration(X) :- 
+    person(X, del_piero),
+    action(X, stick_out_tongue).
+...
+#+END_SRC
+{{{ed()}}}
+{{{d(fragment fade-in flexcol,width:100%;margin:5px auto 0px auto,,2)}}}
+{{{rsarrow(200,290,100,0,100,250,25)}}}
+{{{ed()}}}
+{{{d(fragment fade-in,margin:0px auto,,1)}}}
+{{{rbold(庆祝进球(皮耶罗))}}}
+{{{ed}}}
+{{{d(popupbox fragment fade-in,position:absolute;height:100px;padding:20px;top:54%;right:18%,,3)}}}
+{{{p(auto)}}} *推理* {{{nl}}}逻辑程序{{{ep}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{d(fragment fade-out,position:absolute;top:38%;left:33%,,2)}}}
+{{{rdsarrow(500,360,30,30,360,330,25)}}}
+{{{ed()}}}
+{{{d(fragment fade-in,position:absolute;top:38%;left:33%,,2)}}}
+{{{bdsarrow(500,360,30,330,330,60,25)}}}
+{{{ed()}}}
+#+BEGIN_NOTES
+考虑这样一个问题，这张图片是什么意思？计算机能够如何学会理解这张图片？
+大部分目前的方法选择直接训练一个分类器，从图片映射至标记。
+事实上，人在做判断的时候，是首先通过感知将图片识别为一些基本概念，然后借助领域知识进行推理来做出判断。
+这两种能力在人工智能中一般通过机器学习和逻辑推理实现。
+遗憾的是，如前面几章的研究所说，机器学习与基于领域知识的逻辑推理在人工智能的发展史上是分离的。
+#+END_NOTES
+*** 领域知识与机器学习互促结合
+- *输入*: 图片样本
+- *领域知识*: 
+  - *基本概念*: 皮耶罗, 吐舌头, ... (FOL符号)
+  - *推理规则*: FOL公式
+- *输出*: 语义标记
+#+ATTR_REVEAL: :frag appear :frag_idx 1
+{{{rbold(难点)}}}
+#+ATTR_REVEAL: :frag (appear apear) :frag_idx (2 3)
+1. *感知(机器学习)*: 样本对应{{{bbold(哪些)}}}基本概念？
+2. *推理(逻辑程序)*: {{{bbold(没有)}}}准确的基本概念如何进行推理？
+{{{d(popupbox fragment fade-in,position:absolute;top:40%,,4)}}}
+1. 训练机器学习模型的标记需要通过逻辑推理获得;
+2. 逻辑推理的基本事实来自于机器学习模型的输出.
+{{{ed()}}}
+** 反绎学习框架
+{{{bbold(形式化)}}}
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 2)
+- *输入*:
+  - *训练样本*: $D=\{\langle \mathbf{x}_1,y_1\rangle,\ldots,\langle \mathbf{x}_m,y_m\rangle\}$;
+  - *领域知识*: $KB$
+    - *FOL公式*;
+    - *基本概念*: $\mathcal{P}=\{p_1,p_2,\ldots\}$;
+- *目标*: 学习一个假设模型 $H=p\cup\Delta_C$;
+  - *识别模型* (机器学习): $p:\mathcal{X}\mapsto \mathcal{P}$;
+  - *知识模型* (逻辑推理): FOL公式集合 $\Delta_C$, 它满足:
+{{{d(fragment fade-in,,,2)}}}
+\[
+KB\cup\Delta_C\cup p(\mathbf{x}_i)\models y_i.
+\]
+{{{ed}}}
+*** 反绎学习框架
+#+REVEAL_HTML: <img src="./figs/dissertation/al/framework.png" style="box-shadow:none;margin:30px auto" />
+#+ATTR_REVEAL: :frag (appear)
+1. {{{rbold(机器学习)}}}部件用于学习关于基本概念 $\mathcal{P}$ 的识别模型 $p$;
+2. {{{rbold(反绎逻辑推理)}}}部件既用于知识精化，也用于推理样本中的基本概念符号, 作为机器学习的监督信息;
+3. {{{bbold(一致性优化)}}}用于优化识别模型输出结果 $p(\mathbf{x})$ 、领域知识 $KB$ 与标记 $y$ 的一致性.
+*** 反绎学习框架
+{{{bbold(最大化 $D$ 中与 $H$ 一致的样本个数)}}}
+\begin{align}
+  \max\limits_{H=p\cup\Delta_C}\quad \text{Con}(H\cup D)
+\end{align}
+{{{p(auto,0.8em)}}}其中 $\text{Con}(H\cup D)$ 表示 $D$ 中与 $H$ 一致的样本集合 $\hat{D}_C$ 的大小{{{ep}}}
+\begin{align}
+  \hat{D}_C=\arg\max\limits_{D_c\subseteq D}\quad&\mid D_c\mid\label{eq:al:con}\\
+  \mathrm{s.t.}\quad&\forall \langle \mathbf{x}_i,y_i\rangle\in D_c\quad(KB\wedge \Delta_C\models p(\mathbf{x}_i)\wedge y_i).\nonumber
+\end{align}
+{{{d(fragment fade-in,,,1)}}}
+{{{rbold(优化方法：交替优化 $p$ 与 $\Delta_C$ )}}}
+{{{ed}}}
+#+BEGIN_NOTES
+p一般可微，但Δc不可微，因此无法在同一个框架下优化；且子问题：最大一致样本个数是一个子集选择问题，所以优化非常困难。
+#+END_NOTES
+*** 反绎学习框架
+{{{bbold(当 $p$ 固定时)}}}
+{{{d(,font-size:0.8em)}}}
+#+ATTR_REVEAL: :frag (appear appear appear appear) :frag_idx (1 2 3 4)
+- 从样本中识别出{{{bold(伪标记)}}}符号 $p^t(\mathbf{x})=\cup_i p^t(\mathbf{x}_i)$;
+- 然而, 由于 $p$ 没有真实标记进行训练, 因此伪标记 $p^t(\mathbf{x})$ {{{bold(可能有错误)}}};
+- 需要被修改的伪标记符号记为 $\delta(p^t(X))\subseteq p^t(X)$, $\delta$ 是一个用于估计哪些伪标记被识别错误的{{{bold(判别函数)}}}.
+- 通过一致性优化来得到最优的 $\delta$, $M$ 为最大修改个数;
+{{{d(fragment fade-in,,,4)}}}
+\begin{align}
+  \max\limits_\delta\quad&\text{Con}(p^t\cup\Delta_C(B,r_\delta(X),Y)\cup D)\label{eq:al:opt2}\\
+  s.t.\quad&\mid\delta(p^t(X))\mid\leq M\nonumber
+\end{align}
+{{{ed}}}
+#+ATTR_REVEAL: :frag (appear) :frag_idx (5)
+- 根据修正后的伪标记符号 $r_\delta(X)$, 通过反绎逻辑推理获得 $\Delta_C$.
+{{{ed}}}
+*** 反绎学习框架
+{{{rbold(当 $\Delta_C$ 固定时)}}}
+- 将 $r_\delta(X)$ 作为标记来训练 $p^{t+1}$. $L$ 为 $p$ 的损失函数.
+\begin{align}
+  p^{t+1}=\arg\min\limits_{p}\quad&\sum_{i=1}^mL(p(\mathbf{x}_i),r_\delta(\mathbf{x}_i))
+\end{align}
+*** 与常规机器学习的比较{{{bsup([180])}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al_zhouzh.png" style="box-shadow:none;margin: 80px auto"/>
+#+BEGIN_NOTES
+综上所述，反绎学习的过程大致如下：当输入数据时，首先由机器学习部件从数据中提取逻辑符号表示的伪标记 p(X);
+这些伪标记被输入进反绎逻辑部件，用于增广领域知识并被用于知识推理与精化，以估计出样本的最终标记。
+当预测标记与真实标记出现不一致时，反绎学习会根据真实标记与领域知识反绎推理出样本中更可能正确的伪标记符号 r_\delta(X)，以重新训练机器学习模型。
+#+END_NOTES
 ** Neural Logical Machine
+#+REVEAL_HTML: <img src="./figs/dissertation/al/nlm.png" style="box-shadow:none;margin: 20px auto" />
+1. 机器学习模型: 卷积神经网络{{{bsup([95])}}}
+2. 反绎逻辑推理: ALP{{{bsup([73])}}}
+3. 一致性优化: 零阶梯度优化方法RACOS{{{bsup([175])}}}
+#+BEGIN_NOTES
+最上层是由卷积神经网络（convolutional neural network，CNN）构成的识别模型，它对应着反绎学习中的机器学习部分；下部的反绎逻辑程序（Abductive Logic Programming，ALP）则对应于反绎逻辑推理部件；中间是则是由非梯度优化方法实现的一致性搜索\cite{Yu2016Derivative}。
+#+END_NOTES
+*** Tricks
+1. 反绎逻辑推理复杂度高, 其中的一致性判断为NP难;
+   #+ATTR_REVEAL: :frag (appear)
+   - 每次训练 $p$ 时只采样部分样本（带来噪声）;
+   - 部分样本下学得的 $\Delta_C$ 作为领域知识, 将样本增广为向量;
+   - 用增广的向量训练一个 MLP 作为最终的判别模型（应对噪声）.
+2. 一致性优化复杂度也较高, 若样本中需要被修改伪标记过多, 也会影响速度.
+   #+ATTR_REVEAL: :frag (appear)
+   - 使用课程学习{{{bsup([9])}}}, 从简单样本学起.
 ** 实验验证
+{{{bbold(任务: 手写二进制加法等式学习)}}}
+- *输入:* 
+#+REVEAL_HTML: <img src="./figs/dissertation/al/data3.png" style="box-shadow:none;margin: 20px auto" width=600px />
+{{{d(fragment fade-in,,,1)}}}
+- *输出:*
+  - 识别数字符号的CNN: $p:\mathbb{R}^d\mapsto\{0,1,+,=\}$
+  - 加法法则. 如 =1+1=10=, =1+0=1=,...(加法); =1+1=0=, =0+1=1=,...(异或).
+{{{ed}}}
+*** 领域知识
+{{{bbold(等式构成)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/bk1.png" style="box-shadow:none;margin: 20px auto" width=700px />
+- 等式结构为 =X+Y=Z=;
+- 数字为 =0= 和 =1= 构成的序列.
+*** 领域知识
+{{{bbold(二进制运算)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/bk2.png" style="box-shadow:none;margin: 20px auto" width=700px />
+- 加法为按位运算, 由最后一位开始;
+- 允许进位.
+*** 实验设置
+- {{{bbold(实验数据)}}}: 5-26位长度等式, 每个长度300个
+  - *DBA*: 由MNIST{{{bsup([95])}}}构成的图片序列;
+  - *RBA*: 由Omniglot{{{bsup([92])}}}构成的图片序列, 等式结构与DBA相同;
+  - *二进制算数加法* 与 *逻辑异或*.
+{{{d(fragment fade-in,,,1)}}}
+- {{{rbold(对比方法)}}}
+  - *NLM-all*: 本文方法, 使用全部训练数据;
+  - *NLM-short*: 本文方法, 仅使用{{{bold(5-8位等式)}}};
+  - *DNC* {{{bsup([58])}}}: 基于memory的深度神经网络;
+  - *Transformer* {{{bsup([63])}}}: 基于attention的深度神经网络;
+  - *BiLSTM* {{{bsup([150])}}}: 常用的序列学习神经网络，作为基准方法.
+{{{ed()}}}
+*** 实验结果
+{{{bbold(DBA与RBA中的分类结果)}}}
+{{{d(flexbox-start)}}}
+{{{d(leftcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r1.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{d(rightcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r2.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{ed}}}
+{{{d(popupbox fragment fade-in,,,1)}}}
+引入领域知识后的NLM不仅泛化能力更好, {{{nl}}}还能学得运算法则的准确定义(图5.8).
+{{{ed}}}
+*** 实验结果
+{{{bbold(学习过程)}}}
+{{{d(flexbox-start)}}}
+{{{d(leftcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r3.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{d(rightcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r4.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{ed}}}
+{{{d(popupbox fragment fade-in,,,1)}}}
+领域知识精化与识别模型学习的确在相互促进
+{{{ed}}}
+*** 实验结果
+{{{bbold(识别模型迁移（左）与知识模型迁移（右）)}}}
+{{{d(flexbox-start)}}}
+{{{d(leftcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r5.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{d(rightcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r6.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{ed}}}
+{{{d(popupbox fragment fade-in,,,1)}}}
+NLM学得的模型能够重用, 且比冷启动效果更好
+{{{ed}}}
 ** 小结
+- 提出了反绎学习框架
+  - 利用机器学习模型对FOL领域知识进行增广;
+  - 利用反绎逻辑推理得到训练机器学习模型的标记;
+  - 通过一致性优化将机器学习与逻辑推理相结合.
+{{{d(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:120px;margin:30px auto,,1)}}}
+{{{rbold(相关成果已经发表)}}}
+- _W.-Z. Dai_, Q.-L. Xu, Y. Yu, and Z.-H. Zhou. Tunneling neural perception and logic reasoning through abductive learning. *CoRR, abs/1802.01173*, 2018. /(已投稿)/
 * 总结
+** 本文贡献
+{{{bbold(FOL领域知识与机器学习相结合的三个方面)}}}
+1. *领域知识辅助机器学习*:
+   - 增广样本: SUL方法;
+   - 辅助约束: LASIN方法;
+2. *机器学习驱动知识精化*:
+   - KRL方法;
+3. *机器学习与领域知识互促结合*:
+   - 反绎学习框架.
+** 未来研究方向
+- 引入FOL推理后, 机器学习的效率受到影响;
+  #+ATTR_REVEAL: :frag (appear)
+  - 对基于离散搜索FOL推理进行研究和改进, 使之能够更有效地应用于大数据问题;
+- 机器学习模型识别的符号可能未定义在领域知识中;
+  #+ATTR_REVEAL: :frag (appear)
+  - 基于机器学习模型输出的谓词发明;
+- FOL领域知识可能存在错误, 或随着时间发生冲突;
+  #+ATTR_REVEAL: :frag (appear)
+  - 基于非单调FOL的学习.
+** 论文情况
+{{{bbold(第一作者论文)}}}
+{{{d(,font-size:0.6em)}}}
+- _W.-Z. Dai_ and Z.-H. Zhou. Combining logic abduction and statistical induction: Discovering written primitives with human knowledge. In: *Proceedings of the 31st AAAI Conference on Artificial Intelligence (AAAI’17)*, San Francisco, CA, 2017, pp.4392-4398. /(CCF-A类会议)/
+- _W.-Z. Dai_ and Z.-H. Zhou. Statistical unfolded logic learning. In: *Proceedings of the 7th Asian Conference on Machine Learning (ACML’15)*, Hong Kong, China, 2015, JMLR: W&CP 45, pp. 349-361. /(CCF-C类, 机器学习领域重要国际会议)/
+- _W.-Z. Dai_, S. H. Muggleton, J. Wen, A. Tamaddoni-Nezhad and Z.-H. Zhou. Logical vision: One-Shot Meta-Interpretive Learning on Real Images. In: *Proceedings of the 27th International Conference on Inductive Logic Programming (ILP’17)*, Orleans, France, 2017, pp.46-62. /(CCF-C类, 归纳逻辑程序设计领域旗舰会议)/
+- _W.-Z. Dai_, S. H. Muggleton, and Z.-H. Zhou. Logical vision: Meta-interpretive learning for simple geometrical concepts. In: *Proceedings of the 25th International Conference on Inductive Logic Programming (ILP’15)*. Kyoto, Japan, 2015, pp.1-16. /(CCF-C类, 归纳逻辑程序设计领域旗舰会议)/
+- _戴望州_, 周志华. 归纳逻辑程序设计综述. *计算机研究与发展*. 56(1): 138-154, 2019. /(计算机类核心期刊)/
+{{{ed}}}
+*** 论文情况
+{{{bbold(其他论文)}}}
+{{{d(,font-size:0.6em)}}}
+- S. H. Muggleton, _W.-Z. Dai_, C. Sammut, A. Tamaddoni-Nezhad, J. Wen, and Z.-H. Zhou. Meta-interpretive learning from noisy images. *Machine Learning*. 107(7): 749-766, 2018. /(CCF-B类, 机器学习领域重要国际期刊)/
+- _W.-Z. Dai_, Q.-L. Xu, Y. Yu, and Z.-H. Zhou. Tunneling neural perception and logic reasoning through abductive learning. *CoRR, abs/1802.01173*, 2018. /(已投稿)/
+{{{ed}}}
+** 获奖情况
+{{{d(,font-size:0.7em)}}}
+1. IBM 博士生英才计划奖(IBM PhD Fellowship Award), 2016年
+2. 谷歌优秀奖学金(Google Excellence Fellowship), 2012年
+3. 南京大学优秀研究生, 2012年
+4. 南京大学优秀博士生提升计划, 2015年
+5. AAAI 学生旅行奖, 2017年
+6. ILP 学生旅行奖, 2015年
+{{{ed}}}
+** 致谢
+{{{d(,font-size:0.7em;)}}}
+#+ATTR_REVEAL: :frag (appear)
+- 感谢我的恩师周志华教授。周老师对我学业的支持, 生活的关心, 是我今天能顺利完成论文的前提. 老师对我为人处世的教导, 独立思维的培养, 则是我未来一生能在社会中安身立命的凭借. 感谢老师周老师给予我机会访问世界上最一流的学者并建立合作, 感谢老师一针见血地指出我的缺陷, 并一次次的宽容我改正.
+- 感谢姜老师对我生活上的关心和帮助, 感谢王魏老师在工作上对我的教导和协助, 感谢俞扬老师、 黎铭老师、 詹德川老师、 高魏老师和李宇峰老师, 感谢他们在科研和工作上对我进行的无私帮助，并在我遇见挫折的时候的安慰和鼓励.
+- 感谢所有 LAMDA 的师兄师姐和师弟师妹们, 他们对我的帮助和关心让我的这八年博士生生涯得以顺利完成, 他们的可爱和有趣也让这八年生活充满了欢笑和色彩. 特别感谢胡毅奇、杨杨、王璐、沈芷玉、侯博建和赵鹏等师弟师妹们在科研之外事务中对我的帮助.
+- 感谢我在访问伦敦帝国理工学院期间指导我的 Stphen Muggleton 教授, 作为归纳逻辑程序设计领域的顶尖专家, Muggleton 教授在科研和学习上给予了我许多包容和帮助.
+- 感谢我的父母和妻子, 他们的默默支持和无私奉献是支撑我完成博士学习最坚定的力量, 也是我未来生活中继续前行时最强大的动力.
+{{{ed}}}
+#+BEGIN_EXPORT html
+</section>
+<section id="slide-final">
+<img src="./figs/dissertation/nju.jpg" style="position:absolute;top:5%;right:5%;width:300px;box-shadow:none" />
+<img src="./figs/dissertation/lamda.png" style="position:absolute;top:5%;right:37%;width:200px;box-shadow:none" />
+<div class="talk-title" style="text-align:center">
+    <h1 class="no-toc-progress">谢谢！<br>敬请各位专家批判指正！</h1>
+</div>
+</section>
+#+END_EXPORT

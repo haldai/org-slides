@@ -313,6 +313,60 @@ body {
     align-items: stretch;
 }
 
+.reveal .flexcol {
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.reveal .flexcol-left {
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+
+.reveal .flexcol-right {
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+
 .reveal .scalebox90 {
     -ms-transform: scale(0.9, 0.9); /* IE 9 */
     -webkit-transform: scale(0.9, 0.9); /* Safari */
@@ -430,6 +484,10 @@ body {
 /*********************************************
  * OTHER
  *********************************************/
+
+.reveal .shadowed {
+    filter: drop-shadow(0px 15px 10px rgba(0,0,0,0.55));
+}
 
 div.legalese {
   font-size: 2vh;
@@ -907,6 +965,7 @@ div.ribbon-legalese a {
 
 .reveal .popupbox {
     background-color: #981E32;
+    z-index: 100;
     color: #fff;
     font-size: 1em;
     display: flex;
@@ -914,7 +973,7 @@ div.ribbon-legalese a {
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     border-radius: 10px;
     padding: 30px;
     margin: auto;
@@ -924,13 +983,14 @@ div.ribbon-legalese a {
 .reveal .popupbox-blue {
     background-color: #1A53A1;
     color: #fff;
+    z-index: 100;
     font-size: 1em;
     display: flex;
     text-align: center;
     align-items: center;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     border-radius: 10px;
     padding: 30px;
     margin: auto;

@@ -1061,7 +1061,7 @@ TOC-Progress plugin
     -webkit-justify-content: flex-end;
     align-items: center;
     flex-wrap: nowrap;
-    font-size: small;
+    font-size: x-small;
 }
 #toc-progress-footer-secondary {
     display: -webkit-box;

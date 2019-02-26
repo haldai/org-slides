@@ -63,6 +63,12 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
     <img class="fragment appear" data-fragment-index=1 src="https://thumbs.gfycat.com/AmusingConfusedBobwhite-max-1mb.gif" height=180 width=auto />    
 </div>
 #+END_EXPORT
+#+BEGIN_NOTES
+人工智能是计算机科学中重要的研究方向之一。它的目标是令计算机像人类一样自动识别环境和任务，并做出自主判断和决策。
+它最早出现在人类的想象之中，现在已逐渐走进我们的生活。
+2017年，我国颁布了人工智能发展规划，将人工智能研究提升为国家战略；
+这个月初，特朗普也签署主席令，将人工智能作为重要发展方向。
+#+END_NOTES
 *** 早期人工智能
 {{{d(flexbox)}}}
 {{{d(leftcol60)}}}
@@ -81,20 +87,11 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 #+ATTR_HTML: :class org-center fragment appear
 {{{bbold(“推理引擎+领域知识”)}}}
 #+BEGIN_NOTES
-(Simon & Newell 1957), (Gelenter 1959, Robinson 1965), (Feigenbaum et. al. 1960s), (McCarthy et. al. 1960s, Kowalski 1970s), (Japan, 1980s)
-#+END_NOTES
-*** “知识工程瓶颈”
-#+REVEAL_HTML: <img src="https://www.igcseict.info/theory/7_2/expert/files/stacks_image_5738.png" align=center style="margin:10px auto;"/>
-#+ATTR_HTML: :style font-size:3em;position:absolute;right:39.5%;top:21% :class fragment appear :data-fragment-index 1
-{{{rawesome(157)}}}
-#+ATTR_HTML: :style font-size:2em;position:absolute;right:25%;top:18% :class fragment appear :data-fragment-index 2
-{{{rawesome(119)}}}
-#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 2)
-- 领域知识成本高;
-- 某些知识难以总结、专家不愿分享;
+早期的人工智能研究以自动推理、知识工程为主。达特茅斯会议上，西蒙和钮厄尔就提出了一般问题求解系统。这些工作逐渐发展为自动定理证明、专家系统、逻辑程序。日本甚至提出了基于Prolog推理的第五代计算机计划。
 
-#+ATTR_HTML: :class org-center fragment appear
-{{{bbold(解决办法: 通过计算、利用经验来改善系统自身性能)}}}
+这些人工智能系统的特点是构建通用推理引擎，并引入专业领域知识。
+然而，一方面逻辑推理速度慢、领域知识成本高，人工智能遇到了知识工程瓶颈。主流研究方向逐渐转变为机器学习。
+#+END_NOTES
 ** 机器学习
 {{{d(flexbox)}}}
 {{{d(leftcol40)}}}
@@ -106,16 +103,17 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 \]
 #+BEGIN_EXPORT html
 <div class=flexbox-stretch>
-    <img class="fragment appear" data-fragment-index=0 src="https://systweak1.vo.llnwd.net/content/wp/systweakblogsnew/uploads_new/2018/03/hidden-layers-in-network.gif" width=290px height=220px/>
+    <img class="fragment appear" data-fragment-index=1 src="https://systweak1.vo.llnwd.net/content/wp/systweakblogsnew/uploads_new/2018/03/hidden-layers-in-network.gif" width=290px height=220px/>
     <img class="fragment appear" data-fragment-index=1 src="https://jeremykun.files.wordpress.com/2017/06/svm_solve_by_hand-e1496076457793.gif" width=280px height=220px/>
-    <img class="fragment appear" data-fragment-index=2 src="https://yanndubs.github.io/img/blog/decision-tree-class.gif" width=340px height=220px/>
-    <img class="fragment appear" data-fragment-index=3 src="https://cdn-images-1.medium.com/max/1600/1*Nx6IyGfRAV1ly6uDGnVCxQ.gif" width=230px height=220px>
+    <img class="fragment appear" data-fragment-index=1 src="https://yanndubs.github.io/img/blog/decision-tree-class.gif" width=340px height=220px/>
+    <img class="fragment appear" data-fragment-index=1 src="https://cdn-images-1.medium.com/max/1600/1*Nx6IyGfRAV1ly6uDGnVCxQ.gif" width=230px height=220px>
 </div>
 #+END_EXPORT
 {{{ed}}}
 {{{ed}}}
 #+BEGIN_NOTES
-机器学习的目标，代表性模型有神经网络、支持向量机、决策树等监督学习方法，以及非监督学习方法
+机器学习的目标是从数据中进行学习，通过计算、利用经验来改善系统自身性能，而非直接获得知识。
+代表性模型有神经网络、支持向量机、决策树等监督学习方法，以及非监督学习方法。
 #+END_NOTES
 ** 待解决的问题
 {{{d(flexbox)}}}
@@ -130,6 +128,15 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{img(https://imgs.xkcd.com/comics/machine_learning.png, 100%, auto)}}}
 {{{ed()}}}
 {{{ed()}}}
+{{{d(popupbox fragment fade-in,position:absolute;top:40%;left:20%,,1)}}}
+1. 我们明白的，无法传达给机器;
+2. 机器学会的，无法传达给我们.
+{{{ed}}}
+#+BEGIN_NOTES
+然而，数据驱动的机器学习却伴随着较差的可理解性。近年来，大量人工智能与机器学习会议举办了关于可理解性的workshop和special track，美国国防部也启动了关于可解释AI的项目。
+
+可解释，事实上有两层意思：
+#+END_NOTES
 ** 一种可能的解决方案
 #+ATTR_HTML: :class org-center
 {{{rbold(将机器学习与一阶逻辑表示的知识相结合)}}}
@@ -148,12 +155,14 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 - {{{rbold(公式)}}}: $\forall X(mortal(X)\leftarrow man(X)).$
 {{{ed()}}}
 {{{d(rightcol40)}}}
-#+ATTR_HTML: :height 400px :class fragment appear :data-fragment-index 1
+#+ATTR_HTML: :height 400px :class fragment appear :data-fragment-index 5
 [[http://www.quickmeme.com/img/a3/a31f18eace4a2930460d85351cb584fc88ff5971bddf657816ce54115d9e7cfd.jpg]]
 {{{ed()}}}
 {{{ed()}}}
 #+BEGIN_NOTES
-什么是一阶逻辑
+长期以来，许多人们相信的一种解决方案，就是将早期基于FOL领域知识和推理的人工智能，与当下的机器学习相结合。
+
+一阶逻辑是一种形式语言，它拥有常量、变量、连词，以及表示常量间关系的谓词以及对变量进行量化的量词，它们能够共同构成人类易于理解的逻辑公式。
 #+END_NOTES
 *** FOL领域知识
 {{{d(flexbox)}}}
@@ -175,32 +184,23 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
    - 比统计模型和神经网络更易于人类理解   
 2. 强大的{{{rbold(表达能力)}}}
    - 允许递归、谓词发明
-   - 强于函数形式表达的优化约束
+   - 强于一般的函数形式表达
 3. 优秀的{{{rbold(推理能力)}}}
    - 是完备的形式系统
 {{{ed()}}}
 {{{ed()}}}
 #+BEGIN_NOTES
+例如，左图是一个从楼梯场景中学到的递归定义，可以发现，它不但符合人类理解，也拥有更强大的表达能力。此外，作为一个完备的形式系统，它还能进行复杂的逻辑推理。
+
 完备的，意味着所有真命题都可以通过有限步推理证明；那些不可判定的均为假命题。
 #+END_NOTES
-*** FOL领域知识
-{{{d(flexbox)}}}
-{{{d(leftcol)}}}
-- 可重用性
-  - 知识迁移
-  - 类比推理
-  - 学件
-  - 通用人工智能
-- 降低训练数据量需求
-{{{ed()}}}
-{{{d(rightcol)}}}
-{{{img(./figs/dissertation/learnware.png, 100%, auto)}}}
-{{{ed()}}}
-{{{ed()}}}
 ** 本文工作
 {{{d(flexbox-center)}}}
 [[./figs/dissertation/chpts.svg]]
 {{{ed()}}}
+#+BEGIN_NOTES
+本文将一阶逻辑领域知识与机器学习的结合分为三个子问题，分别进行探讨。它们包括如何利用领域知识帮助机器学习，如何利用机器学习来驱动领域知识精化，以及如何将二者更自然地融合并相互促进。
+#+END_NOTES
 *** 领域知识辅助机器学习
 {{{d(flexbox)}}}
 {{{d(leftcol65)}}}
@@ -210,12 +210,11 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
   - 机器学习模型未训练{{{rawesome(165)}}}
   - 利用领域知识提升机器学习性能
 - {{{bbold(以往工作)}}}:
-  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (4 5 6)
-  - 可引入函数表达的领域知识
-  - {{{bawesome(188)}}}{{{bbold(难点1)}}}：符号表示数据中采用效率更高的统计学习
-  - {{{bawesome(188)}}}{{{bbold(难点2)}}}：非符号表示数据中引入FOL领域知识
+  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (4 5)
+  - {{{bawesome(188)}}}{{{bbold(难点1)}}}：符号数据中进行统计学习
+  - {{{bawesome(188)}}}{{{bbold(难点2)}}}：非符号数据引入FOL知识
 - {{{bold(本文工作)}}}:
-  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (7 7)
+  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (6 6)
   - 第二章：领域知识增广样本（SUL）
   - 第三章：领域知识辅助约束（LASIN）
 {{{ed()}}}
@@ -253,11 +252,10 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
   - 机器学习模型已训练{{{rawesome(087)}}}
   - 利用机器学习驱动FOL知识精化
 - {{{bbold(以往工作)}}}:
-  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (4 5)
-  - 可在FOL表示的数据中对领域知识进行精化，获得FOL规则集
+  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (4)
   - {{{bawesome(188)}}}{{{bbold(难点)}}}：在非符号表示的数据中对FOL领域知识进行精化
 - {{{bold(本文工作)}}}:
-  #+ATTR_REVEAL: :frag (appear) :frag_idx (6)
+  #+ATTR_REVEAL: :frag (appear) :frag_idx (5)
   - 第四章：机器学习驱动领域知识精化方法（KRL）
 {{{ed()}}}
 {{{d(rightcol40)}}}
@@ -352,71 +350,33 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{rbold(常用于统计关系学习，<br />一般作为组合优化约束)}}}
 {{{ed()}}}
 {{{ed()}}}
-# ** 引入FOL领域知识的机器学习方法
-# {{{d(flexbox-center)}}}
-# {{{d(leftcol)}}}
-# #+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 3)
-# - (概率)归纳逻辑程序((P)ILP){{{bsup([107\,34])}}};
-#   #+ATTR_REVEAL: :frag (appear) :frag_idx (4)
-#   - 模型为FOL规则;
-# - 统计关系学习(SRL){{{bsup([54])}}};
-#   #+ATTR_REVEAL: :frag (appear appear) :frag_idx (5 6)
-#   - 将逻辑关系解释为相关性;
-#   - FOL规则→概率图模型.
-# {{{d(fragment fade-in,,,8)}}}
-# {{{rbold(难点)}}}
-# - FOL规则学习和图模型结构学习均为NP难{{{bsup([24])}}};
-# - 只能在小数据中学习.
-# {{{ed()}}}
-# {{{ed()}}}
-# {{{d(rightcol fragment fade-in,,,7)}}}
-# #+ATTR_HTML: :style margin:5px auto;
-# [[./figs/dissertation/mln.png]] 
-# {{{d(scalebox60 flex-box,flex-direction:column;margin:0;flex-wrap:none auto;width:450px;height:600px)}}}
-# \begin{align}
-# \mathbf{friends}(X,Z)\leftrightarrow&\mathbf{friends}(X,Y)\\
-# &\wedge \mathbf{friends}(Y,Z).\\
-# \mathbf{cancer}(X)\leftarrow&\mathbf{smokes}(X).\\
-# \mathbf{smokes}(Y)\leftarrow&\mathbf{smokes}(X)\\
-# &\wedge\mathbf{friends}(X,Y).\\
-# \mathbf{smokes}(X)\leftarrow&\neg\mathbf{friends}(X).
-# \end{align}
-# {{{d(,width:700px;font-size:1.19em)}}}
-# #+BEGIN_SRC prolog :exports code
-# % (P)ILP与SRL使用的关系型数据集
-# smokes(alan).      smokes(bob).
-# friends(alan,bob). friends(bob,charlie).
-# cancer(charlie).
-# ...
-# ?- cancer(jack).
-# #+END_SRC
-# {{{ed()}}}
-# {{{ed()}}}
-# {{{ed()}}}
-# {{{ed()}}}
 ** 以往引入FOL领域知识的机器学习
-{{{d(fragment fade-in,,,1)}}}
+{{{d()}}}
 - 领域知识库 $KB$ 由FOL规则组成:
 \[
 A\leftarrow B_1\wedge B_2\wedge\ldots\wedge B_n.
 \]
 {{{ed()}}}
-{{{d(fragment fade-in,,,2)}}}
+{{{d(fragment fade-in,,,1)}}}
 - 假设模型 $H=(\Gamma,\theta)$ 由（带权）FOL规则组成:
 \[
 \color{#981E32}{w::}A\leftarrow B_1\wedge B_2\wedge\ldots\wedge B_n.
 \]
 {{{ed}}}
-#+ATTR_REVEAL: :frag (appear) :frag_idx (3)
+#+ATTR_REVEAL: :frag (appear) :frag_idx (2)
 - 学习方式:
   1. 更新规则结构 $\Gamma$;
   2. 最大化似然，求解参数 $\theta$;
   3. 若达到终止条件, 输出 $H=(\Gamma,\theta)$; 否则, goto 2.
-{{{d(popupbox fragment fade-in,position:absolute;top:40%;left:4%,,4)}}}
+{{{d(popupbox fragment fade-in,position:absolute;top:40%;left:4%,,3)}}}
 *可直接引入FOL领域知识. 但目标函数不可微，{{{nl}}}无法使用梯度下降等速度较快的优化方法求解*
 {{{ed}}}
 #+BEGIN_NOTES
-由于领域知识和背景知识采用了相同的形式，归纳逻辑程序设计和统计关系学习均直接对这些领域知识进行利用。
+本文涉及的领域知识均为一阶逻辑公式。
+
+能够直接引入FOL知识的机器学习方法一般本身即是基于逻辑表示的。由于领域知识和背景知识采用了相同的形式，它们均直接对这些领域知识进行利用。
+
+然而...
 #+END_NOTES
 *** 常规机器学习方法
 {{{d(flexbox-start)}}}
@@ -442,13 +402,16 @@ $L$: 损失函数
 {{{ed()}}}
 #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (3 4 5)
 1. 利用FOL规则初始化神经网络结构{{{bsup([37\,51\,143\,155])}}};
-2. 端到端学习，将FOL知识作为序列输入{{{bsup([57\,58\,170])}}};
+2. 端到端学习，FOL推理转化为可微函数{{{bsup([57\,58\,170])}}};
 3. LDA中将FOL知识作为先验分布或后验分布约束，采用SRL类似的方式学习{{{bsup([2\,102])}}}.
 {{{d(popupbox-blue fragment fade-in,position:absolute;top:40%;left:8%,,6)}}}
 1. *无法进行真正的逻辑推理*;
-2. *基于嵌入表示的模型难以泛化至未见数据*;
+2. *模型难以泛化至未见数据*;
 3. *仅能使用形式十分受限的FOL规则*.
 {{{ed}}}
+#+BEGIN_NOTES
+这一类方法引入的一阶逻辑形式大多已经被改变或者受限，只能解决几种特殊类别的问题。
+#+END_NOTES
 ** 领域知识增广样本
 #+ATTR_HTML: :class org-center fragment fade-in :data-fragment-index 1
 {{{rbold(将领域知识 $KB$ 增广样本\,<br/>在新的训练数据集中进行学习)}}}
@@ -456,7 +419,7 @@ $L$: 损失函数
 \begin{equation}
 \min_{h\in\color{#981E32}{\mathcal{H}'}}\frac{1}{m}\sum_{i=1}^mL(h(\mathbf{x}_i,\color{#981E32}{\mathbf{u}_i}),y_i),
 \end{equation}
-#+ATTR_REVEAL: :frag (appear)
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (2 2)
 - $\color{#981E32}{\mathbf{u}_i}\in\mathcal{F}$: 由$KB\cup\mathcal{x}_i$ 经过逻辑推理而得到的新信息;
 - $\color{#981E32}{\mathcal{H}'}$: 增广后的新假设空间.
 *** 领域知识增广样本
@@ -474,7 +437,7 @@ $L$: 损失函数
 B\cup KB\vdash F
 \end{equation}
 {{{ed()}}}
-{{{d(fragment fade-in,font-size:0.8em,,3)}}}
+{{{d(fragment fade-in,font-size:0.8em,,2)}}}
 - 通过 $F$ 提取新特征向量 $\mathbf{u}_i=\langle u_{i1},\ldots,u_{ik}\rangle$, 其中:
 #+ATTR_HTML: :style margin:20px 0
 \begin{equation}
@@ -487,7 +450,7 @@ B\cup KB\vdash F
 \end{equation}
 {{{ed()}}}
 {{{ed()}}}
-{{{d(rightcol fragment fade-in,,,2)}}}
+{{{d(rightcol fragment fade-in,,,1)}}}
 {{{rbold(符号表示)}}}
 #+ATTR_HTML: :style font-size:0.8em;line-height:2.3em
 $B=\{\mathbf{x}_1,\ldots,\mathbf{x}_m\}$: 样本(背景知识){{{nl()}}}
@@ -496,7 +459,7 @@ $\vdash$: 逻辑"推出"{{{nl()}}}
 $F=\{f_1,\ldots,f_n\}$: 增广特征
 {{{ed()}}}
 {{{ed()}}}
-{{{d(remarkbox fragment fade-in,font-size:0.8em,,4)}}}
+{{{d(remarkbox fragment fade-in,font-size:0.8em,,3)}}}
 "$\vdash$"可用前向链推理{{{bsup([71])}}}实现, 它表示根据 $B\cup KB$ 演绎推理得到 $F.$ 因此这些特征 $f_i\in F$ 作为推理的“结论”均至少包含一部分 $KB$ 中的语义.
 {{{ed()}}}
 ** 实验验证
@@ -584,39 +547,6 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
 | title     |         20.6 |         80.8 |       34 |        16396 |
 | venue     |         55.4 |        491.6 |       33 |        73354 |
 | advisedby |         11.5 |         22.7 |      452 |        10625 |
-*** 实验结果
-#+ATTR_HTML: :class org-center :style font-size:0.8em
-{{{bbold(领域知识复杂度与学习模型(J48)性能的关系)}}}
-{{{d(flexbox)}}}
-#+REVEAL_HTML: <img src="./figs/dissertation/sul/title-len.svg" style="box-shadow:none" width=480px />
-#+REVEAL_HTML: <img src="./figs/dissertation/sul/uw-len.svg" style="box-shadow:none" width=480px />
-{{{ed()}}}
-#+BEGIN_NOTES
-增加路径长度确实对提升 SUL-Path 的表现有所帮助.不过一旦长度超过某个阈值，它带来提升就变得十分有限了.领域知识，关系型路径假设：“有限长度路径”的猜想基本是正确的.
-
-由于 SUL-Path-Boost 和 SUL-Path-RF 的结果已经接近最优，我们选择通过观察SUL-Path-J48 的结果来进研究，该结果如图2.2所示。由于领域内的关系过于复杂，advisedby 任务中当最大路径长度超过 4 时，SUL-Path的展开阶段就无法在 1 小时内结束，因此我们没有计算它的结果.
-#+END_NOTES
-*** 谓词发明
-{{{bbold(习得规则)}}}
-\begin{align}
-  \mathbf{tree_0\_score}(X_1,X_2,W)\leftarrow & \mathbf{ct\_path}_{0,0}(X_1,X_2,N)\\
-  &\hspace{1em}\wedge N > 0.0\wedge W=1.0.
-\end{align}
-{{{rbold(发明谓词)}}}
-\begin{align}
-  \mathbf{path}_0(X_1,X_2,X_3,X_4,X_5)\leftarrow & \mathbf{author}(X_3,X_1)\wedge \mathbf{title}(X_3,X_4)\\
-  &\hspace{1em}\wedge \mathbf{title}(X_5,X_4)\wedge \mathbf{author}(X_5,X_2).\\
-  \mathbf{path}_{0,0}(X_1,X_2,X_3,X_4,X_5)\leftarrow & \mathbf{path}_0(X_1,X_2,X_3,X_4,X_5)\\
-  &\hspace{1em}\wedge \mathbf{haswordauthor}(X_1,X_6)\\
-  &\hspace{1em}\wedge \mathbf{haswordauthor}(X_2,X_6).
-\end{align}
-{{{d(popupbox fragment fade-in,position:absolute;top:17%;left:7%;font-size:0.8em,,1)}}}
-- $path_0$: 作者 $X_1$ 和 $X_2$ 发表了标题一样的论文；
-- $path_{0,0}$: $X_1$ 和 $X_2$ 的名字中至少还拥有一个相同的单词.
-{{{ed()}}}
-#+BEGIN_NOTES
-借助不同新谓词的组合，SUL-Path可以学得拥有较大长度规则，因此能够表示关系较为复杂的目标概念，这在目前其他的SRL和PILP算法中较难做到。
-#+END_NOTES
 ** 小结
 - 提出了SUL方法
   - 将FOL领域知识转化为样本
@@ -635,12 +565,11 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
     B\cup KB\color{#981E32}{\vdash}F
   \]
   该过程的"$\vdash$"为基于语构蕴涵(implication)的演绎, 对于某些形式的 $KB$， 该问题{{{red(不可判定)}}}{{{bsup([56])}}}.
-  #+ATTR_REVEAL: :frag appear :frag_idx 3
   - 一次性的领域知识增广样本无法保证最优.
-#+ATTR_HTML: :class org-center fragment fade-in :data-fragment-index 4
+#+ATTR_HTML: :class org-center fragment fade-in :data-fragment-index 3
 {{{rbold(解决方案：将 $KB$ 作为约束，对学习模型进行迭代优化)}}}
 #+BEGIN_NOTES
-一旦KB中出现递归或循环规则，便无法通过有限步推出所有满足该式的F. 这也是上一章实验中研究知识复杂度对学习性能影响的原因.
+一旦KB中出现递归或循环规则，便无法通过有限步推出所有满足该式的F. 
 #+END_NOTES
 ** 领域知识辅助约束
 {{{bbold(LASIN (Logical Abduction and Statistical INduction))}}}
@@ -661,13 +590,6 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
 #+BEGIN_NOTES
 表示学得的假设模型与领域知识不产生矛盾
 #+END_NOTES
-# *** "盲人摸象"
-# #+REVEAL_HTML: <img src="./figs/dissertation/elephant.jpg" style="margin: 20px auto;" />
-# #+ATTR_REVEAL: :frag (appear)
-# 1. 通过{{{rbold(反绎逻辑推理)}}}生成一个假设空间;
-# 2. 在假设空间中进行机器学习得到候选模型;
-# 3. 在数据中对候选模型进行检验;
-# 4. 根据检验结果来选择接受、排除或更新自己的假设.
 *** 反绎逻辑推理
 {{{bbold(三种逻辑推理)}}}:
 {{{d(,font-size:0.9em)}}}
@@ -688,27 +610,6 @@ H\equiv B\rightarrow E.
 {{{ed()}}}
 {{{ed()}}}
 *** 反绎逻辑推理
-{{{bbold(鞋子湿了)}}}
-- 是因为下雨还是草坪喷水器？
-{{{d(org-center fragment fade-in,margin:auto,,1)}}}
-#+BEGIN_SRC prolog :exports code
-% 领域知识 KB
-wet_shoes(X) :- wet_grass(X).
-wet_grass(X) :- rained_last_night(X).
-wet_grass(X) :- sprinkler_was_on(X).
-
-% 完整性约束
-rained_last_night(X), sprinkler_was_on(X) ==> fail.
-
-% 观测事实
-?- wet_shoes(bob), not(rained_last_night(bob)).
-
-% 反绎推理结果
-sprinkler_was_on(bob) ;
-false.
-#+END_SRC
-{{{ed()}}}
-*** 反绎逻辑推理
 {{{d(remarkbox)}}}
 *定义3.1 (反绎逻辑程序)* 
 
@@ -724,7 +625,7 @@ false.
 *** 基于反绎推理的假设空间约束
 {{{bbold(形式化)}}}
 \begin{align}
-  &KB\cup\mathcal{H}_{t+1}\models error_t.\\
+  &KB\cup\mathcal{H}_{t+1}\models \neg error_t.\\
   \text{s.t.}\quad&\text{Con}(KB\cup\mathcal{H}_{t+1}).\nonumber
 \end{align}
 {{{d(fragment fade-in,font-size:0.8em;margin:10px auto,,1)}}}
@@ -753,7 +654,7 @@ $\mathcal{H}_{t+1}$ 由反绎推理得出, 因此:
 #+REVEAL_HTML: <img src="./figs/dissertation/lasin/data_all.svg" width=500px style="margin:20px auto" />
 {{{ed()}}}
 #+ATTR_REVEAL: :frag (appear) :frag_idx (2)
-- *输出:* 一组特征作为字典，以使得每个原样本在经过该字典编码后所得到的特征向量均为稀疏向量.
+- *输出:* 一组稀疏编码特征作为字典，以使得每个原样本在经过该字典编码后所得到的特征向量均为稀疏向量.
 #+BEGIN_NOTES
 表示学习的假设模型是一组字典，即由具体特征组成的集合
 #+END_NOTES
@@ -822,36 +723,19 @@ $\mathcal{H}_{t+1}$ 由反绎推理得出, 因此:
 | OS2    |   24.74 | *25.07* |                      24.10 |    23.98 | 25.63 | *26.29* |                      26.00 |    26.21 |
 *** 实验结果
 #+ATTR_HTML: :class org-center :style font-size:0.8em
-{{{bbold(字典迁移分类精度(%))}}}
-#+ATTR_HTML: :style font-size:80%;margin:30px auto
-|      |       |         | $\mid\mathbf{b}\mid = 20$ |          |       |         | $\mid\mathbf{b}\mid = 50$ |          |
-| /    |     < |         |                           |        > |     < |         |                           |        > |
-| 任务 |    SC | stroke  |                    kmeans | spectral |    SC | stroke  |                    kmeans | spectral |
-|------+-------+---------+---------------------------+----------+-------+---------+---------------------------+----------|
-| M2O  | 19.36 | *20.69* |                     19.09 |    18.60 | 20.39 | *23.38* |                     20.86 |    21.09 |
-| O2M  | 87.72 | *88.14* |                     87.98 |    88.06 | 93.08 | *93.69* |                     93.44 |    93.67 |
-#+ATTR_HTML: :style font-size:80%;margin:30px auto
-|        |       |         | $\mid\mathbf{b}\mid = 100$ |          |       |         | $\mid\mathbf{b}\mid = 200$ |          |
-| /      |     < |         |                            |        > |     < |         |                            |        > |
-| 数据集 |    SC | stroke  | kmeans                     | spectral |    SC | stroke  |                     kmeans | spectral |
-|--------+-------+---------+----------------------------+----------+-------+---------+----------------------------+----------|
-| M2O    | 20.43 | *23.19* | 20.93                      |    21.48 | 18.62 | *24.63* |                      22.57 |    22.82 |
-| O2M    | 96.03 | 96.00   | *96.11*                    |    95.81 | 96.11 | *96.39* |                      96.19 |    96.22 |
-*** 实验结果
-#+ATTR_HTML: :class org-center :style font-size:0.8em
 {{{bbold(印度语手写字符原语学习结果)}}}
 #+REVEAL_HTML: <img src="./figs/dissertation/lasin/dev_all.svg" style="margin:-22px auto;box-shadow:none"/>
 ** 小结
 - 提出了LASIN方法
   - 将FOL领域知识嵌入机器学习优化过程;
-  - 将FOL领域知识转化转化为对假设空间的约束.
+  - 将FOL领域知识转化为对假设空间的约束.
 {{{d(remarkbox fragment fade-in,font-size:60%;padding:0 15px;height:180px;margin:30px auto,,1)}}}
 {{{rbold(相关成果已经发表)}}}
 - _W.-Z. Dai_ and Z.-H. Zhou. Combining logic abduction and statistical induction: Discovering written primitives with human knowledge. In: *Proceedings of the 31st AAAI Conference on Artificial Intelligence (AAAI’17)*, San Francisco, CA, 2017, pp.4392-4398. /(CCF-A类会议)/
 {{{ed()}}}
 * 第{{{rbold(4)}}}章{{{p}}}一种机器学习驱动的{{{nl()}}}领域知识精化方法{{{ep}}}
 ** 领域知识精化
-- {{{bbold(目标)}}}: 从数据中学习一组描述目标概念的逻辑规则.
+- {{{bbold(目标)}}}: 从数据 $B$ 和标记 $E$ 中学习一组描述目标概念的逻辑规则.
 {{{d()}}}
 \begin{equation}
 B\cup H\models E.
@@ -872,7 +756,6 @@ B\cup H\models E.
 \[
 KB\cup \color{#981E32}{D}\cup\{\color{#981E32}{f}\}\cup H \models \color{#981E32}{E}.
 \]
-{{{d(fragment fade-in,,,1)}}}
 {{{rbold(符号表示)}}}
 {{{d(,font-size:0.8em)}}}
 #+ATTR_REVEAL: :frag (appear appear appear appear appear) :frag_idx (2 2 3 4 5)
@@ -881,7 +764,6 @@ KB\cup \color{#981E32}{D}\cup\{\color{#981E32}{f}\}\cup H \models \color{#981E32
 - {{{rbold($D$)}}}: $\{\mathbf{x}_1,\mathbf{x}_2,\ldots,\mathbf{x}_m\}$ 为训练样本, 其中 $\mathbf{x}_i\in\mathcal{X}$, 而 $\mathcal{X}$ 为 *非符号表示* 的输入空间, 如图像、波形、向量等等.
 - {{{rbold($E$)}}}: $\{y_1,y_2,\ldots,y_m\}$ 为每个样例的标记;
 - {{{rbold($f:\mathcal{X}\mapsto \Gamma$)}}}: 可从 $D$ 中提取基本事实的 *机器学习模型*, 其中 $\Gamma$ 表示 $KB$ 的Herbrand域{{{bsup([43])}}}.
-{{{ed}}}
 {{{ed}}}
 *** KRL方法
 {{{bbold(Knowledge Refinement by Learning)}}}
@@ -923,9 +805,7 @@ KB\cup \color{#981E32}{F}\models D
 KB\cup F\models f(\mathbf{x}_i)
 \end{equation}
 {{{ed()}}}
-{{{d(fragment fade-in,width:100%,,3)}}}
 可根据反绎推理（主动假设检验）的特点, 实现按需采样.
-{{{ed()}}}
 {{{ed()}}}
 {{{ed()}}}
 *** 基于机器学习的领域知识精化
@@ -935,7 +815,7 @@ KB\cup F\models f(\mathbf{x}_i)
 KB\cup F\cup\color{#981E32}{H}\models E
 \]
 {{{ed()}}}
-{{{d(remarkbox fragment fade-in,margin:20px auto,,2)}}}
+{{{d(remarkbox,margin:20px auto,,)}}}
 *元解释学习(Meta-Interpretive Learning)* {{{bsup([114])}}}
 {{{d(,width:100%)}}}
  \begin{align*}
@@ -987,7 +867,7 @@ KB\cup F\cup\color{#981E32}{H}\models E
   \mathbf{triangle_2}(A,C,H)&\leftarrow \mathbf{rmv\_rdndnt}(A,B,C)\wedge \mathbf{\color{#981E32}{list\_length}}(B,H).\\
   \mathbf{triangle_1}(A,A2,B2)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{triangle\_2}(B,A2,B2).\\
   \mathbf{triangle}(A)&\leftarrow \mathbf{triangle_0}(A,0.04,\mathbf{\color{#981E32}{3}}).\\
-  \mathbf{triangle_1}(A,G)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{list\_length}(B,G).\\
+  \mathbf{triangle_1}(A,G)&\leftarrow \mathbf{polygon}(A,B)\wedge \mathbf{\color{#981E32}{list\_length}}(B,G).\\
   \mathbf{triangle}(A)&\leftarrow \mathbf{triangle}_1(A,\mathbf{\color{#981E32}{3}}).
 \end{align}
 {{{d()}}}
@@ -1136,6 +1016,13 @@ celebration(X) :-
 KB\cup\Delta_C\cup p(\mathbf{x}_i)\models y_i.
 \]
 {{{ed}}}
+*** 与常规机器学习的比较{{{bsup([180])}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al_zhouzh.png" style="box-shadow:none;margin: 80px auto"/>
+#+BEGIN_NOTES
+综上所述，反绎学习的过程大致如下：当输入数据时，首先由机器学习部件从数据中提取逻辑符号表示的伪标记 p(X);
+这些伪标记被输入进反绎逻辑部件，用于增广领域知识并被用于知识推理与精化，以估计出样本的最终标记。
+当预测标记与真实标记出现不一致时，反绎学习会根据真实标记与领域知识反绎推理出样本中更可能正确的伪标记符号 r_\delta(X)，以重新训练机器学习模型。
+#+END_NOTES
 *** 反绎学习框架
 #+REVEAL_HTML: <img src="./figs/dissertation/al/framework.png" style="box-shadow:none;margin:30px auto" />
 #+ATTR_REVEAL: :frag (appear)
@@ -1181,13 +1068,6 @@ p一般可微，但Δc不可微，因此无法在同一个框架下优化；且�
 \begin{align}
   p^{t+1}=\arg\min\limits_{p}\quad&\sum_{i=1}^mL(p(\mathbf{x}_i),r_\delta(\mathbf{x}_i))
 \end{align}
-*** 与常规机器学习的比较{{{bsup([180])}}}
-#+REVEAL_HTML: <img src="./figs/dissertation/al_zhouzh.png" style="box-shadow:none;margin: 80px auto"/>
-#+BEGIN_NOTES
-综上所述，反绎学习的过程大致如下：当输入数据时，首先由机器学习部件从数据中提取逻辑符号表示的伪标记 p(X);
-这些伪标记被输入进反绎逻辑部件，用于增广领域知识并被用于知识推理与精化，以估计出样本的最终标记。
-当预测标记与真实标记出现不一致时，反绎学习会根据真实标记与领域知识反绎推理出样本中更可能正确的伪标记符号 r_\delta(X)，以重新训练机器学习模型。
-#+END_NOTES
 ** Neural Logical Machine
 #+REVEAL_HTML: <img src="./figs/dissertation/al/nlm.png" style="box-shadow:none;margin: 20px auto" />
 1. 机器学习模型: 卷积神经网络{{{bsup([95])}}}
@@ -1197,13 +1077,12 @@ p一般可微，但Δc不可微，因此无法在同一个框架下优化；且�
 最上层是由卷积神经网络（convolutional neural network，CNN）构成的识别模型，它对应着反绎学习中的机器学习部分；下部的反绎逻辑程序（Abductive Logic Programming，ALP）则对应于反绎逻辑推理部件；中间是则是由非梯度优化方法实现的一致性搜索\cite{Yu2016Derivative}。
 #+END_NOTES
 *** Tricks
+#+ATTR_REVEAL: :frag (appear)
 1. 反绎逻辑推理复杂度高, 其中的一致性判断为NP难;
-   #+ATTR_REVEAL: :frag (appear)
    - 每次训练 $p$ 时只采样部分样本（带来噪声）;
    - 部分样本下学得的 $\Delta_C$ 作为领域知识, 将样本增广为向量;
    - 用增广的向量训练一个 MLP 作为最终的判别模型（应对噪声）.
 2. 一致性优化复杂度也较高, 若样本中需要被修改伪标记过多, 也会影响速度.
-   #+ATTR_REVEAL: :frag (appear)
    - 使用课程学习{{{bsup([9])}}}, 从简单样本学起.
 ** 实验验证
 {{{bbold(任务: 手写二进制加法等式学习)}}}
@@ -1333,7 +1212,7 @@ NLM学得的模型能够重用, 且比冷启动效果更好
 #+ATTR_REVEAL: :frag (appear)
 - 感谢我的恩师周志华教授。周老师对我学业的支持, 生活的关心, 是我今天能顺利完成论文的前提. 老师对我为人处世的教导, 独立思维的培养, 则是我未来一生能在社会中安身立命的凭借. 感谢老师周老师给予我机会访问世界上最一流的学者并建立合作, 感谢老师一针见血地指出我的缺陷, 并一次次的宽容我改正.
 - 感谢姜老师对我生活上的关心和帮助, 感谢王魏老师在工作上对我的教导和协助, 感谢俞扬老师、 黎铭老师、 詹德川老师、 高魏老师和李宇峰老师, 感谢他们在科研和工作上对我进行的无私帮助，并在我遇见挫折的时候的安慰和鼓励.
-- 感谢所有 LAMDA 的师兄师姐和师弟师妹们, 他们对我的帮助和关心让我的这八年博士生生涯得以顺利完成, 他们的可爱和有趣也让这八年生活充满了欢笑和色彩. 特别感谢胡毅奇、杨杨、王璐、沈芷玉、侯博建和赵鹏等师弟师妹们在科研之外事务中对我的帮助.
+- 感谢所有 LAMDA 的师兄师姐和师弟师妹们, 他们对我的帮助和关心让我的这八年博士生生涯得以顺利完成, 他们的可爱和有趣也让这八年生活充满了欢笑和色彩. 特别感谢胡毅奇、杨杨、王璐、沈芷玉、侯博建、赵鹏和史舒婷等师弟师妹们在科研之外事务中对我的帮助.
 - 感谢我在访问伦敦帝国理工学院期间指导我的 Stphen Muggleton 教授, 作为归纳逻辑程序设计领域的顶尖专家, Muggleton 教授在科研和学习上给予了我许多包容和帮助.
 - 感谢我的父母和妻子, 他们的默默支持和无私奉献是支撑我完成博士学习最坚定的力量, 也是我未来生活中继续前行时最强大的动力.
 {{{ed}}}

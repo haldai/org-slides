@@ -1,0 +1,119 @@
+#+INCLUDE: style/config.org
+
+#+NAME: eval_conf
+#+BEGIN_SRC emacs-lisp :results none :exports none
+(set 'conf-file (concat default-directory "style/config.el"))
+(load conf-file)
+#+END_SRC
+
+#+TITLE: 反绎学习：连接机器学习与逻辑推理的桥梁
+#+AUTHOR: 戴望州
+#+DATE: <2019-04-08 一>
+
+# Title slide
+#+BEGIN_EXPORT html
+<section id="slide-title" style="height:100%">
+<img src="./figs/dissertation/nju.jpg" style="position:absolute;top:5%;right:26%;width:300px;box-shadow:none" />
+<img src="./figs/dissertation/lamda.png" style="position:absolute;top:5%;right:2%;width:200px;box-shadow:none" />
+<img src="./figs/icl.jpg" style="position:absolute;top:-3%;right:56%;width:325px;box-shadow:none" />
+<div style="top:20%;position:fixed">
+<div class="talk-title">
+    <h1 class="no-toc-progress">反绎学习</h1>
+    <p style="font-size:1.2em;font-weight:bold;color:rgba(0,0,0,0.55)">——连接机器学习与逻辑推理的桥梁</p>
+</div>
+
+<div class="talk-subtitle">
+    <p>Abductive Learning: Towards Bridging Machine Learning and Logical Reasoning</p>
+</div>
+<div class="keyboard-usage">
+    <p>(Press <code>?</code> for help, <code>n</code> and <code>p</code> for next and previous slide)</p>
+</div>
+<br />
+<div class="talk-author" style="font-size:0.7em">
+<b>戴望州</b><br />
+<span class="talk-date">2019-04-08 星期一 @ <a href="http://jxgc.xtu.edu.cn/">湘潭大学机械工程学院</a></span></p>
+</div>
+</div>
+</section>
+<!--大纲-->
+<section id="slide-toc">
+<div class="talk-toc">
+    <h3 class="no-toc-progress">大纲</h3>
+</div>
+#+END_EXPORT
+- 人工智能与机器学习
+- 一阶逻辑领域知识
+- 反绎学习
+- 实验结果
+- 小结
+#+REVEAL_HTML: </section>
+* 人工智能与机器学习
+** 人工智能
+#+BEGIN_EXPORT html
+<div class=flexbox-stretch>
+    <img class="fragment appear" data-fragment-index=0
+src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180 width=auto />
+    <img class="fragment appear" data-fragment-index=0 src="https://media.tenor.com/images/14ea2784dbf2458cc2911e5dac4e4024/tenor.gif" height=180 width=auto />
+    <img class="fragment appear" data-fragment-index=0 src="https://i.pinimg.com/originals/6c/fc/5c/6cfc5c281108d8ae10f4d6ced8c34dc6.gif" height=180 width=auto />
+    <img class="fragment appear" data-fragment-index=2 src="http://5b0988e595225.cdn.sohucs.com/images/20170727/a6fbd258cec24b81aa29da7747a633c9.png" height=180 width=320 />    
+    <img src="https://www.citibank.com.sg/citigold/images/insights/infograph-1a.gif" height=180 width=280 />
+    <img class="fragment appear" data-fragment-index=3 src="./figs/dissertation/trump.png" height=180 width=380 />
+    <img class="fragment appear" data-fragment-index=1 src="./figs/dissertation/sc2.gif" height=180 width=auto />
+    <img class="fragment appear" data-fragment-index=1 src="https://thumbs.gfycat.com/DeliciousWeepyBullfrog-small.gif" height=180 width=340 />
+    <img class="fragment appear" data-fragment-index=1 src="https://thumbs.gfycat.com/AmusingConfusedBobwhite-max-1mb.gif" height=180 width=auto />    
+</div>
+#+END_EXPORT
+#+BEGIN_NOTES
+人工智能是计算机科学中重要的研究方向之一。它的目标是令计算机像人类一样自动识别环境和任务，并做出自主判断和决策。
+它最早出现在人类的想象之中，现在已逐渐走进我们的生活。
+2017年，我国颁布了人工智能发展规划，将人工智能研究提升为国家战略；
+这个月初，特朗普也签署主席令，将人工智能作为重要发展方向。
+#+END_NOTES
+*** 早期人工智能
+{{{d(flexbox)}}}
+{{{d(leftcol60)}}}
+- 一般问题求解:
+  - General Problem Solver, 1957
+  - 自动定理证明, 1960s
+- 知识工程:
+  - 专家系统, 1960s
+  - 逻辑程序, 1970s
+  - "五代机", 1980s
+{{{ed()}}}
+{{{d(rightcol40)}}}
+[[http://diva.library.cmu.edu/Newell/newell-simon.jpg]]
+{{{ed()}}}
+{{{ed()}}}
+#+ATTR_HTML: :class org-center fragment appear
+{{{bbold(“推理引擎+领域知识”)}}}
+#+BEGIN_NOTES
+早期的人工智能研究以自动推理、知识工程为主。达特茅斯会议上，西蒙和钮厄尔就提出了一般问题求解系统。这些工作逐渐发展为自动定理证明、专家系统、逻辑程序。日本甚至提出了基于Prolog推理的第五代计算机计划。
+
+这些人工智能系统的特点是构建通用推理引擎，并引入专业领域知识。
+然而，一方面逻辑推理速度慢、领域知识成本高，人工智能遇到了知识工程瓶颈。主流研究方向逐渐转变为机器学习。
+#+END_NOTES
+
+
+** 机器学习
+{{{d(flexbox)}}}
+{{{d(leftcol40)}}}
+[[./figs/dissertation/ml.svg]]
+{{{ed()}}}
+{{{d(rightcol60)}}}
+\[
+\min_f E_{\langle x,y\rangle\sim D}loss(f(x),y)
+\]
+#+BEGIN_EXPORT html
+<div class=flexbox-stretch>
+    <img class="fragment appear" data-fragment-index=1 src="https://systweak1.vo.llnwd.net/content/wp/systweakblogsnew/uploads_new/2018/03/hidden-layers-in-network.gif" width=290px height=220px/>
+    <img class="fragment appear" data-fragment-index=1 src="https://jeremykun.files.wordpress.com/2017/06/svm_solve_by_hand-e1496076457793.gif" width=280px height=220px/>
+    <img class="fragment appear" data-fragment-index=1 src="https://yanndubs.github.io/img/blog/decision-tree-class.gif" width=340px height=220px/>
+    <img class="fragment appear" data-fragment-index=1 src="https://cdn-images-1.medium.com/max/1600/1*Nx6IyGfRAV1ly6uDGnVCxQ.gif" width=230px height=220px>
+</div>
+#+END_EXPORT
+{{{ed}}}
+{{{ed}}}
+#+BEGIN_NOTES
+机器学习的目标是从数据中进行学习，通过计算、利用经验来改善系统自身性能，而非直接获得知识。
+代表性模型有神经网络、支持向量机、决策树等监督学习方法，以及非监督学习方法。
+#+END_NOTES

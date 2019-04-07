@@ -41,14 +41,17 @@
     <h3 class="no-toc-progress">大纲</h3>
 </div>
 #+END_EXPORT
-- 人工智能与机器学习
-- 一阶逻辑领域知识
-- 反绎学习
-- 实验结果
-- 小结
+- 研究背景
+- 反绎逻辑推理
+- 基于反绎推理的机器学习方法
+- 总结
 #+REVEAL_HTML: </section>
-* 人工智能与机器学习
-** 人工智能
+* 研究背景
+** 人工智能？
+#+REVEAL_HTML: <iframe src="https://player.bilibili.com/player.html?aid=44675966&cid=78214689&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="1024" height="800" style="margin:20px auto"> </iframe>
+*** 人工智能？
+#+REVEAL_HTML: <iframe src="https://player.bilibili.com/player.html?aid=22575605&cid=37440336&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="1024" height="800" style="margin:20px auto"> </iframe>
+*** 人工智能
 #+BEGIN_EXPORT html
 <div class=flexbox-stretch>
     <img class="fragment appear" data-fragment-index=0
@@ -85,15 +88,13 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 {{{ed()}}}
 {{{ed()}}}
 #+ATTR_HTML: :class org-center fragment appear
-{{{bbold(“推理引擎+领域知识”)}}}
+{{{bbold(“推理引擎+专家知识”)}}}
 #+BEGIN_NOTES
 早期的人工智能研究以自动推理、知识工程为主。达特茅斯会议上，西蒙和钮厄尔就提出了一般问题求解系统。这些工作逐渐发展为自动定理证明、专家系统、逻辑程序。日本甚至提出了基于Prolog推理的第五代计算机计划。
 
 这些人工智能系统的特点是构建通用推理引擎，并引入专业领域知识。
 然而，一方面逻辑推理速度慢、领域知识成本高，人工智能遇到了知识工程瓶颈。主流研究方向逐渐转变为机器学习。
 #+END_NOTES
-
-
 ** 机器学习
 {{{d(flexbox)}}}
 {{{d(leftcol40)}}}
@@ -117,3 +118,667 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 机器学习的目标是从数据中进行学习，通过计算、利用经验来改善系统自身性能，而非直接获得知识。
 代表性模型有神经网络、支持向量机、决策树等监督学习方法，以及非监督学习方法。
 #+END_NOTES
+*** 机器学习 ≈“函数拟合”= 最优化
+#+ATTR_HTML: :style margin:20px
+\begin{equation}
+\min_{h\in\mathcal{H}}\frac{1}{m}\sum_{i=1}^mLoss(\color{#981E32}{h(\mathbf{x}_i)},y_i),
+\end{equation}
+{{{d(flexbox-start)}}}
+{{{d(leftcol)}}}
+#+ATTR_REVEAL: :frag (appear appear) (1 2)
+- {{{rbold(训练数据)}}}: $\langle \mathbf{x}_i, y_i\rangle^m_{i=1}$
+  - 样本: $\mathbf{x}_i\in\mathcal{X}$
+  - 标记: $y_i\in\mathcal{Y}$
+- {{{rbold(假设模型)}}}: $h\in\mathcal{H}$
+  - 线性模型: $h(\mathbf{x})=w\mathbf{x}+b$
+  - 神经网络: $h_l(h_{l-1}(\ldots h_2(h_1(\mathbf{x}))))$
+{{{ed}}}
+{{{d(rightcol)}}}
+#+ATTR_REVEAL: :frag (appear) (3)
+- {{{rbold(损失函数)}}}: $Loss(h(\mathbf{x}), y)$
+  - 0-1 loss: $I(h(\mathbf{x})\neq y)$
+  - Squared loss: $||h(\mathbf{x})-y||^2$
+  - Hinge loss: $\max(0,1-y\cdot h(\mathbf{x}))$
+  - Exponential loss: $\exp(-\beta\cdot y\cdot h(\mathbf{x}))$
+{{{ed}}}
+{{{ed}}}
+*** 深度（神经网络）学习
+{{{d(flexbox)}}}
+{{{img(./figs/ABL/network.png, 100%,,,margin:auto;border:0)}}}
+#+ATTR_REVEAL: :frag (appear)
+- 每一层是一个输入函数+激活函数
+  - Hebbian model: $s=w\cdot\mathbf{x}+\mathbf{b}$
+  - Sigmoid: $\frac{1}{1+e^-s}$, ReLu: $\max(0,s)$, ...
+- 多达上百层函数复合
+- 消耗百万至千万量级{{{rbold(有标记)}}}数据
+{{{ed}}}
+** 人工智能的可理解性
+{{{rbold(Monolith / Black box)}}}
+{{{img(./figs/ABL/monolith.jpg,74%,auto,,margin:10px auto)}}}
+*** 人工智能的可理解性
+{{{d(flexbox)}}}
+{{{d(leftcol)}}}
+- 已成为国际关注热点
+  - Human Aware AI: [[https://aaai.org/Library/Workshops/ws17-10.php][AAAI'17 WS]], [[http://rakaposhi.eas.asu.edu/haai-aaai/AAAI-Presidential-Address-final.pdf][AAAI'18 Presidential Adress]].
+  - Interpretable Machine Learning: [[https://nips.cc/Conferences/2017/Schedule?showEvent=8744][NIPS'17 WS]], [[https://sites.google.com/site/nips2016interpretml/][NIPS'16 WS]].
+  - Explainable AI (XAI): [[http://home.earthlink.net/~dwaha/research/meetings/faim18-xai/][IJCAI'18 WS]], [[http://home.earthlink.net/~dwaha/research/meetings/ijcai17-xai/][IJCAI'17 WS]], [[https://www.darpa.mil/program/explainable-artificial-intelligence][DARPA Program]].
+  - Human in the Loop Machine Learning: [[https://machlearn.gitlab.io/hitl2017/][ICML'17 WS]].
+{{{ed()}}}
+{{{d(rightcol)}}}
+{{{img(https://imgs.xkcd.com/comics/machine_learning.png, 100%, auto)}}}
+{{{ed()}}}
+{{{ed()}}}
+{{{d(popupbox fragment fade-in,position:absolute;top:40%;left:20%,,1)}}}
+1. 我们明白的，无法传达给机器;
+2. 机器学会的，无法传达给我们.
+{{{ed}}}
+#+BEGIN_NOTES
+然而，数据驱动的机器学习却伴随着较差的可理解性。近年来，大量人工智能与机器学习会议举办了关于可理解性的workshop和special track，美国国防部也启动了关于可解释AI的项目。
+
+可解释，事实上有两层意思：
+#+END_NOTES
+*** 可理解性差带来的问题
+{{{d(flexbox-start)}}}
+{{{d(leftcol,text-align:center;font-size:0.8em)}}}
+[[https://ai.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html]["deep dream"]]
+
+{{{p}}}深度神经网络对图片进行重构{{{ep}}}
+{{{img(./figs/ABL/skyarrow.png,100%,auto,,margin:20px;box-shadow:none)}}}
+{{{img(./figs/ABL/Funny-Animals.png,100%,auto,,margin:20px;box-shadow:none)}}}
+{{{ed}}}
+{{{d(rightcol,text-align:center;font-size:0.8em)}}}
+[[https://arxiv.org/abs/1412.1897]["easily fooled"]]
+{{{img(./figs/ABL/fool1.jpeg,100%,auto,,margin:20px;box-shadow:none)}}}
+{{{img(./figs/ABL/fool2.png,100%,auto,,margin:20px;box-shadow:none)}}}
+{{{ed}}}
+{{{ed}}}
+** 一种可能的解决方案
+#+ATTR_HTML: :class org-center
+{{{rbold(将机器学习与一阶逻辑表示的知识相结合)}}}
+
+{{{d(flexbox-center,font-size:80%)}}}
+#+ATTR_HTML: :class fragment appear :data-fragment-index 1 :style text-align:left
+*一阶逻辑* (First-Order Logic, FOL)是一种[[https://zh.wikipedia.org/zh-cn/%25E5%25BD%25A2%25E5%25BC%258F%25E8%25AF%25AD%25E8%25A8%2580][形式语言]].
+{{{d(leftcol60)}}}
+#+ATTR_REVEAL: :frag (appear)
+1. $\forall X(mortal(X)\leftarrow man(X)).$
+   - “任何人都会死”
+2. $man(socrates).$
+   - “苏格拉底是人”
+3. $mortal(socrates).$
+   - “苏格拉底会死”
+{{{ed()}}}
+{{{d(rightcol40)}}}
+#+ATTR_HTML: :height 400px
+[[http://www.quickmeme.com/img/a3/a31f18eace4a2930460d85351cb584fc88ff5971bddf657816ce54115d9e7cfd.jpg]]
+{{{ed()}}}
+{{{ed()}}}
+#+BEGIN_NOTES
+长期以来，许多人们相信的一种解决方案，就是将早期基于FOL领域知识和推理的人工智能，与当下的机器学习相结合。
+
+一阶逻辑是一种形式语言，它拥有常量、变量、连词，以及表示常量间关系的谓词以及对变量进行量化的量词，它们能够共同构成人类易于理解的逻辑公式。
+#+END_NOTES
+** 机器学习中的“领域知识”
+{{{d(flexbox-start)}}}
+{{{d(leftcol)}}}
+{{{bbold(常见的领域知识：)}}}
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 2)
+- *类型*:
+  - 模型选择;
+  - 特征工程; 
+  - 目标函数;
+    - 损失函数;
+    - 正则化项;
+    - 函数空间约束;
+  - 先验分布;
+- *特点*: 一般连续可微.
+#+ATTR_HTML: :class fragment appear :data-fragment-index 5
+{{{bbold(常用于SVM、NN，<br />一般作为凸优化约束)}}}
+{{{ed()}}}
+{{{d(rightcol)}}}
+{{{rbold(关系型知识：)}}}
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (3 4)
+- *类型*:
+  - 标记间的关系;
+    - 层次标记;
+    - 相关性;
+  - 特征间的关系;
+    - 因果关系;
+    - 相关性;
+  - 样本间的关系;
+- *特点*: 离散，关系型知识.
+#+ATTR_HTML: :class org-center fragment appear :data-fragment-index 6 :style padding:9px 0 0 0
+{{{rbold(常用于规则学习，<br />一般作为组合优化约束)}}}
+{{{ed()}}}
+{{{ed()}}}
+*** 一阶逻辑知识
+{{{d(flexbox)}}}
+{{{d(leftcol60)}}}
+{{{d(scalebox90,font-size:0.8em)}}}
+{{{bold(目标概念)}}}/{{{rbold(发明谓词)}}}/{{{bbold(领域知识)}}}:
+\begin{align}
+\mathbf{stair}(P)\leftarrow&\color{#981E32}{\mathbf{s}_1}(P).\\
+\mathbf{stair}([X,Y,Z|P])\leftarrow&\color{#981E32}{\mathbf{s}_1}(X,Y,Z)\wedge\mathbf{stair}([Z|P]).\\
+\color{#981E32}{\mathbf{s}_1}(X,Y,Z)\leftarrow& \color{#1A53A1}{\mathbf{hori}}(X,Y)\wedge\color{#1A53A1}{\mathbf{vert}}(Y,Z).
+\end{align}
+{{{ed()}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/stairs.svg" height=300px style="box-shadow:none;position:relative;left:21%"/>
+{{{ed()}}}
+{{{d(rightcol40)}}}
+#+ATTR_REVEAL: :frag (appear) :frag_idx (1 2 3)
+1. 良好的{{{rbold(可理解性)}}}
+   - 模型形式为 $A\leftarrow B_1\wedge\ldots\wedge B_n$
+   - 比统计模型和神经网络更易于人类理解   
+2. 强大的{{{rbold(表达能力)}}}
+   - 允许递归、谓词发明
+   - 强于一般的函数形式表达
+3. 优秀的{{{rbold(推理能力)}}}
+   - 是完备的形式系统
+{{{ed()}}}
+{{{ed()}}}
+{{{d(popupbox fragment fade-in,position:absolute;top:40%;left:4%,,4)}}}
+*难点：如何将复杂的逻辑知识{{{nl}}}与连续可微的学习相结合？*
+{{{ed}}}
+#+BEGIN_NOTES
+例如，左图是一个从楼梯场景中学到的递归定义，可以发现，它不但符合人类理解，也拥有更强大的表达能力。此外，作为一个完备的形式系统，它还能进行复杂的逻辑推理。
+
+完备的，意味着所有真命题都可以通过有限步推理证明；那些不可判定的均为假命题。
+#+END_NOTES
+* 反绎逻辑推理
+** "Holmesian deduction"
+{{{d(flexbox)}}}
+{{{d(leftcol60,font-size:0.7em;text-align:justify;font-family:serif)}}}
+"It is simplicity itself ... my eyes tell me that on the inside of your left shoe, just where the firelight strikes it, the leather is scored by six almost parallel cuts. Obviously they have been caused by someone who has very carelessly scraped round the edges of the sole in order to remove crusted mud from it. Hence, you see, my double {{{rbold(deduction)}}} that you had been out in vile weather, and that you had a particularly malignant boot-slitting specimen of the London slavey."
+{{{ed}}}
+{{{d(rightcol40)}}}
+{{{img(./figs/ABL/sherlock.jpg,100%)}}}
+{{{ed}}}
+{{{ed}}}
+** 三类逻辑推理
+{{{d(,font-size:0.9em)}}}
+\[
+B \cup H \models E.
+\]
+#+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (1 1 2)
+1. {{{bold(演绎)}}}: 已知{{{bold(具体)}}}事实 $B$ 与{{{bold(一般)}}}规律 $H$ 推理出{{{bold(具体)}}}结论 $E$;
+2. {{{bold(归纳)}}}: 已知{{{bold(具体)}}}事实 $B$ 与{{{bold(具体)}}}样例 $E$ 归纳出{{{bold(一般)}}}规律 $H$;
+3. {{{rbold(反绎)}}}: 已知{{{bold(一般)}}}规律 $H$ 与{{{bold(具体)}}}事实 $E$ 推理出{{{bold(具体)}}}原因 $B$.
+{{{d(fragment fade-in,,,3)}}}
+{{{rbold(演绎与反绎的区别：)}}}
+\[
+H\equiv B\rightarrow E.
+\]
+- {{{bold(演绎)}}}是已知前提推出结论;
+- {{{rbold(反绎)}}}是根据结论猜测原因.
+{{{ed()}}}
+{{{ed()}}}
+** 一个例子
+{{{d(,margin:30px auto)}}}
+#+BEGIN_SRC prolog :exports code
+:- use_module(library(chr)).
+% 可反绎谓词
+:- chr_constraint wet_grass/1, rained_last_night/1, sprinkler_was_on/1.
+% 一般规律
+wet_shoes(X) :- wet_grass(X).
+wet_grass(X) :- rained_last_night(X).
+wet_grass(X) :- sprinkler_was_on(X).
+rained_last_night(X), sprinkler_was_on(X) ==> fail.
+% 观测事实
+?- wet_shoes(bob), not(rained_last_night(bob)).
+% 反绎推理结果
+%@ sprinkler_was_on(bob) ;
+#+END_SRC
+{{{ed}}}
+** 形式化
+{{{d(remarkbox)}}}
+*定义 (反绎逻辑程序)* 
+
+反绎逻辑程序是一个三元组 $(KB,A,IC)$, 其中 $KB$ 为 *领域知识*, $A$ 为 *可反绎谓词*, $IC$ 为 *完整性约束*. 当给定观测 *事实* $O$ 时, 能够推理出关于 $A$ 的 *具体* 逻辑事实集合 $\Delta$, 使得：
+
+- $\Delta\cup KB\models O$,
+- $\Delta\cup KB\models IC$,
+- $\text{Con}(KB\cup\Delta)$.
+{{{ed()}}}
+{{{d(org-center fragment fade-in,margin:30px auto,,1)}}}
+{{{rbold(换言之，$\Delta$ 是基于 $KB$ 对 $O$ 的一种具体“解释”)}}}
+{{{ed}}}
+** 机器学习与反绎逻辑推理
+#+ATTR_REVEAL: :frag (appear)
+- 训练样例 $\{\mathbf{x}\}$ 是一组{{{rbold(观测事实)}}}；
+- 样例标记 $\{ y\}$ 是一组{{{rbold(观测事实)}}}；
+- 我们希望利用的领域知识是一组{{{rbold(一般规律)}}}；
+- 待学习的模型假设 $h$ 与反绎推理得出的{{{bbold(解释)}}}有关.
+* 一种领域知识辅助约束的{{{nl}}}机器学习方法
+** 领域知识辅助机器学习
+{{{d(flexbox)}}}
+{{{d(leftcol65)}}}
+- {{{rbold(任务目标)}}}:
+  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (1 1 2)
+  - FOL领域知识完备{{{rawesome(087)}}}
+  - 机器学习模型未训练{{{rawesome(165)}}}
+  - 利用逻辑知识提升机器学习性能
+- {{{bbold(以往工作)}}}:
+  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (4 5)
+  - {{{bawesome(188)}}}{{{bbold(难点1)}}}：符号数据中进行统计学习
+  - {{{bawesome(188)}}}{{{bbold(难点2)}}}：非符号数据引入FOL知识
+- {{{bold(本文工作)}}}:
+  #+ATTR_REVEAL: :frag (appear) :frag_idx (6)
+  - 逻辑知识辅助约束（LASIN）
+{{{ed()}}}
+{{{d(rightcol40)}}}
+{{{d(scalebox90,font-size:0.8em)}}}
+#+BEGIN_EXPORT html
+<img src="./figs/dissertation/lasin/data_1.svg" width=200px height="auto" style="position:fixed;right:20%" class="fragment fade-out" data-fragment-index=3 />
+<div class="fragment fade-out" data-fragment-index=3>
+<div style="font-size:2em;font-weight:bold;position:fixed;right:38.5%;top:62%;">↓</div>
+<div style="position: fixed;top: 71%;right: 5%;">特征学习</div>
+</div>
+#+END_EXPORT
+#+ATTR_REVEAL: :frag fade-in :frag_idx 3
+\begin{align}
+&\mathbf{char}([S|T])\leftarrow\\
+&\hspace{3em}\mathbf{stroke}(S)\wedge\mathbf{strokes}(T).\\
+&\mathbf{stroke}([A,B,C|T])\leftarrow\\
+&\hspace{3em}\mathbf{ink}(A,B)\wedge\mathbf{ink}(B,C)\\
+&\hspace{2em}\wedge\mathbf{angle}(\mathbf{AB},\mathbf{BC})<\alpha\\
+&\hspace{2em}\wedge\mathbf{stroke}([B,C|T]).
+\end{align}
+{{{ed()}}}
+#+BEGIN_EXPORT html
+<img class="fragment fade-out" data-fragment-index=3 style="position:relative" width="350" height="auto" src="./figs/dissertation/lasin/origin_dict.svg" />
+<img class="fragment fade-in" data-fragment-index=3 style="position:fixed;margin:5px;right:0" width="350" height="auto" src="./figs/dissertation/lasin/stroke_dict.svg" />
+#+END_EXPORT
+{{{ed()}}}
+{{{ed()}}}
+** LASIN
+{{{bbold(Logical Abduction and Statistical INduction)}}}
+\begin{align}
+  \min\limits_{h\in\mathcal{H}}\quad&\frac{1}{m}\sum_{i=1}^mLoss(h(\mathbf{x}_i),y_i).\\
+  \text{s.t.}\quad& \text{Con}(KB\cup \mathcal{H}).\nonumber
+\end{align}
+{{{d(fragment fade-in,,,1)}}}
+这里的 $\text{Con}$ 为一致性约束, *"$\models$"* 表示“逻辑满足”:
+\[
+\not\exists\varphi ((\mathcal{H}\cup KB\models \varphi)\wedge(\mathcal{H}\cup KB\models \neg\varphi))
+\]
+{{{ed()}}}
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (2 3)
+- {{{rbold(难点：)}}}将FOL公式转化为机器学习可利用的约束;
+- {{{bbold(本节：)}}}通过 *反绎推理* 将FOL公式转化为假设空间约束;
+#+BEGIN_NOTES
+表示学得的假设模型与领域知识不产生矛盾
+#+END_NOTES
+** 基于反绎推理的假设空间约束
+{{{bbold(形式化)}}}
+\begin{align}
+  &KB\cup\mathcal{H}_{t+1}\models \neg error_t.\\
+  \text{s.t.}\quad&\text{Con}(KB\cup\mathcal{H}_{t+1}).\nonumber
+\end{align}
+{{{d(fragment fade-in,font-size:0.8em;margin:10px auto,,1)}}}
+这里的观测事实则为上一轮学得模型 $h_t$ 在训练数据中造成的误差: $error_t=\{\varepsilon_1,\ldots,\varepsilon_m\}$, 其中
+\begin{equation}
+  \varepsilon_i=\text{difference}(h_{t}(\mathbf{x}_i),y_i),
+\end{equation}
+{{{ed()}}}
+{{{d(remarkbox fragment fade-in,margin:10px auto,,2)}}}
+$\mathcal{H}_{t+1}$ 由反绎推理得出, 因此:
+{{{d(,margin:-10px 100px,,2)}}}
+1. 它是一组具体逻辑事实构成的集合;
+2. 它必定与 $KB$ 一致, 因此满足上面的约束.
+{{{ed()}}}
+{{{ed()}}}
+*** LASIN算法
+#+ATTR_REVEAL: :frag (appear)
+1. 根据 $KB$ 与 $error_{t-1}$ 通过{{{rbold(反绎推理)}}}得到假设空间 $\mathcal{H}_t$;
+2. 在 $\mathcal{H}_t$ 中进行机器学习得到候选模型 $h_t$;
+3. 在数据中对 $h_t$ 进行检验, 得到误差 $error_t$;
+4. 根据检验结果来选择接受、排除或更新 $h_t$.
+** 实验验证
+{{{bbold(任务：表示学习)}}}
+{{{d(fragment fade-in,,,1)}}}
+- *输入:* 手写字符图像
+#+REVEAL_HTML: <img src="./figs/dissertation/lasin/data_all.svg" width=500px style="margin:20px auto" />
+{{{ed()}}}
+#+ATTR_REVEAL: :frag (appear) :frag_idx (2)
+- *输出:* 一组稀疏编码特征作为字典，以使得每个原样本在经过该字典编码后所得到的特征向量均为稀疏向量.
+#+BEGIN_NOTES
+表示学习的假设模型是一组字典，即由具体特征组成的集合
+#+END_NOTES
+*** 领域知识: 书写原语——“笔划”
+{{{d(flexbox)}}}
+{{{d(leftcol70)}}}
+1. 每个手写字符由多个笔划构成；
+2. 每个笔划可看作由一组子笔划（书写原语）构成；
+3. 每个子笔划是连续、较光滑的墨迹.
+{{{ed()}}}
+{{{d(rightcol30)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/yong.png" style="margin:20px auto" />
+{{{ed()}}}
+{{{d(remarkbox fragment fade-in,,,1)}}}
+*$KB$*:
+
+\begin{align}
+\mathbf{character}(C)\leftarrow & C=\{S_1,S_2,\ldots\}\wedge \mathbf{stroke}(S_1)\wedge\ldots.\\
+\mathbf{stroke}(S) \leftarrow & S=\{P_1,P_2,\ldots\}\wedge \mathbf{sub\_strk}(P_1,P_2,P_3)\wedge\cdots.\\
+\mathbf{sub\_strk}(A,B,C) \leftarrow &\mathbf{ink}(\mathbf{AB})\wedge\mathbf{ink}(\mathbf{BC})\wedge \mathbf{angle}(\mathbf{AB},\mathbf{BC})<\alpha).
+\end{align}
+{{{ed()}}}
+*** 学习目标
+{{{bbold(基于稀疏编码的特征提取)}}}
+\begin{eqnarray}
+&&\min_{\mathbf{b},\mathbf{a}}\sum_k{||h^{(k)}-\sum_j{a_j^{(k)}b_j}||_2^2+\beta||a^{(k)}||_1}\label{eq:lasin:si}\\
+&\text{s.t. } &||b_j||_2\leq1, \forall j\in 1,\ldots,s.\nonumber\\
+&&\forall h^{(k)}((h^{(k)}\in\mathcal{H})\wedge (KB\vDash stroke(h^{(k)})).\nonumber
+\end{eqnarray}
+{{{rbold(符号表示)}}}
+{{{d(,font-size:0.8em)}}}
+- $\mathbf{b}$: 待学习字典;
+- $\mathbf{a}$: 编码;
+- $\mathcal{H}$: 反绎推理得到的假设空间;
+- $h^{(k)}$: 假设空间中的具体假设.
+{{{ed()}}}
+*** 实验设置
+#+ATTR_REVEAL: :frag (appear)
+- {{{bbold(实验数据)}}}
+  - *MNIST* : 70000张阿拉伯数字图片;
+  - *Omniglot* : 1628类字符，每个字符20个样例. 被分为 =OS1= 与 =OS2=;
+  - *HPL-Devanagali* : 111种印度语字符，每个字符100个样例.
+- {{{rbold(对比方法)}}}
+  - *稀疏编码 (SC)* : 未引入任何领域知识.
+  - *LASIN-stroke*: 引入关于“笔划”的FOL知识
+  - *LASIN-kmeans*: 通过聚类来得到“笔划”
+  - *LASIN-spectral*: 通过谱聚类来得到“笔划”
+*** 实验结果
+#+ATTR_HTML: :class org-center :style font-size:0.8em
+{{{bbold(手写字符图片分类精度(%))}}}
+#+ATTR_HTML: :style font-size:80%;margin:30px auto
+|        |         |         |  $\mid\mathbf{b}\mid = 20$ |          |       |         |  $\mid\mathbf{b}\mid = 50$ |          |
+| /      |       < |         |                            |        > |     < |         |                            |        > |
+| 数据集 |      SC | stroke  |                     kmeans | spectral |    SC | stroke  |                     kmeans | spectral |
+|--------+---------+---------+----------------------------+----------+-------+---------+----------------------------+----------|
+| MNIST  |   90.37 | *91.66* |                      90.48 |    90.82 | 93.89 | *94.88* |                      94.47 |    94.79 |
+| OS1    | *16.46* | 16.24   |                      15.83 |    15.33 | 21.27 | *21.82* |                      20.92 |    21.09 |
+| OS2    |   15.12 | 16.65   |                    *17.37* |    17.43 | 22.61 | *22.90* |                      21.12 |    21.05 |
+#+ATTR_HTML: :style font-size:80%;margin:30px auto
+|        |         |         | $\mid\mathbf{b}\mid = 100$ |          |       |         | $\mid\mathbf{b}\mid = 200$ |          |
+| /      |       < |         |                            |        > |     < |         |                            |        > |
+| 数据集 |      SC | stroke  |                     kmeans | spectral |    SC | stroke  |                     kmeans | spectral |
+|--------+---------+---------+----------------------------+----------+-------+---------+----------------------------+----------|
+| MNIST  |   95.23 | *96.27* |                      96.19 |    96.05 | 95.77 | *97.01* |                      96.91 |    96.97 |
+| OS1    |   23.48 | *24.74* |                      23.26 |    23.45 | 25.40 | *26.64* |                      25.94 |    26.37 |
+| OS2    |   24.74 | *25.07* |                      24.10 |    23.98 | 25.63 | *26.29* |                      26.00 |    26.21 |
+*** 实验结果
+#+ATTR_HTML: :class org-center :style font-size:0.8em
+{{{bbold(印度语手写字符原语学习结果)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/lasin/dev_all.svg" style="margin:-22px auto;box-shadow:none"/>
+* 一种领域知识与机器学习{{{nl}}}互促结合框架
+** 领域知识与机器学习互促结合
+{{{d(flexbox)}}}
+{{{d(leftcol65)}}}
+- {{{rbold(任务目标)}}}:
+  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (1 1 2)
+  - FOL领域知识不完备{{{rawesome(165)}}}
+  - 机器学习模型未训练{{{rawesome(165)}}}
+  - 同时进行FOL知识精化与机器学习
+- {{{bawesome(188)}}}{{{bbold(挑战)}}}:
+  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (4 4)
+  - 训练机器学习模型的标记（label）{{{nl()}}}需要通过逻辑推理获得
+  - 逻辑推理使用的基本事实（facts）{{{nl()}}}需要借助机器学习识别
+- {{{bold(本节工作)}}}:
+  #+ATTR_REVEAL: :frag (appear) :frag_idx (5)
+  - 领域知识与机器学习{{{nl()}}}互促结合（反绎学习）
+{{{ed()}}}
+{{{d(rightcol40)}}}
+{{{d(flexbox-center)}}}
+#+BEGIN_EXPORT html
+<img src="./figs/dissertation/al/before_learn.svg" class="fragment fade-out" style="box-shadow:none;position:fixed;right:0;" data-fragment-index=3 width=350px height=auto />
+<img src="./figs/dissertation/al/after_learn.svg" class="fragment fade-in" style="box-shadow:none;position:fixed;right:0" data-fragment-index=3 width=350px height=auto />
+#+END_EXPORT
+{{{ed()}}}
+{{{ed()}}}
+{{{ed()}}}
+** 一个历史上的例子
+{{{bbold(帕伦克十字架神庙，建于684 AD - 702 AD.)}}}
+#+ATTR_HTML: :width 700px
+{{{img(./figs/homework/temple_photo.jpg,80%,auto,,margin:5px auto)}}}
+*** 十字架神庙石刻
+{{{img(./figs/homework/tab_photo.jpg,80%,auto,,margin:5px auto)}}}
+#+ATTR_REVEAL: :frag (appear)
+- 用于记录时间以及当年发生的事情.
+  - 石刻的抬头部分记录了时间.
+*** 逻辑知识
+{{{d(flexbox)}}}
+{{{d(leftcol)}}}
+*日历纪年*
+- 1-2行：起始日期 $X$
+- 3-7行：历经时间 $Y$
+- 8-9行：最终日期 $Z$
+*计算方法*
+\[ X+_{maya}Y=Z \]
+{{{ed}}}
+{{{d(rightcol)}}}
+{{{img(./figs/homework/tab_xyz.png,100%,auto,,margin:5px auto;box-shadow:none)}}}
+{{{ed}}}
+{{{ed}}}
+*** 逻辑知识
+{{{d(flexbox)}}}
+{{{d(leftcol)}}}
+*日期记法*
+- 奇数列：数字 $a_i$
+- 偶数列：单位 $u_i$
+*计算方法*
+- $X=X_0$
+- $Y=\sum_{i=3}^7 a_i\cdot u_i$
+- $Z=\sum_{i=8}^9 a_i\cdot u_i$
+{{{ed}}}
+{{{d(rightcol)}}}
+{{{img(./figs/homework/temple_of_cross.png,100%,auto,,margin:5px auto;box-shadow:none)}}}
+{{{ed}}}
+{{{ed}}}
+*** 逻辑知识
+[[https://en.wikipedia.org/wiki/Mesoamerican_Long_Count_calendar][玛雅历法：长纪年历]]
+| 日历单位        | 取值（天） | 范围（天）           |
+|-----------------+------------+----------------------|
+| $20^0$          | 1          | 0-19                 |
+| $20^1$          | 20         | 20-359               |
+| $18\times 20^1$ | 360        | 360-7,199            |
+| $18\times 20^2$ | 7,200      | 7,200-143,999        |
+| $18\times 20^3$ | 14,400     | 144,000-2,879,999    |
+| $18\times 20^4$ | 2,880,000  | 2,880,000-57,599,999 |
+| etc.            | etc.       | etc.                 |
+*** 破译目标：字符识别
+[[https://en.wikipedia.org/wiki/Maya_script#Decipherment][象形文字→数字]]
+{{{img(./figs/homework/head_var.png,100%,auto,,margin:5px auto;box-shadow:none)}}}
+** 目标和挑战
+{{{rbold(目标:)}}} 从数据中同时进行{{{bbold(机器学习)}}}和{{{bbold(逻辑推理)}}}.
+1. {{{bbold(机器学习)}}}: 从原始数据中识别出逻辑符号
+2. {{{bbold(逻辑推理)}}}: 从识别的符号和领域知识中进行推理
+#+ATTR_REVEAL: :frag appear :frag_idx 1
+{{{rbold(难点:)}}}
+#+ATTR_REVEAL: :frag (appear apear) :frag_idx (2 3)
+1. *感知(机器学习)*: 样本对应{{{bbold(哪些)}}}基本概念？
+2. *推理(逻辑程序)*: {{{bbold(没有)}}}准确的基本概念如何进行推理？
+{{{d(popupbox fragment fade-in,position:absolute;top:40%,,4)}}}
+1. 训练机器学习模型的标记需要通过逻辑推理获得;
+2. 逻辑推理的基本事实来自于机器学习模型的输出.
+{{{ed()}}}
+** 反绎学习框架
+{{{bbold(形式化)}}}
+#+ATTR_REVEAL: :frag (appear appear) :frag_idx (1 2)
+- *输入*:
+  - *训练样本*: $D=\{\langle \mathbf{x}_1,y_1\rangle,\ldots,\langle \mathbf{x}_m,y_m\rangle\}$;
+  - *领域知识*: $KB$
+    - *FOL公式*;
+    - *基本概念*: $\mathcal{P}=\{p_1,p_2,\ldots\}$;
+- *目标*: 学习一个假设模型 $H=p\cup\Delta_C$;
+  - *识别模型* (机器学习): $p:\mathcal{X}\mapsto \mathcal{P}$;
+  - *知识模型* (逻辑推理): FOL公式集合 $\Delta_C$, 它满足:
+{{{d(fragment fade-in,,,2)}}}
+\[
+KB\cup\Delta_C\cup p(\mathbf{x}_i)\models y_i.
+\]
+{{{ed}}}
+*** 与常规机器学习的比较
+#+REVEAL_HTML: <img src="./figs/dissertation/al_zhouzh.png" style="box-shadow:none;margin: 80px auto"/>
+#+BEGIN_NOTES
+综上所述，反绎学习的过程大致如下：当输入数据时，首先由机器学习部件从数据中提取逻辑符号表示的伪标记 p(X);
+这些伪标记被输入进反绎逻辑部件，用于增广领域知识并被用于知识推理与精化，以估计出样本的最终标记。
+当预测标记与真实标记出现不一致时，反绎学习会根据真实标记与领域知识反绎推理出样本中更可能正确的伪标记符号 r_\delta(X)，以重新训练机器学习模型。
+#+END_NOTES
+*** 反绎学习框架
+#+REVEAL_HTML: <img src="./figs/dissertation/al/framework.png" style="box-shadow:none;margin:30px auto" />
+#+ATTR_REVEAL: :frag (appear)
+1. {{{rbold(机器学习)}}}部件用于学习关于基本概念 $\mathcal{P}$ 的识别模型 $p$;
+2. {{{rbold(反绎逻辑推理)}}}部件既用于知识精化，也用于推理样本中的基本概念符号, 作为机器学习的监督信息;
+3. {{{bbold(一致性优化)}}}用于优化识别模型输出结果 $p(\mathbf{x})$ 、领域知识 $KB$ 与标记 $y$ 的一致性.
+*** 反绎学习框架
+{{{bbold(最大化 $D$ 中与 $H$ 一致的样本个数)}}}
+\begin{align}
+  \max\limits_{H=p\cup\Delta_C}\quad \text{Con}(H\cup D)
+\end{align}
+{{{p(auto,0.8em)}}}其中 $\text{Con}(H\cup D)$ 表示 $D$ 中与 $H$ 一致的样本集合 $\hat{D}_C$ 的大小{{{ep}}}
+\begin{align}
+  \hat{D}_C=\arg\max\limits_{D_c\subseteq D}\quad&\mid D_c\mid\label{eq:al:con}\\
+  \mathrm{s.t.}\quad&\forall \langle \mathbf{x}_i,y_i\rangle\in D_c\quad(KB\wedge \Delta_C\models p(\mathbf{x}_i)\wedge y_i).\nonumber
+\end{align}
+{{{d(fragment fade-in,,,1)}}}
+{{{rbold(优化方法：交替优化 $p$ 与 $\Delta_C$ )}}}
+{{{ed}}}
+#+BEGIN_NOTES
+p一般可微，但Δc不可微，因此无法在同一个框架下优化；且子问题：最大一致样本个数是一个子集选择问题，所以优化非常困难。
+#+END_NOTES
+*** 反绎学习框架
+{{{bbold(当 $p$ 固定时)}}}
+{{{d(,font-size:0.8em)}}}
+#+ATTR_REVEAL: :frag (appear appear appear appear) :frag_idx (1 2 3 4)
+- 从样本中识别出{{{bold(伪标记)}}}符号 $p^t(\mathbf{x})=\cup_i p^t(\mathbf{x}_i)$;
+- 然而, 由于 $p$ 没有真实标记进行训练, 因此伪标记 $p^t(\mathbf{x})$ {{{bold(可能有错误)}}};
+- 需要被修改的伪标记符号记为 $\delta(p^t(X))\subseteq p^t(X)$, $\delta$ 是一个用于估计哪些伪标记被识别错误的{{{bold(判别函数)}}}.
+- 通过一致性优化来得到最优的 $\delta$, $M$ 为最大修改个数;
+{{{d(fragment fade-in,,,4)}}}
+\begin{align}
+  \max\limits_\delta\quad&\text{Con}(p^t\cup\Delta_C(B,r_\delta(X),Y)\cup D)\label{eq:al:opt2}\\
+  s.t.\quad&\mid\delta(p^t(X))\mid\leq M\nonumber
+\end{align}
+{{{ed}}}
+#+ATTR_REVEAL: :frag (appear) :frag_idx (5)
+- 根据修正后的伪标记符号 $r_\delta(X)$, 通过反绎逻辑推理获得 $\Delta_C$.
+{{{ed}}}
+*** 反绎学习框架
+{{{rbold(当 $\Delta_C$ 固定时)}}}
+- 将 $r_\delta(X)$ 作为标记来训练 $p^{t+1}$. $L$ 为 $p$ 的损失函数.
+\begin{align}
+  p^{t+1}=\arg\min\limits_{p}\quad&\sum_{i=1}^mL(p(\mathbf{x}_i),r_\delta(\mathbf{x}_i))
+\end{align}
+** Neural Logical Machine
+#+REVEAL_HTML: <img src="./figs/dissertation/al/nlm.png" style="box-shadow:none;margin: 20px auto" />
+1. 机器学习模型: 卷积神经网络
+2. 反绎逻辑推理: ALP
+3. 一致性优化: 零阶梯度优化方法RACOS
+#+BEGIN_NOTES
+最上层是由卷积神经网络（convolutional neural network，CNN）构成的识别模型，它对应着反绎学习中的机器学习部分；下部的反绎逻辑程序（Abductive Logic Programming，ALP）则对应于反绎逻辑推理部件；中间是则是由非梯度优化方法实现的一致性搜索\cite{Yu2016Derivative}。
+#+END_NOTES
+*** Tricks
+#+ATTR_REVEAL: :frag (appear)
+1. 反绎逻辑推理复杂度高, 其中的一致性判断为NP难;
+   - 每次训练 $p$ 时只采样部分样本（带来噪声）;
+   - 部分样本下学得的 $\Delta_C$ 作为领域知识, 将样本增广为向量;
+   - 用增广的向量训练一个 MLP 作为最终的判别模型（应对噪声）.
+2. 一致性优化复杂度也较高, 若样本中需要被修改伪标记过多, 也会影响速度.
+   - 使用课程学习, 从简单样本学起.
+** 实验验证
+{{{bbold(任务: 手写二进制加法等式学习)}}}
+- *输入:* 
+#+REVEAL_HTML: <img src="./figs/dissertation/al/data3.png" style="box-shadow:none;margin: 20px auto" width=600px />
+{{{d(fragment fade-in,,,1)}}}
+- *输出:*
+  - 识别数字符号的CNN: $p:\mathbb{R}^d\mapsto\{0,1,+,=\}$
+  - 加法法则. 如 =1+1=10=, =1+0=1=,...(加法); =1+1=0=, =0+1=1=,...(异或).
+{{{ed}}}
+*** 领域知识
+{{{bbold(等式构成)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/bk1.png" style="box-shadow:none;margin: 20px auto" width=700px />
+- 等式结构为 =X+Y=Z=;
+- 数字为 =0= 和 =1= 构成的序列.
+*** 领域知识
+{{{bbold(二进制运算)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/bk2.png" style="box-shadow:none;margin: 20px auto" width=700px />
+- 加法为按位运算, 由最后一位开始;
+- 允许进位.
+*** 实验设置
+- {{{bbold(实验数据)}}}: 5-26位长度等式, 每个长度300个
+  - *DBA*: 由MNIST构成的图片序列;
+  - *RBA*: 由Omniglot构成的图片序列, 等式结构与DBA相同;
+  - *二进制算数加法* 与 *逻辑异或*.
+{{{d(fragment fade-in,,,1)}}}
+- {{{rbold(对比方法)}}}
+  - *NLM-all*: 本节方法, 使用全部训练数据;
+  - *NLM-short*: 本节方法, 仅使用{{{bold(5-8位等式)}}};
+  - *DNC*: 基于memory的深度神经网络;
+  - *Transformer*: 基于attention的深度神经网络;
+  - *BiLSTM*: 常用的序列学习神经网络，作为基准方法.
+{{{ed()}}}
+*** 实验结果
+{{{bbold(DBA与RBA中的分类结果)}}}
+{{{d(flexbox-start)}}}
+{{{d(leftcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r1.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{d(rightcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r2.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{ed}}}
+{{{d(popupbox fragment fade-in,,,1)}}}
+引入领域知识后的NLM不仅泛化能力更好, {{{nl}}}还能学得运算法则的准确定义(图5.8).
+{{{ed}}}
+*** 实验结果
+{{{bbold(学习过程)}}}
+{{{d(flexbox-start)}}}
+{{{d(leftcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r3.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{d(rightcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r4.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{ed}}}
+{{{d(popupbox fragment fade-in,,,1)}}}
+领域知识精化与识别模型学习的确在相互促进
+{{{ed}}}
+*** 实验结果
+{{{bbold(识别模型迁移（左）与知识模型迁移（右）)}}}
+{{{d(flexbox-start)}}}
+{{{d(leftcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r5.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{d(rightcol)}}}
+#+REVEAL_HTML: <img src="./figs/dissertation/al/r6.svg" style="box-shadow:none;margin: 20px auto" width=500px />
+{{{ed}}}
+{{{ed}}}
+{{{d(popupbox fragment fade-in,,,1)}}}
+NLM学得的模型能够重用, 且比冷启动效果更好
+{{{ed}}}
+* 总结
+** 总结
+#+ATTR_REVEAL: :frag (appear)
+- 人工智能还停留在初级阶段
+  - 尽管在某些需要高计算力的任务上超越人类，但[[https://arxiv.org/abs/1904.01557][学不会高中数学]]
+- 机器学习 $\overset{a.s.}{\longrightarrow}$ 函数拟合
+  - 不“收敛”的地方测度为 $0$ ……
+- 通过反绎逻辑推理，我们可以
+  - 将复杂的逻辑知识应用于机器学习
+  - 使人工智能拥有更好的可理解性
+  - 令机器学习模型变得更容易重用
+  - 降低对标记数据的需求量
+** Thanks
+#+REVEAL_HTML: <iframe src="http://cs.nju.edu.cn/zhouzh" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="1024px" height="900px" style="margin:20px auto"></iframe>
+#+BEGIN_EXPORT html
+</section>
+<section id="slide-final" style="height:1024px">
+<img src="./figs/dissertation/nju.jpg" style="position:absolute;top:5%;right:26%;width:300px;box-shadow:none" />
+<img src="./figs/dissertation/lamda.png" style="position:absolute;top:5%;right:2%;width:200px;box-shadow:none" />
+<img src="./figs/icl.jpg" style="position:absolute;top:-1%;right:56%;width:325px;box-shadow:none" />
+<div style="text-align:center;position:absolute;top:30%;width:100%">
+    <p style="font-size:1.6em;font-weight:bold;color:#981E32">谢谢！Q & A</p>
+</div>
+</section>
+#+END_EXPORT

@@ -210,7 +210,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
   - 机器学习模型未训练{{{rawesome(165)}}}
   - 利用领域知识提升机器学习性能
 - {{{bbold(以往工作)}}}:
-  #+ATTR_REVEAL: :frag (appear appear appear) :frag_idx (4 5)
+  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (4 5)
   - {{{bawesome(188)}}}{{{bbold(难点1)}}}：符号数据中进行统计学习
   - {{{bawesome(188)}}}{{{bbold(难点2)}}}：非符号数据引入FOL知识
 - {{{bold(本文工作)}}}:
@@ -304,7 +304,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
   - 训练机器学习模型的标记（label）{{{nl()}}}需要通过逻辑推理获得
   - 逻辑推理使用的基本事实（facts）{{{nl()}}}需要借助机器学习识别
 - {{{bold(本文工作)}}}:
-  #+ATTR_REVEAL: :frag (appear appear) :frag_idx (5)
+  #+ATTR_REVEAL: :frag (appear) :frag_idx (5)
   - 第五章：领域知识与机器学习{{{nl()}}}互促结合（反绎学习）
 {{{ed()}}}
 {{{d(rightcol40)}}}
@@ -586,7 +586,6 @@ samevenue(venue_19th_symposium_theory_computing_,venue_19th_symposium_theory_com
 #+ATTR_REVEAL: :frag (appear appear) :frag_idx (2 3)
 - {{{rbold(难点：)}}}将FOL公式转化为机器学习可利用的约束;
 - {{{bbold(本文：)}}}通过 *反绎推理* 将FOL公式转化为假设空间约束;
-
 #+BEGIN_NOTES
 表示学得的假设模型与领域知识不产生矛盾
 #+END_NOTES

@@ -148,7 +148,7 @@ src="https://media.boingboing.net/wp-content/uploads/2018/11/hal.gif" height=180
 #+ATTR_REVEAL: :frag (appear)
 - 每一层是一个输入函数+激活函数
   - Hebbian model: $s=w\cdot\mathbf{x}+\mathbf{b}$
-  - Sigmoid: $\frac{1}{1+e^-s}$, ReLu: $\max(0,s)$, ...
+  - Sigmoid: $\frac{1}{1+e^{-s}}$, ReLu: $\max(0,s)$, ...
 - 多达上百层函数复合
 - 消耗百万至千万量级{{{rbold(有标记)}}}数据
 {{{ed}}}
@@ -344,8 +344,8 @@ rained_last_night(X), sprinkler_was_on(X) ==> fail.
 {{{ed}}}
 ** 机器学习与反绎逻辑推理
 #+ATTR_REVEAL: :frag (appear)
-- 训练样例 $\{\mathbf{x}\}$ 是一组{{{rbold(观测事实)}}}；
-- 样例标记 $\{ y\}$ 是一组{{{rbold(观测事实)}}}；
+- 训练样例 $\{\mathbf{x}_i\}$ 是一组{{{rbold(观测事实)}}}；
+- 样例标记 $\{ y_i\}$ 是一组{{{rbold(观测事实)}}}；
 - 我们希望利用的领域知识是一组{{{rbold(一般规律)}}}；
 - 待学习的模型假设 $h$ 与反绎推理得出的{{{bbold(解释)}}}有关.
 * 一种领域知识辅助约束的{{{nl}}}机器学习方法
@@ -762,7 +762,7 @@ NLM学得的模型能够重用, 且比冷启动效果更好
 #+ATTR_REVEAL: :frag (appear)
 - 人工智能还停留在初级阶段
   - 尽管在某些需要高计算力的任务上超越人类，但[[https://arxiv.org/abs/1904.01557][学不会高中数学]]
-- 机器学习 $\overset{a.s.}{\longrightarrow}$ 函数拟合
+- 机器学习 $\longrightarrow$ 函数拟合 $\mu.a.e$
   - 不“收敛”的地方测度为 $0$ ……
 - 通过反绎逻辑推理，我们可以
   - 将复杂的逻辑知识应用于机器学习

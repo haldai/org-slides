@@ -30,6 +30,8 @@
 #+macro: nl @@html:<br \>@@
 #+macro: p @@html:<p style="margin:$1;font-size:$2;font-family:$3;font-weight:$4">@@
 #+macro: ep @@html:</p>@@
+#+macro: sp @@html:<span style="color:$1;font-size:$2;font-family:$3;font-weight:$4">@@
+#+macro: esp @@html:</span>@@
 #+macro: d @@html:<div class="$1" style="$2" id="$3" data-fragment-index="$4">@@
 #+macro: ed @@html:</div>@@
 #+macro: img @@html:<img src="$1" width="$2" height="$3" class="$4" style="$5" />@@

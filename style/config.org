@@ -1,7 +1,7 @@
 # Root of reveal.js and my style css
 
 #+reveal_root: ../style/reveal.js/
-#+reveal_extra_css: ../style/Reveal.js-TOC-Progress/plugin/toc-progress/toc-progress.css
+#+reveal_extra_css: ../style/toc-progress.css
 #+reveal_extra_css: ../style/hal9001.css
 
 # reveal.js options

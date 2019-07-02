@@ -28,7 +28,7 @@
 # macros
 #+macro: cmt @@comment:$1@@
 #+macro: nl @@html:<br \>@@
-#+macro: p @@html:<p style="margin:$1;font-size:$2;font-family:$3;font-weight:$4">@@
+#+macro: p @@html:<p style="margin:$1;font-size:$2;font-family:$3;font-weight:$4;text-align:$5">@@
 #+macro: ep @@html:</p>@@
 #+macro: sp @@html:<span style="color:$1;font-size:$2;font-family:$3;font-weight:$4">@@
 #+macro: esp @@html:</span>@@

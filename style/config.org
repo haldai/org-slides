@@ -23,7 +23,7 @@
 #+reveal_theme: white
 
 # reveal.js plugins
-#+reveal_plugins: (markdown notes search zoom)
+#+reveal_plugins: (markdown notes search zoom highlight)
 
 # macros
 #+macro: cmt @@comment:$1@@

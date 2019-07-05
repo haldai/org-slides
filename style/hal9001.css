@@ -2,50 +2,97 @@
  * FONT FAMILY
  *********************************************/
 @font-face {
-    font-family: 'FontAwesome47';
-    src: url('fonts/fontawesome-webfont.eot?v=4.7.0');
-    src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'FontAwesome47';
+  src: url('fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* source-code-pro-regular - latin-ext_latin */
 @font-face {
-    font-family: 'Source Code Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: url('fonts/source-code-pro-v8-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
-    src: local('Source Code Pro'), local('SourceCodePro-Regular'),
-         url('fonts/source-code-pro-v8-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('fonts/source-code-pro-v8-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-         url('fonts/source-code-pro-v8-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
-         url('fonts/source-code-pro-v8-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-         url('fonts/source-code-pro-v8-latin-ext_latin-regular.svg#SourceCodePro') format('svg'); /* Legacy iOS */
+  font-family: 'Source Code Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/source-code-pro-v8-latin-ext_latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Source Code Pro'), local('SourceCodePro-Regular'),
+       url('fonts/source-code-pro-v8-latin-ext_latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/source-code-pro-v8-latin-ext_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/source-code-pro-v8-latin-ext_latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/source-code-pro-v8-latin-ext_latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/source-code-pro-v8-latin-ext_latin-regular.svg#SourceCodePro') format('svg'); /* Legacy iOS */
 }
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
+:root {
+  --fg1:#FFFFEF;
+  --fg:#DCDCCC;
+  --fg-1:#656555;
+  --bg-2:#000000;
+  --bg-1:#2B2B2B;
+  --bg-05:#383838;
+  --bg:#3F3F3F;
+  --bg05:#494949;
+  --bg1:#4F4F4F;
+  --bg2:#5F5F5F;
+  --bg3:#6F6F6F;
+  --red2:#ECB3B3;
+  --red1:#DCA3A3;
+  --red:#CC9393;
+  --red-1:#BC8383;
+  --red-2:#AC7373;
+  --red-3:#9C6363;
+  --red-4:#8C5353;
+  --red-5:#7C4343;
+  --red-6:#6C3333;
+  --orange:#DFAF8F;
+  --yellow:#F0DFAF;
+  --yellow-1:#E0CF9F;
+  --yellow-2:#D0BF8F;
+  --green-5:#2F4F2F;
+  --green-4:#3F5F3F;
+  --green-3:#4F6F4F;
+  --green-2:#5F7F5F;
+  --green-1:#6F8F6F;
+  --green:#7F9F7F;
+  --green1:#8FB28F;
+  --green2:#9FC59F;
+  --green3:#AFD8AF;
+  --green4:#BFEBBF;
+  --cyan:#93E0E3;
+  --blue3:#BDE0F3;
+  --blue2:#ACE0E3;
+  --blue1:#94BFF3;
+  --blue:#8CD0D3;
+  --blue-1:#7CB8BB;
+  --blue-2:#6CA0A3;
+  --blue-3:#5C888B;
+  --blue-4:#4C7073;
+  --blue-5:#366060;
+  --magenta:#DC8CC3;
+}
 body {
-    background-color: #FFF;
-    color: #303030;
+  color: var(--fg);
+  background: var(--bg);
 }
 
 .reveal {
     font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
     font-size: 40px;
     font-weight: normal;
-    color: #303030;
+    color: var(--fg);
 }
 
 ::selection {
-  color: #fff;
-  background: #981E32;
+  color: var(--fg1)
+  background: var(--bg3);
   text-shadow: none; }
 
 ::-moz-selection {
-  color: #fff;
-  background: #981E32;
+  color: var(--fg1);
+  background: var(--bg3);
   text-shadow: none; }
 
 .reveal .slides > section,
@@ -57,15 +104,18 @@ body {
 
 .reveal .slides li {
   line-height: 1.1;
-  margin: 0.25ex 0px 0.25ex 0px; }
+  margin: 0.25ex 0px 0.25ex 0px;
+}
 
 .reveal .slides li p {
   line-height: 1.1;
-  margin: 0.5ex 0px 0.25ex 0px; }
+  margin: 0.5ex 0px 0.25ex 0px;
+}
 
 .reveal .slides section .fragment.highlight-red.visible {
   font-weight: bold;
-  color: #303030; }
+  color: var(--fg1);
+}
 
 .reveal .slides section .fragment.gray-out {
   opacity: 1;
@@ -98,7 +148,7 @@ body {
   margin: 0 0 20px 0;
   top: 0;
   left: 0;
-  color: #303030;
+  color: var(--fg);
   font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
   font-weight: 600;
   letter-spacing: normal;
@@ -130,7 +180,7 @@ body {
     line-height: 1.5;
     width: 100%;
     margin: 0 auto;
-    border-bottom: solid #981E32 0.1em;
+    border-bottom: solid var(--bg3) 0.1em;
 }
 
 /* Footer; TOC progress plugin has height 9.5vh. */
@@ -408,6 +458,7 @@ body {
     margin: 5px 5px;
     display: block;
     border: none;
+    background: rgba(255, 255, 255, 0);
 }
 
 .reveal iframe {
@@ -448,7 +499,7 @@ body {
 /* Adjust background color for slide number.
  * Use color of TOC footer (hard-coded in reveal-config.el). */
 .reveal .slide-number {
-  background-color: rgba(120,138,130,0.2); }
+  background-color: var(--bg3); }
 
 /* Right in lists. */
 .reveal li > figure,
@@ -500,7 +551,7 @@ div.legalese {
 div.ribbon-legalese {
   z-index: 50;
   color: #fff;
-  background: #00568a;
+  background: var(--bg3);
   font-size: 14px;
   text-align: center;
   padding: 3px 10px;
@@ -521,7 +572,7 @@ div.ribbon-legalese a {
 #forkmeongitlab a, #forkmeongitlab-right a {
   z-index: 20;
   color: #fff;
-  background: #00568a;
+  background: var(--bg3);
   text-decoration: none;
   text-align: center;
   padding: 3px 20px;
@@ -553,27 +604,28 @@ div.ribbon-legalese a {
 #slide-license p {
   font-size: .8em; }
 
-.reveal .talk-title {
-    color:#981E32;
+.reveal .talk-title,
+.reveal .talk-title h1 {
+    color:var(--fg);
     margin: 80px 0px 30px 0px; }
 
-.reveal .talk-subtitle p {
-    color:#981E32;
+.reveal .talk-subtitle p{
+    color:var(--red2);
     font-weight: bold;
     font-size: .6em;
     line-height: 1.0;
     margin: 0; }
 
 .reveal .talk-author {/* nothing special */ }
+.reveal .keyboard-usage p {
+  margin: 1ex 0;
+  font-size: 0.5em;
+  color:var(--fg);
+}
 
 .reveal .talk-date {
-    color: #303030;
-    font-size:.6em;}
-
-.reveal .keyboard-usage p {
-    margin: 1ex 0;
-    font-size: 0.5em;
-    color: rgba(0,0,0,0.6);
+  color: var(--fg1);
+  font-size:.6em;
 }
 
 .reveal p {
@@ -630,7 +682,7 @@ div.ribbon-legalese a {
     padding: 0.1em;
     margin: 0 auto;
     -moz-border-radius:8px;
-    color: #fff;
+    color: var(--fg1);
 }
 .reveal .slides dl,
 .reveal .slides ul,
@@ -731,7 +783,7 @@ div.ribbon-legalese a {
   padding: 5px;
   font-style: italic;
   font-size: 0.8em;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg2);
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
 
 .reveal blockquote p:first-child,
@@ -747,14 +799,16 @@ div.ribbon-legalese a {
   position: relative;
   margin: 1ex auto;
   overflow: auto;
-  line-height: 1.2em;
+  line-height: 0.5em;
   max-height: 22em;
   max-width: 95%;
   text-align: left;
   font-size: 0.55em;
   font-family: monospace;
   word-wrap: normal;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
 
 .org-src-container {
     display: -webkit-box;
@@ -768,43 +822,51 @@ div.ribbon-legalese a {
     flex-wrap: wrap;
 }
 
-.reveal code {
-    color: dimgrey;
-    background: whitesmoke;
-    width: 100%;
-    font-family: 'Source Code Pro', monospace;
-}
-
 .reveal pre code {
     display: block;
-    padding: 5px;
+    padding: 2px;
     overflow: auto;
     max-height: 400px;
     word-wrap: normal;
     width: 100%;
+    font-size: 1.5ex;
+    height: 1.7ex;
+}
+
+.reveal code {
+  color: var(--fg);
+  background: var(--bg1);
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1.5ex;
+  padding: 0.1ex 0.5ex;
+  border-radius: 5px;
 }
 
 .reveal .src {
-    color: #dcdccc;
-    background: #3f3f3f;
-    width: 100%;
-    font-family: 'Source Code Pro', monospace;
+  color: var(--fg);
+  background: var(--bg1);
+  width: 100%;
+  font-family: 'Source Code Pro', monospace;
 }
 
 .reveal section table {
     margin: 20px auto;
     line-height: 1.1;
     border-collapse: collapse;
-    border-spacing: 0; }
+    border-spacing: 0;
+}
 
 .reveal section table th {
-    background-color: #A0A0A0;
-    font-weight: bold;
-    border-top: 2px solid;
+  background-color: var(--bg2);
+  font-weight: bold;
+  border-top: 2px solid;
 }
 
 .reveal section table tr:nth-child(even) {
-    background-color: #E1E1E1;
+  background-color: var(--bg3);
+}
+.reveal section table tr:nth-child(odd) {
+  background-color: var(--bg1);
 }
 
 .reveal section table th,
@@ -812,7 +874,7 @@ div.ribbon-legalese a {
     font-size: 0.8em;
     text-align: left;
     padding: 0.2em 0.5em 0.2em 0.5em;
-    border-bottom: 2px solid;
+    border-bottom: 1px solid;
 }
 
 .reveal .emacs-table td {
@@ -871,17 +933,17 @@ div.ribbon-legalese a {
  * LINKS
  *********************************************/
 .reveal .slides a[href] {
-    color: #1A53A1;
-    text-decoration: underline dotted;
-    -webkit-transition: color .15s ease;
-    -moz-transition: color .15s ease;
-    transition: color .15s ease;
+  color: var(--yellow);
+  text-decoration: underline dotted;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  transition: color .15s ease;
 }
 
 .reveal .slides a[href^="http"],
 .reveal .slides a[href^="news:"],
 .reveal .slides a[href^="mailto:"] {
-    color: #1A53A1;
+  color: var(--yellow);
 }
 
 .reveal .slides a[href^="#"]:not(.nooutlink):after,
@@ -897,7 +959,7 @@ div.ribbon-legalese a {
 .reveal .slides a[href].forwardlink::after {
     content: "\00a0\25b8";
 }
-
+n
 .reveal .slides a[href]:hover {
   font-weight: bold;
   text-shadow: none;
@@ -905,7 +967,7 @@ div.ribbon-legalese a {
 
 .reveal .slides a[id] {
     font-size: 85%;
-    color: #66757F;
+    color: var(--bg3);
 }
 
 .reveal .slides a[id]:hover {
@@ -914,13 +976,13 @@ div.ribbon-legalese a {
 
 .reveal .slides .roll span:after {
   color: #fff;
-  background: #1A53A1;
+  background: var(--blue);
 }
 
 /* footer TOC */
 
 .reveal footer a[href] {
-    color: #1A53A1;
+    color: var(--yellow);
     text-decoration: none;
     -webkit-transition: color .15s ease;
     -moz-transition: color .15s ease;
@@ -930,7 +992,7 @@ div.ribbon-legalese a {
 .reveal footer a[href^="http"],
 .reveal footer a[href^="news:"],
 .reveal footer a[href^="mailto:"] {
-    color: #1A53A1;
+    color: var(--yellow);
 }
 
 .reveal footer a[href^="#"]:not(.nooutlink):after,
@@ -954,19 +1016,19 @@ div.ribbon-legalese a {
 }
 
 .reveal footer a[id] {
-    color: #66757F;
+    color: var(--bg3);
 }
 
 .reveal footer a[id]:hover {
     font-weight: normal; }
 
 .reveal footer .roll span:after {
-    color: #eee;
-    background: #1A53A1;
+    color: var(--fg);
+    background: var(--blue);
 }
 
 .reveal .remarkbox {
-    background-color: #eee;
+    background-color: var(--bg1);
     font-size: 0.7em;
     display: flex;
     align-items: center;
@@ -974,15 +1036,15 @@ div.ribbon-legalese a {
     flex-direction: row;
     justify-content: flex-start;
     border-radius: 10px;
-    border: 2px solid #66757F;
     padding: 20px;
     margin: auto;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
 }
 
 .reveal .popupbox {
-    background-color: #981E32;
+    background-color: var(--red-4);
     z-index: 100;
-    color: #fff;
+    color: var(--fg);
     font-size: 1em;
     display: flex;
     text-align: center;
@@ -997,8 +1059,8 @@ div.ribbon-legalese a {
 }
 
 .reveal .popupbox-blue {
-    background-color: #1A53A1;
-    color: #fff;
+    background-color: var(--blue-5);
+    color: var(--fg);
     z-index: 100;
     font-size: 1em;
     display: flex;
@@ -1024,7 +1086,7 @@ div.ribbon-legalese a {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgborra(255, 255, 255, 0.2);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
@@ -1037,20 +1099,24 @@ div.ribbon-legalese a {
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
-    background: #1A53A1; }
+  background: var(--bg-1);
+}
 
 .reveal .progress span {
-    background: #981E32;
+    background: var(--yellow-2);
     -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
     -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
     transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
 }
 
+.reveal .controls button {
+  color: var(--yellow);
+}
 /********************************************
 TOC-Progress plugin
 *********************************************/
 #toc-progress-footer {
-    color: #1A53A1;
+    color: var(--yellow-2);
     font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
     line-height: 1.1;
     width: 100%;

@@ -836,7 +836,7 @@ div.ribbon-legalese a {
 
 .reveal code {
   color: var(--fg);
-  background: var(--bg1);
+  background: var(--bg-1);
   font-family: 'Source Code Pro', monospace;
   font-size: 1.5ex;
   padding: 0.1ex 0.5ex;

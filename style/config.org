@@ -35,11 +35,11 @@
 #+macro: d @@html:<div class="$1" style="$2" id="$3" data-fragment-index="$4">@@
 #+macro: ed @@html:</div>@@
 #+macro: img @@html:<img src="$1" width="$2" height="$3" class="$4" style="$5" />@@
-#+macro: wimg @@html:<img src="$1" width="$2" style="box-shadow:none;background-color:#6F6F6F"/>@@
-#+macro: cimg @@html:<img src="$1" width="$2" style="box-shadow:none;margin:20px auto;float:none"/>@@
-#+macro: cwimg @@html:<img src="$1" width="$2" style="box-shadow:none;margin:20px auto;background-color:#6F6F6F;float:none"/>@@
-#+macro: wbimg @@html:<img src="$1" width="$2" style="box-shadow:none;border:$3 solid #FFFFFF"/>@@
-#+macro: cwbimg @@html:<img src="$1" width="$2" style="box-shadow:none;border:$3 solid #FFFFFF;margin:20px auto;float:none"/>@@
+#+macro: wimg @@html:<img src="$1" width="$2" style="$3;box-shadow:none;background-color:#6F6F6F"/>@@
+#+macro: cimg @@html:<img src="$1" width="$2" style="$3;box-shadow:none;margin:20px auto;float:none"/>@@
+#+macro: cwimg @@html:<img src="$1" width="$2" style="$3;box-shadow:none;margin:20px auto;background-color:#6F6F6F;float:none"/>@@
+#+macro: wbimg @@html:<img src="$1" width="$2" style="$3;box-shadow:none;border:$3 solid #FFFFFF"/>@@
+#+macro: cwbimg @@html:<img src="$1" width="$2" style="$3;box-shadow:none;border:$3 solid #FFFFFF;margin:20px auto;float:none"/>@@
 #+macro: awesome @@html:&#xf$1@@
 #+macro: rawesome @@html:<font color="#CC9393">&#xf$1</font>@@
 #+macro: bawesome @@html:<font color="#8CD0D3">&#xf$1</font>@@

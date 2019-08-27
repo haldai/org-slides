@@ -822,10 +822,14 @@ div.ribbon-legalese a {
     flex-wrap: wrap;
 }
 
+code {
+  font-size: 1.5ex;
+}
+
 .reveal pre code {
     display: block;
     padding: 2px;
-    overflow: auto;
+    overflow: hidden;
     max-height: 400px;
     word-wrap: normal;
     width: 100%;

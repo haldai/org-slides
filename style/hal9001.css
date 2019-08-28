@@ -823,7 +823,7 @@ div.ribbon-legalese a {
 }
 
 code {
-  font-size: 1.5ex;
+  font-size: 0.75em;
 }
 
 .reveal pre code {
@@ -833,8 +833,8 @@ code {
     max-height: 400px;
     word-wrap: normal;
     width: 100%;
-    font-size: 1.5ex;
-    line-height: 2.3ex;
+    font-size: 0.75em;
+    line-height: 0.8em;
     background: var(--bg-1);
 }
 
@@ -842,8 +842,8 @@ code {
   color: var(--fg);
   background: var(--bg-1);
   font-family: 'Source Code Pro', monospace;
-  font-size: 1.5ex;
-  padding: 0.1ex 0.5ex;
+  font-size: 0.75em;
+  padding: 0.05em 0.1ex;
   border-radius: 5px;
 }
 

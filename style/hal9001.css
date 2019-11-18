@@ -937,12 +937,22 @@ code {
 /*********************************************
  * LINKS
  *********************************************/
-.reveal .slides a[href] {
+.reveal .slides a[href] not(org-ref-reference) {
   color: var(--yellow);
   text-decoration: underline dotted;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease;
+}
+
+.reveal .org-ref-reference {
+  font-family: 'FontAwesome47', Helvetica, sans-serif;
+  font-size: .6cm;
+  color: var(--blue-3);
+}
+
+.reveal .org-ref-reference:before {
+  content: "\f0f6\ ";
 }
 
 .reveal .slides a[href^="http"],

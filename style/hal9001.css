@@ -23,6 +23,47 @@
        url('fonts/source-code-pro-v8-latin-ext_latin-regular.svg#SourceCodePro') format('svg'); /* Legacy iOS */
 }
 
+/* EB Garamond
+   copyright: http://www.georgduffner.at
+*/
+@font-face {
+  font-family: 'EBG12-Re';
+  src:  url( ./fonts/EBGaramond12-Regular.eot );
+  src:  url('./fonts/EBGaramond12-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: "EBG12-Re";
+  src:  url( ./fonts/EBGaramond12-Italic.eot );
+  src:  url('./fonts/EBGaramond12-Italic.woff') format('woff');
+  font-style: italic;
+}
+@font-face {
+  font-family: "EBG08-Re";
+  src:  url( ./fonts/EBGaramond08-Regular.eot );
+  src:  url('./fonts/EBGaramond08-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: "EBG08-Re";
+  src:  url( ./fonts/EBGaramond08-Italic.eot );
+  src:  url('./fonts/EBGaramond08-Italic.woff') format('woff');
+  font-style: italic;
+}
+@font-face {
+  font-family: "EBG08-SC";
+  src:  url( ./fonts/EBGaramondSC08-Regular.eot );
+  src:  url('./fonts/EBGaramondSC08-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: "EBG12-SC";
+  src:  url( ./fonts/EBGaramondSC12-Regular.eot );
+  src:  url('./fonts/EBGaramondSC12-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: "EBGInit";
+  src:	url( ./fonts/EBGaramond-Initials.eot );
+  src:	url('./fonts/EBGaramond-Initials.woff') format('woff');
+}
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -79,7 +120,7 @@ body {
 }
 
 .reveal {
-    font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
+    font-family: "EBG12-Re", "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
     font-size: 40px;
     font-weight: normal;
     color: var(--fg);
@@ -149,11 +190,12 @@ body {
   top: 0;
   left: 0;
   color: var(--fg);
-  font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: "EBG12-SC", "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
+  font-weight: bold;
   letter-spacing: normal;
   text-align: left;
   text-shadow: none;
+  text-transform: none;
   width: auto;
   word-wrap: break-word; }
 
@@ -704,7 +746,7 @@ div.ribbon-legalese a {
 .reveal .slides ol li:before {
     content: counter(my-awesome-counter) ".";
     /* color: #303030; */
-    font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
+    font-family: "EBG12-Re", "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
     font-weight: bold;
     display: inline-block;
     margin-left: -1.3em; /* same as padding-left set on li */
@@ -1147,7 +1189,7 @@ TOC-Progress plugin
 *********************************************/
 #toc-progress-footer {
     color: var(--yellow-2);
-    font-family: "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
+    font-family: "EBG12-Re", "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
     line-height: 1.1;
     width: 100%;
     height: 9.5vh;
@@ -1173,7 +1215,7 @@ TOC-Progress plugin
     -webkit-justify-content: flex-end;
     align-items: center;
     flex-wrap: nowrap;
-    font-size: small;
+    font-size: medium;
 }
 #toc-progress-footer-secondary {
     display: -webkit-box;
@@ -1185,5 +1227,5 @@ TOC-Progress plugin
     -webkit-justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
-    font-size: x-small;
+    font-size: small;
 }

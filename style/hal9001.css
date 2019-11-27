@@ -799,7 +799,7 @@ div.ribbon-legalese a {
   position: relative;
   margin: 1ex auto;
   overflow: auto;
-  line-height: 0.5em;
+  /* line-height: 0.5em; */
   /* max-height: 22em; */
   max-width: 95%;
   text-align: left;

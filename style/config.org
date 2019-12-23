@@ -5,15 +5,9 @@
 #+reveal_extra_css: ../style/hal9001.css
 
 # reveal.js options
-#+options: reveal_history:t reveal_fragmentinurl:t
-#+options: reveal_mousewheel:t reveal_inter_presentation_links:t
+#+reveal_init_options: history:true, fragmentInURL:true, margin:0.1, minScale:0.5, maxScale:2.5, width:1200, height:800, mouseWheel:true, keyboard: {37: function() {Reveal.navigatePrev();},38: function() {Reveal.navigatePrev();}, 39: function() {Reveal.navigateNext();}, 40: function() {Reveal.navigateNext();},}
 #+options: reveal_title_slide:nil
 #+options: toc:nil num:nil
-#+options: reveal_width:1024 reveal_height:768
-
-#+reveal_margin: 0.1
-#+reveal_min_scale: 0.5
-#+reveal_max_scale: 2.5
 
 # Enable smart quotes
 #+options: ':t

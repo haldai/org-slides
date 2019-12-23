@@ -5,7 +5,7 @@
 #+reveal_extra_css: ../style/hal9001.css
 
 # reveal.js options
-#+reveal_init_options: history:true, fragmentInURL:true, margin:0.1, minScale:0.5, maxScale:2.5, width:1200, height:800, mouseWheel:true, keyboard: {37: function() {Reveal.navigatePrev();},38: function() {Reveal.navigatePrev();}, 39: function() {Reveal.navigateNext();}, 40: function() {Reveal.navigateNext();},}
+#+reveal_init_options: history:true, fragmentInURL:true, margin:0.1, minScale:0.5, maxScale:2.5, width:1200, height:800, mouseWheel:true, keyboard: {37: function() {Reveal.navigatePrev();},38: function() {Reveal.navigatePrev();}, 39: function() {Reveal.navigateNext();}, 40: function() {Reveal.navigateNext();},}, slideNumber:true,
 #+options: reveal_title_slide:nil
 #+options: toc:nil num:nil
 

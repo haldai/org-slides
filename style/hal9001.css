@@ -684,7 +684,7 @@ div.ribbon-legalese a {
 .reveal video,
 .reveal iframe {
     max-width: 90%;
-    max-height: 25ex;
+    max-height: 90%;
 }
 
 /* center videos */

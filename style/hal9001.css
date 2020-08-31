@@ -116,6 +116,7 @@
 }
 
 .reveal-viewport {
+    color: var(--fg);
   background: var(--bg);
 }
 
@@ -912,6 +913,11 @@ code {
   background-color: var(--bg2);
   font-weight: bold;
   border-top: 2px solid;
+}
+
+.reveal section table tbody {
+  border-width: thick;
+  border-color: var(--fg01);
 }
 
 .reveal section table tr:nth-child(even) {

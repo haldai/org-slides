@@ -14,7 +14,7 @@
 
 # Transition styles: none/fade/slide/convex/concave/zoom/cube
 #+reveal_trans: slide
-#+reveal_theme: white
+#+reveal_theme: nil
 
 # reveal.js plugins
 #+reveal_plugins: (markdown notes search zoom)

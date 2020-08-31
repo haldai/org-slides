@@ -114,6 +114,11 @@
   --blue-5:#366060;
   --magenta:#DC8CC3;
 }
+
+.reveal-viewport {
+  background: var(--bg);
+}
+
 body {
   color: var(--fg);
   background: var(--bg);

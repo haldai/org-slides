@@ -47,6 +47,7 @@
 #+macro: rit @@html:<font color="#CC9393" style="font-size:$2"><i>$1</i></font>@@
 #+macro: bit @@html:<font color="#8CD0D3" style="font-size:$2"><i>$1</i></font>@@
 #+macro: small @@html:<small>$1</small>@@
+#+macro: sbracket @@html:<small>($1)</small>@@
 #+macro: rsmall @@html:<font color="#CC9393"><small>$1</small></font>@@
 #+macro: bsmall @@html:<font color="#8CD0D3"><small>$1</small></font>@@
 #+macro: rsup @@html:<font color="#CC9393"><sup>$1</sup></font>@@

@@ -25,23 +25,46 @@
 
 @font-face {
   font-family: 'SourceHanSerifSCSubset';
-  font-weight: normal;
+  font-weight: 300;
+  src: /* local('Source Han Serif CN'), local('Source Han Serif SC'), */
+    url('./fonts/SourceHanSerifSC-Light.subset.woff2') format('woff2'); /* Super Modern Browsers */
+}
+
+@font-face {
+  font-family: 'SourceHanSerifSCSubset';
+  font-weight: 400;
   src: /* local('Source Han Serif CN'), local('Source Han Serif SC'), */
     url('./fonts/SourceHanSerifSC-Regular.subset.woff2') format('woff2'); /* Super Modern Browsers */
 }
 
 @font-face {
   font-family: 'SourceHanSerifSCSubset';
-  font-weight: bold;
+  font-weight: 500;
+  src: /* local('Source Han Serif CN'), local('Source Han Serif SC'), */
+    url('./fonts/SourceHanSerifSC-Medium.subset.woff2') format('woff2'); /* Super Modern Browsers */
+}
+
+
+@font-face {
+  font-family: 'SourceHanSerifSCSubset';
+  font-weight: 600;
+  src: /* locppal('Source Han Serif CN'), local('Source Han Serif SC'), */
+    url('./fonts/SourceHanSerifSC-SemiBold.subset.woff2') format('woff2'); /* Super Modern Browsers */
+}
+
+
+@font-face {
+  font-family: 'SourceHanSerifSCSubset';
+  font-weight: 700;
   src: /* local('Source Han Serif CN'), local('Source Han Serif SC'), */
     url('./fonts/SourceHanSerifSC-Bold.subset.woff2') format('woff2'); /* Super Modern Browsers */
 }
 
 @font-face {
   font-family: 'SourceHanSerifSCSubset';
-  font-weight: light;
+  font-weight: 800;
   src: /* local('Source Han Serif CN'), local('Source Han Serif SC'), */
-    url('./fonts/SourceHanSerifSC-Light.subset.woff2') format('woff2'); /* Super Modern Browsers */
+    url('./fonts/SourceHanSerifSC-Heavy.subset.woff2') format('woff2'); /* Super Modern Browsers */
 }
 
 
@@ -170,9 +193,9 @@ body {
 }
 
 .reveal {
-  font-family: "EBG12-Re", "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
-  font-size: 40px;
-  font-weight: normal;
+  font-family: 'EBG12-Re', 'SourceHanSerifSCSubset', 'FontAwesome47', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
   color: var(--fg);
 }
 
@@ -204,7 +227,7 @@ body {
 }
 
 .reveal .slides section .fragment.highlight-red.visible {
-  font-weight: bold;
+  font-weight: 600;
   color: var(--fg1);
 }
 
@@ -239,40 +262,48 @@ body {
   margin: 0 0 20px 0;
   top: 0;
   left: 0;
-  color: var(--fg);
-  font-family: "EBG12-SC", "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
-  font-weight: bold;
+  color: var(--fg1);
+  font-family: 'EBG12-SC', 'SourceHanSerifSCSubset', 'FontAwesome47', sans-serif;
+  font-weight: 800;
   letter-spacing: normal;
   text-align: left;
   text-shadow: none;
   text-transform: none;
   width: auto;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+}
 
 /* h1 is used on the title slide. */
 .reveal h1 {
   line-height: 1.2;
-  font-size: 2.2em;
-  font-weight: bold;
+  font-size: 2.9em;
+  font-weight: 900;
 }
 
 /* h2 is used for sections that appear in the TOC. */
 .reveal h2 {
-  font-size: 2.2em;
-  font-weight: bold;
+  font-size: 2.9em;
+  font-weight: 800;
   line-height: 1.1;
   text-align: center;
 }
 
-.reveal h3,
-.reveal h4 {
-  font-size: 1.3em;
-  font-weight: bold;
+.reveal h3 {
+  font-size: 1.7em;
+  font-weight: 700;
   text-align: center;
   line-height: 1.5;
   width: 100%;
   margin: 0 auto 15px auto;
   border-bottom: solid var(--bg3) 0.1em;
+}
+.reveal h4 {
+  font-size: 1.7em;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+  width: 100%;
+  margin: 0 auto 10px auto;
 }
 
 /* Footer; TOC progress plugin has height 9.5vh. */
@@ -691,29 +722,34 @@ div.ribbon-legalese a {
   box-shadow: 0px 5px 10px rgba(0,0,0,0.55); }
 
 #forkmeongitlab a:hover, #forkmeongitlab-right a:hover {
-  font-weight: bold; }
+  font-weight: 600; }
 
 #slide-license p {
   font-size: .8em; }
 
 .reveal .talk-title,
 .reveal .talk-title h1 {
-  color:var(--fg);
+  color:var(--fg1);
+  font-size:1.8em;
   margin: 80px 0px 30px 0px;
 }
 
 .reveal .talk-subtitle p{
   color:var(--red2);
-  font-weight: bold;
-  font-size: .6em;
+  font-weight: 600;
+  font-size: .8em;
   line-height: 1.0;
   margin: 0; }
 
-.reveal .talk-author {/* nothing special */ }
+.reveal .talk-author {
+  /* nothing special */
+  font-weight: 500;
+  color: var(--fg);
+}
 .reveal .keyboard-usage p {
   margin: 1ex 0;
-  font-size: 0.5em;
-  color:var(--fg);
+  font-size: 0.7em;
+  color: var(--fg);
 }
 
 .reveal .talk-date {
@@ -761,7 +797,8 @@ div.ribbon-legalese a {
 
 .reveal strong,
 .reveal b {
-  font-weight: bold;
+  font-weight: 700;
+  color: var(--fg1);
 }
 
 .reveal em,
@@ -798,7 +835,7 @@ div.ribbon-legalese a {
   content: counter(my-awesome-counter) ".";
   /* color: #303030; */
   font-family: "EBG12-Re", "Source Han Sans SC", "Source Han Sans", "Source Han Sans CN", "Noto Sans", "Noto Sans CJK", "Noto Sans SC", 'FontAwesome47', Helvetica, sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   display: inline-block;
   margin-left: -1.3em; /* same as padding-left set on li */
   width: 1.3em; /* same as padding-left set on li */
@@ -807,7 +844,7 @@ div.ribbon-legalese a {
 .reveal .slides ul li:before {
   content: "\f105"; /* FontAwesome47 Unicode */
   /* color: #303030; */
-  font-weight: bold;
+  font-weight: 600;
   font-family: 'FontAwesome47', Helvetica, sans-serif;
   display: inline-block;
   margin-left: -1.3em; /* same as padding-left set on li */
@@ -831,7 +868,7 @@ div.ribbon-legalese a {
 .reveal .slides ul ul ul li:before {
   content: "\f101"; /* FontAwesome47 Unicode */
   /* color: #303030; */
-  font-weight: bold;
+  font-weight: 600;
   font-family: 'FontAwesome47', Helvetica, sans-serif;
   display: inline-block;
   margin-left: -1.3em; /* same as padding-left set on li */
@@ -859,7 +896,7 @@ div.ribbon-legalese a {
   line-height: normal; }
 
 .reveal dt {
-  font-weight: bold; }
+  font-weight: 600; }
 
 .reveal dd {
   margin-left: 40px; }
@@ -956,7 +993,7 @@ code {
 
 .reveal section table th {
   background-color: var(--bg2);
-  font-weight: bold;
+  font-weight: 600;
   border-top: 2px solid;
 }
 
@@ -1035,6 +1072,9 @@ code {
 /*********************************************
  * LINKS
  *********************************************/
+.reveal a {
+  color: var(--yellow);
+}
 .reveal .slides a[href] not(org-ref-reference) {
   color: var(--yellow);
   text-decoration: underline dotted;
@@ -1074,7 +1114,7 @@ code {
 }
 n
 .reveal .slides a[href]:hover {
-  font-weight: bold;
+  font-weight: 600;
   text-shadow: none;
   border: none; }
 
@@ -1084,7 +1124,7 @@ n
 }
 
 .reveal .slides a[id]:hover {
-  font-weight: normal;
+  font-weight: 500;
 }
 
 .reveal .slides .roll span:after {
@@ -1123,7 +1163,7 @@ n
 }
 
 .reveal footer a[href]:hover {
-  font-weight: bold;
+  font-weight: 600;
   text-shadow: none;
   border: none;
 }
@@ -1133,7 +1173,7 @@ n
 }
 
 .reveal footer a[id]:hover {
-  font-weight: normal; }
+  font-weight: 500; }
 
 .reveal footer .roll span:after {
   color: var(--fg);

@@ -68,7 +68,7 @@
 #+macro: bdarrow @@html:<svg style="padding:0;margin:0 auto;" width="$1px" height="$2px"><line x1="$3" y1="$4" x2="$5" y2="$6" stroke="#8CD0D3" stroke-width="$7px" marker-start="url(#dot-blue)" marker-end="url(#arrow-blue)" /></svg>@@
 
 # extra settings
-#+html_head: <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+#+html_head: <script type="text/javascript" id="MathJax-script" asyncsrc="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js"></script>
 #+html_head: <script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS": { scale: 80}, tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']], processEscapes: true}});</script>
 
 #+begin_export html

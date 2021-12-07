@@ -218,7 +218,7 @@ body {
 
 .reveal .slides li {
   line-height: 1.1;
-  margin: 0.25ex 0px 0.25ex 0px;
+  margin: 0.5ex 0;
 }
 
 .reveal .slides li p {
@@ -829,6 +829,7 @@ div.ribbon-legalese a {
 .reveal .slides ul li {
   padding-left: 1.3em;
   counter-increment: my-awesome-counter;
+  margin: 1ex 0;
 }
 
 .reveal .slides ol li:before {

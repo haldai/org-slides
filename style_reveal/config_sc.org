@@ -1,0 +1,93 @@
+# Root of reveal.js and my style css
+
+# reveal.js options
+#+reveal_init_options: history:true,fragmentInURL:true,margin:0.04,minScale:0.5,maxScale:2.5,width:1280,height:960,
+#+reveal_init_options: mouseWheel:true,keyboard:{37: function() {Reveal.navigatePrev();},
+#+reveal_init_options: 38: function() {Reveal.navigatePrev();},39: function() {Reveal.navigateNext();},
+#+reveal_init_options: 40: function() {Reveal.navigateNext();},}, slideNumber:true,
+#+reveal_init_options: center:false, display: 'block',
+#+reveal_init_options: transition: 'fade', transitionSpeed: 'fast',
+#+reveal_init_options: chalkboard: { boardmarkers: [ { color: '#CC9393', cursor: 'url(' + path + 'img/boardmarker-red.png), auto'}, { color: '#8CD0D3', cursor: 'url(' + path + 'img/boardmarker-blue.png), auto'}, { color: '#FFFFEF', cursor: 'url(' + path + 'img/boardmarker-black.png), auto'} ] },
+
+#+options: reveal_title_slide:nil
+#+options: toc:nil num:nil
+
+# Enable smart quotes
+#+options: ':t
+
+# reveal.js plugins
+#+reveal_plugins: (markdown notes search zoom RevealChalkboard)
+
+# macros
+#+macro: cmt @@comment:$1@@
+#+macro: nl @@html:<br \>@@
+#+macro: p @@html:<p style="margin:$1;font-size:$2;font-family:$3;font-weight:$4;text-align:$5">@@
+#+macro: ep @@html:</p>@@
+#+macro: sp @@html:<span style="color:$1;font-size:$2;font-family:$3;font-weight:$4">@@
+#+macro: fsp @@html:<span class="fragment" data-fragment-index="$1" style="$2">@@
+#+macro: ssp @@html:<span style="$1">@@
+#+macro: esp @@html:</span>@@
+#+macro: d @@html:<div class="$1" style="$2" id="$3" data-fragment-index="$4">@@
+#+macro: ed @@html:</div>@@
+#+macro: s @@html:<s>@@
+#+macro: es @@html:</s>@@
+#+macro: img @@html:<img src="$1" width="$2" height="$3" class="$4" style="$5" />@@
+#+macro: wimg @@html:<img src="$1" width="$2" style="box-shadow:none;background-color:#FFFFFF;$3"/>@@
+#+macro: cimg @@html:<img src="$1" width="$2" style="box-shadow:none;margin:20px auto;margin-bottom:30px;float:none;$3"/>@@
+#+macro: cwimg @@html:<img src="$1" width="$2" style="box-shadow:none;margin:20px auto;margin-bottom:30px;background-color:#FFFFFF;float:none;$3;"/>@@
+#+macro: wbimg @@html:<img src="$1" width="$2" style="box-shadow:none;border:$3 solid #FFFFFF;background-color:#FFFFFF;$4"/>@@
+#+macro: cwbimg @@html:<img src="$1" width="$2" style="box-shadow:none;border:$3 solid #FFFFFF;margin:20px auto;margin-bottom:30px;background-color:#FFFFFF;float:none;$4"/>@@
+#+macro: awesome @@html:&#xf$1@@
+#+macro: rawesome @@html:<font color="#CC9393">&#xf$1</font>@@
+#+macro: bawesome @@html:<font color="#8CD0D3">&#xf$1</font>@@
+#+macro: color @@html:<font color="$1">$2</font>@@
+#+macro: red @@html:<font color="#CC9393" style="font-size:$2">$1</font>@@
+#+macro: blue @@html:<font color="#8CD0D3" style="font-size:$2">$1</font>@@
+#+macro: bold @@html:<b style="font-size:$2">$1</b>@@
+#+macro: rbold @@html:<font color="#CC9393" style="font-size:$2;font-weight:700">$1</font>@@
+#+macro: bbold @@html:<font color="#8CD0D3" style="font-size:$2;font-weight:700">$1</font>@@
+#+macro: it @@html:<i style="font-size:$2">$1</i>@@
+#+macro: rit @@html:<font color="#CC9393" style="font-size:$2"><i>$1</i></font>@@
+#+macro: bit @@html:<font color="#8CD0D3" style="font-size:$2"><i>$1</i></font>@@
+#+macro: small @@html:<small>$1</small>@@
+#+macro: sbracket @@html:<small>($1)</small>@@
+#+macro: rsmall @@html:<font color="#CC9393"><small>$1</small></font>@@
+#+macro: bsmall @@html:<font color="#8CD0D3"><small>$1</small></font>@@
+#+macro: rsup @@html:<font color="#CC9393"><sup>$1</sup></font>@@
+#+macro: bsup @@html:<font color="#8CD0D3"><sup>$1</sup></font>@@
+#+macro: wsup @@html:<font color="#FFFFFF"><sup>$1</sup></font>@@
+#+macro: rmark @@html:<mark style="background-color: #CC9393;">$1</mark>@@
+#+macro: bmark @@html:<mark style="background-color: #8CD0D3;">$1</mark>@@
+#+macro: rsarrow @@html:<svg style="padding:0;margin:0 auto;" width="$1px" height="$2px" class="shadowed"><line x1="$3" y1="$4" x2="$5" y2="$6" stroke="#CC9393" stroke-width="$7px" marker-end="url(#arrow-red)" /></svg>@@
+#+macro: rarrow @@html:<svg style="padding:0;margin:0 auto;" width="$1px" height="$2px"><line x1="$3" y1="$4" x2="$5" y2="$6" stroke="#CC9393" stroke-width="$7px" marker-end="url(#arrow-red)" /></svg>@@
+#+macro: bsarrow @@html:<svg style="padding:0;margin:0 auto;" width="$1px" height="$2px" class="shadowed"><line x1="$3" y1="$4" x2="$5" y2="$6" stroke="#8CD0D3" stroke-width="$7px" marker-end="url(#arrow-blue)" /></svg>@@
+#+macro: barrow @@html:<svg style="padding:0;margin:0 auto;" width="$1px" height="$2px"><line x1="$3" y1="$4" x2="$5" y2="$6" stroke="#8CD0D3" stroke-width="$7px" marker-end="url(#arrow-blue)" /></svg>@@
+#+macro: rdsarrow @@html:<svg style="padding:0;margin:0 auto;" width="$1px" height="$2px" class="shadowed"><line x1="$3" y1="$4" x2="$5" y2="$6" stroke="#CC9393" stroke-width="$7px" marker-start="url(#dot-red)"  marker-end="url(#arrow-red)" /></svg>@@
+#+macro: rdarrow @@html:<svg style="padding:0;margin:0 auto;" width="$1px" height="$2px"><line x1="$3" y1="$4" x2="$5" y2="$6" stroke="#CC9393" stroke-width="$7px" marker-start="url(#dot-red)" marker-end="url(#arrow-red)" /></svg>@@
+#+macro: bdsarrow @@html:<svg style="padding:0;margin:0 auto;" width="$1px" height="$2px" class="shadowed"><line x1="$3" y1="$4" x2="$5" y2="$6" stroke="#8CD0D3" stroke-width="$7px" marker-start="url(#dot-blue)"  marker-end="url(#arrow-blue)" /></svg>@@
+#+macro: bdarrow @@html:<svg style="padding:0;margin:0 auto;" width="$1px" height="$2px"><line x1="$3" y1="$4" x2="$5" y2="$6" stroke="#8CD0D3" stroke-width="$7px" marker-start="url(#dot-blue)" marker-end="url(#arrow-blue)" /></svg>@@
+
+# extra settings
+#+html_head: <script type="text/javascript" src="style/js/reveal.js/plugin/chalkboard/plugin.js"></script>
+#+html_head: <link rel="stylesheet" href="style/js/reveal.js/plugin/chalkboard/style.css">
+# +html_head: <script type="text/javascript" src="style/js/pangu.min.js"></script>
+# +html_head: <script type="text/javascript" src="style/js/pangu.config.js"></script>
+
+#+begin_export html
+<svg style="display: none">
+  <defs>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3" markerHeight="3" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#CC9393" />
+    </marker>
+    <marker id="dot-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2" markerHeight="2">
+      <circle cx="5" cy="5" r="5" fill="#CC9393" />
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="3" markerHeight="3" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8CD0D3" />
+    </marker>
+    <marker id="dot-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="2" markerHeight="2">
+      <circle cx="5" cy="5" r="5" fill="#8CD0D3" />
+    </marker>
+  </defs>
+</svg>
+#+end_export

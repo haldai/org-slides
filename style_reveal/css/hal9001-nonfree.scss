@@ -16,7 +16,7 @@
   }
 }
 
-@each $font in EBG, EBGSC, SCP {
+@each $font in EBG, EBGSC, SCP, FC {
   @include fontconfig($font, normal);
 }
 
@@ -336,7 +336,7 @@ section > h1, section > h2 {
   font-family: Vollkorn, FZPXYS, fontawesome, sans-serif;
   font-weight: 600;
   display: inline-block;
-  margin-left: -3.3rem; /* same as padding-left set on li */
+  margin-left: -3.5rem; /* same as padding-left set on li */
   width: 3rem; /* same as padding-left set on li */
 }
 
@@ -345,7 +345,7 @@ section > h1, section > h2 {
   font-weight: 600;
   font-family: fontawesome, sans-serif;
   display: inline-block;
-  margin-left: -3.2rem; /* same as padding-left set on li */
+  margin-left: -3.0rem; /* same as padding-left set on li */
   width: 3rem; /* same as padding-left set on li */
 }
 
@@ -368,7 +368,7 @@ section > h1, section > h2 {
   font-weight: 600;
   font-family: fontawesome, sans-serif;
   display: inline-block;
-  margin-left: -1.2rem; /* same as padding-left set on li */
+  margin-left: -3.0rem; /* same as padding-left set on li */
   width: 3rem; /* same as padding-left set on li */
 }
 
@@ -431,7 +431,7 @@ section > h1, section > h2 {
   max-width: 95%;
   text-align: left;
   font-size: 1.5rem;
-  font-family: SCP, monospace;
+  font-family: FC, monospace;
   word-wrap: normal;
   border-radius: 10px;
 }
@@ -466,7 +466,7 @@ code {
 .reveal code {
   color: var(--zenburn-fg);
   background: var(--zenburn-black2);
-  font-family: SCP, monospace;
+  font-family: FC, monospace;
   font-size: 1.5rem !important;
   padding: 0.2rem 0.1ex;
 }
@@ -475,7 +475,7 @@ code {
   color: var(--zenburn-fg);
   background: var(--zenburn-black2);
   width: 100%;
-  font-family: SCP, monospace;
+  font-family: FC, monospace;
 }
 
 .reveal section table {

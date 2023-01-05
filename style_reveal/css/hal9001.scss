@@ -31,7 +31,6 @@
 @each $font in SHSSC {
   @include fontconfig2($font, normal, woff2, medium, 500, woff2);
   @include fontconfig2($font, normal, woff2, bold, 700, woff2);
-  @include fontconfig2($font, normal, woff2, heavy, 800, woff2);
 }
 
 @each $font in Vollkorn {
@@ -152,14 +151,14 @@ section > h1, section > h2 {
 .reveal h1 {
   line-height: 1.5;
   font-size: 6rem;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--zenburn-white1);
 }
 
 /* h2 is used for sections that appear in the TOC. */
 .reveal h2 {
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.5;
   text-align: center;
   margin-top: 25%;
@@ -222,7 +221,7 @@ section > h1, section > h2 {
 
 .reveal .talk-subtitle p{
   color:var(--zenburn-red1);
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.5rem;
   line-height: 1.0;
   margin: 0;
@@ -492,7 +491,7 @@ code {
 }
 
 .reveal section table th {
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.4;
   background-color: var(--zenburn-grey1);
   border-top: 2px solid;

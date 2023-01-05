@@ -37,27 +37,9 @@
 }
 @font-face {
   font-family: SHSSC;
-  src: url("../fonts/SHSSC-light-normal.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 300;
-}
-@font-face {
-  font-family: SHSSC;
-  src: url("../fonts/SHSSC-regular-normal.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-family: SHSSC;
   src: url("../fonts/SHSSC-medium-normal.woff2") format("woff2");
   font-style: normal;
   font-weight: 500;
-}
-@font-face {
-  font-family: SHSSC;
-  src: url("../fonts/SHSSC-semibold-normal.woff2") format("woff2");
-  font-style: normal;
-  font-weight: 600;
 }
 @font-face {
   font-family: SHSSC;
@@ -69,6 +51,54 @@
   font-family: SHSSC;
   src: url("../fonts/SHSSC-heavy-normal.woff2") format("woff2");
   font-style: normal;
+  font-weight: 800;
+}
+@font-face {
+  font-family: Vollkorn;
+  src: url("../fonts/Vollkorn-regular-normal.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: Vollkorn;
+  src: url("../fonts/Vollkorn-regular-italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 500;
+}
+@font-face {
+  font-family: Vollkorn;
+  src: url("../fonts/Vollkorn-semibold-normal.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+}
+@font-face {
+  font-family: Vollkorn;
+  src: url("../fonts/Vollkorn-semibold-italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 600;
+}
+@font-face {
+  font-family: Vollkorn;
+  src: url("../fonts/Vollkorn-bold-normal.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: Vollkorn;
+  src: url("../fonts/Vollkorn-bold-italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 700;
+}
+@font-face {
+  font-family: Vollkorn;
+  src: url("../fonts/Vollkorn-heavy-normal.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+}
+@font-face {
+  font-family: Vollkorn;
+  src: url("../fonts/Vollkorn-heavy-italic.ttf") format("truetype");
+  font-style: italic;
   font-weight: 800;
 }
 /* colors */
@@ -188,7 +218,7 @@
 }
 
 .reveal {
-  font-family: EBG, SHSSC, fontawesome, sans-serif;
+  font-family: Vollkorn, SHSSC, fontawesome, sans-serif;
   font-size: 2rem;
   font-weight: 500;
   color: var(--zenburn-fg);
@@ -287,8 +317,8 @@ section > h1, section > h2 {
   top: 20px;
   left: 0;
   color: var(--zenburn-fg);
-  font-family: EBG, SHSSC, fontawesome, sans-serif;
-  font-weight: 400;
+  font-family: Vollkorn, SHSSC, fontawesome, sans-serif;
+  font-weight: 500;
   letter-spacing: normal;
   text-align: left;
   text-shadow: none;
@@ -320,7 +350,7 @@ section > h1, section > h2 {
 
 .reveal .talk-subtitle p {
   color: var(--zenburn-red1);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.5rem;
   line-height: 1;
   margin: 0;
@@ -329,7 +359,7 @@ section > h1, section > h2 {
 .reveal .talk-author {
   /* nothing special */
   font-weight: 500;
-  font-family: EBG, SHSSC, fontawesome, sans-serif;
+  font-family: Vollkorn, SHSSC, fontawesome, sans-serif;
   color: var(--zenburn-fg);
   text-align: inherit;
 }
@@ -426,8 +456,8 @@ section > h1, section > h2 {
 
 .reveal .slides ol li:before {
   content: counter(my-awesome-counter) ".";
-  font-family: EBG, SHSSC, fontawesome, sans-serif;
-  font-weight: 600;
+  font-family: Vollkorn, SHSSC, fontawesome, sans-serif;
+  font-weight: 500;
   display: inline-block;
   margin-left: -3.4rem; /* same as padding-left set on li */
   width: 3rem; /* same as padding-left set on li */
@@ -435,7 +465,7 @@ section > h1, section > h2 {
 
 .reveal .slides ul li:before {
   content: "\f105"; /* FontAwesome47 Unicode */
-  font-weight: 600;
+  font-weight: 500;
   font-family: fontawesome, sans-serif;
   display: inline-block;
   margin-left: -3.4rem; /* same as padding-left set on li */
@@ -458,7 +488,7 @@ section > h1, section > h2 {
 .reveal .slides ul ol ul li:before,
 .reveal .slides ul ul ul li:before {
   content: "\f101"; /* FontAwesome47 Unicode */
-  font-weight: 600;
+  font-weight: 500;
   font-family: fontawesome, sans-serif;
   display: inline-block;
   margin-left: -3rem; /* same as padding-left set on li */
@@ -489,7 +519,7 @@ section > h1, section > h2 {
 }
 
 .reveal dt {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .reveal dd {
@@ -585,7 +615,7 @@ code {
   line-height: 1.1;
   border-collapse: collapse;
   border-spacing: 0;
-  font-family: EBG, SHSSC, fontawesome, sans-serif;
+  font-family: Vollkorn, SHSSC, fontawesome, sans-serif;
   table-layout: fixed;
   border-spacing: 0;
   border: 1px solid;
@@ -708,7 +738,7 @@ code {
 }
 
 n .reveal .slides a[href]:hover {
-  font-weight: 600;
+  font-weight: 500;
   text-shadow: none;
   border: none;
 }

@@ -29,10 +29,8 @@
 }
 
 @each $font in SHSSC {
-  @include fontconfig2($font, normal, woff2, light, 300, woff2);
-  @include fontconfig2($font, normal, woff2, regular, 400, woff2);
   @include fontconfig2($font, normal, woff2, medium, 500, woff2);
-  @include fontconfig2($font, normal, woff2, semibold, 600, woff2);
+  /* @include fontconfig2($font, normal, woff2, semibold, 600, woff2); */
   @include fontconfig2($font, normal, woff2, bold, 700, woff2);
   @include fontconfig2($font, normal, woff2, heavy, 800, woff2);
 }

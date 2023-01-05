@@ -29,12 +29,20 @@
 }
 
 @each $font in SHSSC {
-  @include fontconfig2($font, normal, woff2, light, 300, woff2);
-  @include fontconfig2($font, normal, woff2, regular, 400, woff2);
   @include fontconfig2($font, normal, woff2, medium, 500, woff2);
-  @include fontconfig2($font, normal, woff2, semibold, 600, woff2);
   @include fontconfig2($font, normal, woff2, bold, 700, woff2);
   @include fontconfig2($font, normal, woff2, heavy, 800, woff2);
+}
+
+@each $font in Vollkorn {
+  @include fontconfig2($font, normal, ttf, regular, 500);
+  @include fontconfig2($font, italic, ttf, regular, 500);
+  @include fontconfig2($font, normal, ttf, semibold, 600);
+  @include fontconfig2($font, italic, ttf, semibold, 600);
+  @include fontconfig2($font, normal, ttf, bold, 700);
+  @include fontconfig2($font, italic, ttf, bold, 700);
+  @include fontconfig2($font, normal, ttf, heavy, 800);
+  @include fontconfig2($font, italic, ttf, heavy, 800);
 }
 
 /* colors */
@@ -80,7 +88,7 @@
 }
 
 .reveal {
-  font-family: EBG, SHSSC, fontawesome, sans-serif;
+  font-family: Vollkorn, SHSSC, fontawesome, sans-serif;
   font-size: 2rem;
   font-weight: 500;
   color: var(--zenburn-fg);
@@ -180,8 +188,8 @@ section > h1, section > h2 {
   top: 20px;
   left: 0;
   color: var(--zenburn-fg);
-  font-family: EBG, SHSSC, fontawesome, sans-serif;
-  font-weight: 400;
+  font-family: Vollkorn, SHSSC, fontawesome, sans-serif;
+  font-weight: 500;
   letter-spacing: normal;
   text-align: left;
   text-shadow: none;
@@ -214,7 +222,7 @@ section > h1, section > h2 {
 
 .reveal .talk-subtitle p{
   color:var(--zenburn-red1);
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.5rem;
   line-height: 1.0;
   margin: 0;
@@ -223,7 +231,7 @@ section > h1, section > h2 {
 .reveal .talk-author {
   /* nothing special */
   font-weight: 500;
-  font-family: EBG, SHSSC, fontawesome, sans-serif;
+  font-family: Vollkorn, SHSSC, fontawesome, sans-serif;
   color: var(--zenburn-fg);
   text-align: inherit;
 }
@@ -318,8 +326,8 @@ section > h1, section > h2 {
 
 .reveal .slides ol li:before {
   content: counter(my-awesome-counter) ".";
-  font-family: EBG, SHSSC, fontawesome, sans-serif;
-  font-weight: 600;
+  font-family: Vollkorn, SHSSC, fontawesome, sans-serif;
+  font-weight: 500;
   display: inline-block;
   margin-left: -3.4rem; /* same as padding-left set on li */
   width: 3rem; /* same as padding-left set on li */
@@ -327,7 +335,7 @@ section > h1, section > h2 {
 
 .reveal .slides ul li:before {
   content: "\f105"; /* FontAwesome47 Unicode */
-  font-weight: 600;
+  font-weight: 500;
   font-family: fontawesome, sans-serif;
   display: inline-block;
   margin-left: -3.4rem; /* same as padding-left set on li */
@@ -350,7 +358,7 @@ section > h1, section > h2 {
 .reveal .slides ul ol ul li:before,
 .reveal .slides ul ul ul li:before {
   content: "\f101"; /* FontAwesome47 Unicode */
-  font-weight: 600;
+  font-weight: 500;
   font-family: fontawesome, sans-serif;
   display: inline-block;
   margin-left: -3.0rem; /* same as padding-left set on li */
@@ -378,7 +386,7 @@ section > h1, section > h2 {
   line-height: normal; }
 
 .reveal dt {
-  font-weight: 600; }
+  font-weight: 500; }
 
 .reveal dd {
   margin-left: 40px; }
@@ -468,7 +476,7 @@ code {
   line-height: 1.1;
   border-collapse: collapse;
   border-spacing: 0;
-  font-family: EBG, SHSSC, fontawesome, sans-serif;
+  font-family: Vollkorn, SHSSC, fontawesome, sans-serif;
   table-layout: fixed;
   border-spacing: 0;
   border: 1px solid;
@@ -588,7 +596,7 @@ code {
 }
 n
 .reveal .slides a[href]:hover {
-  font-weight: 600;
+  font-weight: 500;
   text-shadow: none;
   border: none; }
 
